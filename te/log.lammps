@@ -1,0 +1,115 @@
+LAMMPS (11 Aug 2017)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (../comm.cpp:90)
+  using 1 OpenMP thread(s) per MPI task
+units           real
+atom_style      full
+boundary        p p p
+dielectric      1
+special_bonds   lj/coul 0.0 0.0 0.5
+
+pair_style      lj/charmm/coul/long/opt 13 14.00000
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  none
+improper_style  none
+kspace_style    pppm 0.001
+
+read_restart    t3p2MNaF.avg.1000000.restart
+WARNING: Restart file used different # of processors (../read_restart.cpp:717)
+  orthogonal box = (0 0 5.86888) to (45.6799 46.8859 32.956)
+  2 by 2 by 1 MPI processor grid
+  6150 atoms
+  4000 bonds
+  2000 angles
+  2 = max # of 1-2 neighbors
+  1 = max # of 1-3 neighbors
+  1 = max # of 1-4 neighbors
+  2 = max # of special neighbors
+
+pair_coeff 1 1 0.0000 0.0000
+pair_coeff 1 2 0.0000 0.0000
+pair_coeff 1 3 0.0000 0.0000
+pair_coeff 1 4 0.0000 0.0000
+pair_coeff 2 2 0.1020 3.1880 #t3pe
+pair_coeff 2 3 0.1010 2.8855 #t3pe~Na+ (Netz)
+pair_coeff 2 4 0.0191 3.6745 #t3pe~F- (Netz)
+pair_coeff 3 3 0.1000 2.5830 #Na+ (Netz)
+pair_coeff 3 4 0.0284 3.3720 #Na+_F- scale1.5 (Netz)
+pair_coeff 4 4 0.0036 4.1610 #F- (Netz)
+
+
+neighbor        2.0 multi
+neigh_modify    every 2 delay 4 check yes
+thermo_style    multi
+
+variable        input index in.t3p2MNaF
+variable        sname index t3p2MNaF
+
+fix             1 all momentum 1 linear 1 1 1 angular
+fix             shakeH all shake 0.0001 20 500 b 1 a 1
+  0 = # of size 2 clusters
+  0 = # of size 3 clusters
+  0 = # of size 4 clusters
+  2000 = # of frozen angles
+thermo          100
+timestep	1.0
+#thermo_style    custom temp etotal ke pe ebond eangle evdwl ecoul elong press lz density
+#thermo_modify   line multi
+
+print                          .
+.
+print =====================================
+=====================================
+print "NVT dynamics for MOBILE"
+NVT dynamics for MOBILE
+print =====================================
+=====================================
+print            .
+.
+
+region          11 block 0.0 10.0000 0.0 10.0000 5.86888 30.000
+#region          11 block 0.0 45.6799 0.0 46.8859 5.86888 32.956
+
+reset_timestep  0
+dump            2 all custom 1000 ${sname}.avg.lammpstrj id type xu yu zu
+dump            2 all custom 1000 t3p2MNaF.avg.lammpstrj id type xu yu zu
+restart         500000 ${sname}.avg.*.restart
+restart         500000 t3p2MNaF.avg.*.restart
+fix             5 all conc/berendsen 1.0 1.0 100.0 11
+#compute         5_conc all conc 11
+thermo_style    custom temp etotal ke pe ebond eangle evdwl ecoul elong press lz density c_5_conc[1] c_5_conc[2] c_5_conc[3] c_5_conc[4]
+thermo_modify   line multi
+#fix             3 all nvt temp 300.0 300.0 100.0
+run             1000000
+PPPM initialization ...
+WARNING: Using 12-bit tables for long-range coulomb (../kspace.cpp:321)
+  G vector (1/distance) = 0.157766
+  grid = 10 10 8
+  stencil order = 5
+  estimated absolute RMS force accuracy = 0.224139
+  estimated relative force accuracy = 0.000674989
+  using double precision FFTs
+  3d grid and FFT values/proc = 1300 200
+Unused restart file global fix info:
+  fix style: nvt, fix ID: 3
+Neighbor list info ...
+  update every 2 steps, delay 4 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 16
+  ghost atom cutoff = 16
+  binsize = 8, bins = 6 6 4
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/charmm/coul/long/opt, perpetual
+      attributes: half, newton on
+      pair build: half/multi/newton
+      stencil: half/multi/3d/newton
+      bin: standard
+SHAKE stats (type/ave/delta) on step 0
+  1 0.9572 1.40448e-06
+  1 104.52 0.000123482
+Per MPI rank memory allocation (min/avg/max) = 22.34 | 22.62 | 22.72 Mbytes
+---------------- Step        0 ----- CPU =      0.0000 (sec) ----------------
+Temp     =       300.2172 TotEng   =    -32670.4966 KinEng   =      3712.9002 
+PotEng   =    -36383.3968 E_bond   =         0.0000 E_angle  =         0.0000 
+E_vdwl   =      6021.9263 E_coul   =     23097.2150 E_long   =    -65502.5381 
+Press    =       254.2564 Lz       =        27.0871 Density 

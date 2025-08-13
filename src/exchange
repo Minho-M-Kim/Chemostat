@@ -1,0 +1,1211 @@
+angle_charmm.cpp:  if (comm->me == 0) {
+angle_class2.cpp:  if (comm->me == 0) {
+angle_cosine.cpp:  if (comm->me == 0) fread(&k[1],sizeof(double),atom->nangletypes,fp);
+angle_cosine_periodic.cpp:  if (comm->me == 0) {
+angle_cosine_squared.cpp:  if (comm->me == 0) {
+angle.cpp:      memory->create(eatom,comm->nthreads*maxeatom,"angle:eatom");
+angle.cpp:      memory->create(vatom,comm->nthreads*maxvatom,6,"angle:vatom");
+angle.cpp:  double bytes = comm->nthreads*maxeatom * sizeof(double);
+angle.cpp:  bytes += comm->nthreads*maxvatom*6 * sizeof(double);
+angle_harmonic.cpp:  if (comm->me == 0) {
+angle_hybrid.cpp:  int me = comm->me;
+angle_table.cpp:  if (comm->me == 0) {
+angle_zero.cpp:  if (comm->me == 0) {
+atom.cpp:  if (comm->layout != LAYOUT_TILED) {
+atom.cpp:      if (comm->myloc[0] == 0) sublo[0] -= epsilon[0];
+atom.cpp:      if (comm->myloc[0] == comm->procgrid[0]-1) subhi[0] += epsilon[0];
+atom.cpp:      if (comm->myloc[1] == 0) sublo[1] -= epsilon[1];
+atom.cpp:      if (comm->myloc[1] == comm->procgrid[1]-1) subhi[1] += epsilon[1];
+atom.cpp:      if (comm->myloc[2] == 0) sublo[2] -= epsilon[2];
+atom.cpp:      if (comm->myloc[2] == comm->procgrid[2]-1) subhi[2] += epsilon[2];
+atom.cpp:      if (comm->mysplit[0][0] == 0.0) sublo[0] -= epsilon[0];
+atom.cpp:      if (comm->mysplit[0][1] == 1.0) subhi[0] += epsilon[0];
+atom.cpp:      if (comm->mysplit[1][0] == 0.0) sublo[1] -= epsilon[1];
+atom.cpp:      if (comm->mysplit[1][1] == 1.0) subhi[1] += epsilon[1];
+atom.cpp:      if (comm->mysplit[2][0] == 0.0) sublo[2] -= epsilon[2];
+atom.cpp:      if (comm->mysplit[2][1] == 1.0) subhi[2] += epsilon[2];
+atom.cpp:   called by comm->exchange() if atom_modify first group is set
+atom.cpp:   always called between comm->exchange() and comm->borders()
+atom_map.cpp:      int nper = static_cast<int> (natoms/comm->nprocs);
+atom_vec_angle.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_angle.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_atomic.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_atomic.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_body.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_body.cpp:  torque = memory->grow(atom->torque,nmax*comm->nthreads,3,"atom:torque");
+atom_vec_body.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_body.cpp:                                  memory->usage(torque,nmax*comm->nthreads,3);
+atom_vec_body.cpp:      printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+atom_vec_body.cpp:      printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+atom_vec_body.cpp:      printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+atom_vec_body.cpp:      printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+atom_vec_body.cpp:      printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+atom_vec_body.cpp:      printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+atom_vec_bond.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_bond.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_charge.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_charge.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_dipole.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_dipole.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_ellipsoid.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_ellipsoid.cpp:  torque = memory->grow(atom->torque,nmax*comm->nthreads,3,"atom:torque");
+atom_vec_ellipsoid.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_ellipsoid.cpp:    bytes += memory->usage(torque,nmax*comm->nthreads,3);
+atom_vec_full.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_full.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_line.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_line.cpp:  torque = memory->grow(atom->torque,nmax*comm->nthreads,3,"atom:torque");
+atom_vec_line.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_line.cpp:    bytes += memory->usage(torque,nmax*comm->nthreads,3);
+atom_vec_line.cpp:      //if (comm->me == 1 && update->ntimestep == 873)
+atom_vec_line.cpp:    printf("BAD vecline ptrs: %s: %d %d: %d\n",str,comm->me,
+atom_vec_line.cpp:           str,comm->me,update->ntimestep,count,nlocal_bonus);
+atom_vec_molecular.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_molecular.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_peri.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_peri.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_sphere.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_sphere.cpp:  torque = memory->grow(atom->torque,nmax*comm->nthreads,3,"atom:torque");
+atom_vec_sphere.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_sphere.cpp:    bytes += memory->usage(torque,nmax*comm->nthreads,3);
+atom_vec_template.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_template.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_tri.cpp:  f = memory->grow(atom->f,nmax*comm->nthreads,3,"atom:f");
+atom_vec_tri.cpp:  torque = memory->grow(atom->torque,nmax*comm->nthreads,3,"atom:torque");
+atom_vec_tri.cpp:  if (atom->memcheck("f")) bytes += memory->usage(f,nmax*comm->nthreads,3);
+atom_vec_tri.cpp:                                  memory->usage(torque,nmax*comm->nthreads,3);
+balance.cpp:  int *procgrid = comm->procgrid;
+balance.cpp:  if (style == BISECTION && comm->style == 0)
+balance.cpp:  // init entire system since comm->setup is done
+balance.cpp:  comm->setup();
+balance.cpp:  comm->exchange();
+balance.cpp:  if (comm->layout == LAYOUT_TILED && style != BISECTION) {
+balance.cpp:    if (comm->layout == LAYOUT_UNIFORM) {
+balance.cpp:        comm->layout = LAYOUT_NONUNIFORM;
+balance.cpp:    } else if (comm->style == LAYOUT_NONUNIFORM) {
+balance.cpp:        comm->layout = LAYOUT_UNIFORM;
+balance.cpp:    } else if (comm->style == LAYOUT_TILED) {
+balance.cpp:        comm->layout = LAYOUT_UNIFORM;
+balance.cpp:      else comm->layout = LAYOUT_NONUNIFORM;
+balance.cpp:        comm->xsplit[i] = i * 1.0/procgrid[0];
+balance.cpp:      comm->xsplit[procgrid[0]] = 1.0;
+balance.cpp:      for (int i = 0; i <= procgrid[0]; i++) comm->xsplit[i] = user_xsplit[i];
+balance.cpp:        comm->ysplit[i] = i * 1.0/procgrid[1];
+balance.cpp:      comm->ysplit[procgrid[1]] = 1.0;
+balance.cpp:      for (int i = 0; i <= procgrid[1]; i++) comm->ysplit[i] = user_ysplit[i];
+balance.cpp:        comm->zsplit[i] = i * 1.0/procgrid[2];
+balance.cpp:      comm->zsplit[procgrid[2]] = 1.0;
+balance.cpp:      for (int i = 0; i <= procgrid[2]; i++) comm->zsplit[i] = user_zsplit[i];
+balance.cpp:    comm->layout = LAYOUT_NONUNIFORM;
+balance.cpp:    comm->layout = LAYOUT_TILED;
+balance.cpp:        for (int i = 0; i <= comm->procgrid[0]; i++)
+balance.cpp:          fprintf(screen," %g",comm->xsplit[i]);
+balance.cpp:        for (int i = 0; i <= comm->procgrid[1]; i++)
+balance.cpp:          fprintf(screen," %g",comm->ysplit[i]);
+balance.cpp:        for (int i = 0; i <= comm->procgrid[2]; i++)
+balance.cpp:          fprintf(screen," %g",comm->zsplit[i]);
+balance.cpp:        for (int i = 0; i <= comm->procgrid[0]; i++)
+balance.cpp:          fprintf(logfile," %g",comm->xsplit[i]);
+balance.cpp:        for (int i = 0; i <= comm->procgrid[1]; i++)
+balance.cpp:          fprintf(logfile," %g",comm->ysplit[i]);
+balance.cpp:        for (int i = 0; i <= comm->procgrid[2]; i++)
+balance.cpp:          fprintf(logfile," %g",comm->zsplit[i]);
+balance.cpp:  if (outflag && comm->me == 0) {
+balance.cpp:  comm->rcbnew = 1;
+balance.cpp:  if (idim >= 0) comm->rcbcutfrac = (rcb->cut - boxlo[idim]) / prd[idim];
+balance.cpp:  else comm->rcbcutfrac = 0.0;
+balance.cpp:  comm->rcbcutdim = idim;
+balance.cpp:  double (*mysplit)[2] = comm->mysplit;
+balance.cpp:  int max = MAX(comm->procgrid[0],comm->procgrid[1]);
+balance.cpp:  max = MAX(max,comm->procgrid[2]);
+balance.cpp:  if (comm->layout == LAYOUT_TILED) {
+balance.cpp:    int *procgrid = comm->procgrid;
+balance.cpp:    double *xsplit = comm->xsplit;
+balance.cpp:    double *ysplit = comm->ysplit;
+balance.cpp:    double *zsplit = comm->zsplit;
+balance.cpp:  int *procgrid = comm->procgrid;
+balance.cpp:    if (bdim[idim] == X) split = comm->xsplit;
+balance.cpp:    else if (bdim[idim] == Y) split = comm->ysplit;
+balance.cpp:    else if (bdim[idim] == Z) split = comm->zsplit;
+balance.cpp:  double *xsplit = comm->xsplit;
+balance.cpp:  double *ysplit = comm->ysplit;
+balance.cpp:  double *zsplit = comm->zsplit;
+balance.cpp:  int nx = comm->procgrid[0];
+balance.cpp:  int ny = comm->procgrid[1];
+balance.cpp:  int nz = comm->procgrid[2];
+bond_class2.cpp:  if (comm->me == 0) {
+bond.cpp:      memory->create(eatom,comm->nthreads*maxeatom,"bond:eatom");
+bond.cpp:      memory->create(vatom,comm->nthreads*maxvatom,6,"bond:vatom");
+bond.cpp:  double bytes = comm->nthreads*maxeatom * sizeof(double);
+bond.cpp:  bytes += comm->nthreads*maxvatom*6 * sizeof(double);
+bond_fene.cpp:    if (comm->me == 0)
+bond_fene.cpp:  if (comm->me == 0) {
+bond_fene_expand.cpp:    if (comm->me == 0)
+bond_fene_expand.cpp:  if (comm->me == 0) {
+bond_harmonic.cpp:  if (comm->me == 0) {
+bond_hybrid.cpp:  int me = comm->me;
+bond_morse.cpp:  if (comm->me == 0) {
+bond_nonlinear.cpp:  if (comm->me == 0) {
+bond_quartic.cpp:  if (comm->me == 0) {
+bond_table.cpp:  if (comm->me == 0) {
+bond_zero.cpp:  if (comm->me == 0) {
+change_box.cpp:  if (comm->me == 0 && screen) fprintf(screen,"Changing box ...\n");
+change_box.cpp:  if (natoms != atom->natoms && comm->me == 0) {
+comm_brick.cpp:  if (oldcomm->layout == LAYOUT_TILED)
+comm_brick.cpp:  layout = oldcomm->layout;
+comm.cpp:  if (oldcomm->grid2proc) {
+comm.cpp:    memcpy(&grid2proc[0][0][0],&oldcomm->grid2proc[0][0][0],
+comm.cpp:    memcpy(xsplit,oldcomm->xsplit,(procgrid[0]+1)*sizeof(double));
+comm.cpp:    memcpy(ysplit,oldcomm->ysplit,(procgrid[1]+1)*sizeof(double));
+comm.cpp:    memcpy(zsplit,oldcomm->zsplit,(procgrid[2]+1)*sizeof(double));
+comm.cpp:  if (oldcomm->cutusermulti) {
+comm.cpp:    memcpy(cutusermulti,oldcomm->cutusermulti,atom->ntypes+1);
+comm.cpp:    int n = strlen(oldcomm->customfile) + 1;
+comm.cpp:    strcpy(customfile,oldcomm->customfile);
+comm.cpp:    int n = strlen(oldcomm->outfile) + 1;
+comm.cpp:    strcpy(outfile,oldcomm->outfile);
+comm_tiled.cpp:  layout = oldcomm->layout;
+compute_bond_local.cpp:  if (velflag && !comm->ghost_velocity) ghostvelflag = 1;
+compute_bond_local.cpp:  if (ghostvelflag && !initflag) comm->forward_comm_compute(this);
+compute_centro_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_chunk_atom.cpp:    int nprocs = comm->nprocs;
+compute_chunk_atom.cpp:    comm->ring(n,sizeof(int),list,1,idring,NULL,(void *)this,0);
+compute_chunk_atom.cpp:   callback from comm->ring()
+compute_chunk_atom.cpp:  if (flagall && comm->me == 0)
+compute_cluster_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_cluster_atom.cpp:    comm->forward_comm_compute(this);
+compute_cluster_atom.cpp:    comm->forward_comm_compute(this);
+compute_cna_atom.cpp:      comm->me == 0)
+compute_cna_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_cna_atom.cpp:  if (nerrorall && comm->me == 0) {
+compute_cna_atom.cpp:  if (nerrorall && comm->me == 0) {
+compute_contact_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_contact_atom.cpp:  if (force->newton_pair) comm->reverse_comm_compute(this);
+compute_coord_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_coord_atom.cpp:    comm->forward_comm_compute(this);
+compute_damage_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_dilatation_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_erotate_sphere_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_fep.cpp:  if (comm->me == 0) {
+compute_force_tally.cpp:  if (comm->me == 0) {
+compute_force_tally.cpp:    comm->reverse_comm_compute(this);
+compute_group_group.cpp:    if (fabs(e_correction) > SMALL && comm->me == 0) {
+compute_heat_flux_tally.cpp:  if (comm->me == 0) {
+compute_heat_flux_tally.cpp:    comm->reverse_comm_compute(this);
+compute_hexorder_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_ke_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_orientorder_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_pe_atom.cpp:    comm->reverse_comm_compute(this);
+compute_pe_mol_tally.cpp:  if (comm->me == 0) {
+compute_pe_tally.cpp:  if (comm->me == 0) {
+compute_pe_tally.cpp:    comm->reverse_comm_compute(this);
+compute_plasticity_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_property_atom.cpp:  int me = comm->me;
+compute_rdf.cpp:      cutghost = MAX(force->pair->cutforce+skin,comm->cutghostuser);
+compute_rdf.cpp:      cutghost = comm->cutghostuser;
+compute_rdf.cpp:      if (comm->me == 0)
+compute_sna_atom.cpp:  snaptr = new SNA*[comm->nthreads];
+compute_sna_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_sna_atom.cpp:  bytes += snaptr[0]->memory_usage()*comm->nthreads;
+compute_snad_atom.cpp:  snaptr = new SNA*[comm->nthreads];
+compute_snad_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_snad_atom.cpp:  comm->reverse_comm_compute(this);
+compute_snad_atom.cpp:  bytes += snaptr[0]->memory_usage()*comm->nthreads;
+compute_snav_atom.cpp:  snaptr = new SNA*[comm->nthreads];
+compute_snav_atom.cpp:  if (count > 1 && comm->me == 0)
+compute_snav_atom.cpp:  comm->reverse_comm_compute(this);
+compute_snav_atom.cpp:  bytes += snaptr[0]->memory_usage()*comm->nthreads;
+compute_stress_atom.cpp:    comm->reverse_comm_compute(this);
+compute_stress_tally.cpp:  if (comm->me == 0) {
+compute_stress_tally.cpp:    comm->reverse_comm_compute(this);
+compute_temp_cs.cpp:  if (comm->ghost_velocity == 0)
+compute_temp_cs.cpp:    if (force->newton_bond) comm->reverse_comm_compute(this);
+compute_temp_deform.cpp:          comm->me == 0)
+compute_temp_deform.cpp:  if (i == modify->nfix && comm->me == 0)
+create_atoms.cpp:      if (atom->molecules[imol]->nset > 1 && comm->me == 0)
+create_atoms.cpp:    ranmol = new RanMars(lmp,molseed+comm->me);
+create_atoms.cpp:    if (comm->layout != LAYOUT_TILED) {
+create_atoms.cpp:        if (comm->myloc[0] == 0) sublo[0] -= epsilon[0];
+create_atoms.cpp:        if (comm->myloc[0] == comm->procgrid[0]-1) subhi[0] -= 2.0*epsilon[0];
+create_atoms.cpp:        if (comm->myloc[1] == 0) sublo[1] -= epsilon[1];
+create_atoms.cpp:        if (comm->myloc[1] == comm->procgrid[1]-1) subhi[1] -= 2.0*epsilon[1];
+create_atoms.cpp:        if (comm->myloc[2] == 0) sublo[2] -= epsilon[2];
+create_atoms.cpp:        if (comm->myloc[2] == comm->procgrid[2]-1) subhi[2] -= 2.0*epsilon[2];
+create_atoms.cpp:        if (comm->mysplit[0][0] == 0.0) sublo[0] -= epsilon[0];
+create_atoms.cpp:        if (comm->mysplit[0][1] == 1.0) subhi[0] -= 2.0*epsilon[0];
+create_atoms.cpp:        if (comm->mysplit[1][0] == 0.0) sublo[1] -= epsilon[1];
+create_atoms.cpp:        if (comm->mysplit[1][1] == 1.0) subhi[1] -= 2.0*epsilon[1];
+create_atoms.cpp:        if (comm->mysplit[2][0] == 0.0) sublo[2] -= epsilon[2];
+create_atoms.cpp:        if (comm->mysplit[2][1] == 1.0) subhi[2] -= 2.0*epsilon[2];
+create_atoms.cpp:  if (comm->me == 0) {
+create_bonds.cpp:  // init entire system since comm->borders and neighbor->build is done
+create_bonds.cpp:  if (rmax > neighbor->cutneighmin && comm->me == 0)
+create_bonds.cpp:  comm->setup();
+create_bonds.cpp:  comm->exchange();
+create_bonds.cpp:  comm->borders();
+create_bonds.cpp:  if (comm->me == 0) {
+create_box.cpp:  comm->set_proc_grid();
+delete_atoms.cpp:  if (comm->me == 0) {
+delete_atoms.cpp:  if (comm->me == 0 && screen)
+delete_atoms.cpp:  // init entire system since comm->borders and neighbor->build is done
+delete_atoms.cpp:  if (cut > neighbor->cutneighmin && comm->me == 0)
+delete_atoms.cpp:  comm->setup();
+delete_atoms.cpp:  comm->exchange();
+delete_atoms.cpp:  comm->borders();
+delete_atoms.cpp:  RanMars *random = new RanMars(lmp,seed + comm->me);
+delete_atoms.cpp:  // pass list to all other procs via comm->ring()
+delete_atoms.cpp:  comm->ring(n,sizeof(tagint),list,1,bondring,NULL,(void *)this);
+delete_atoms.cpp:  // pass list to all other procs via comm->ring()
+delete_atoms.cpp:  comm->ring(n,sizeof(tagint),list,1,molring,NULL,(void *)this);
+delete_atoms.cpp:   callback from comm->ring() in delete_bond()
+delete_atoms.cpp:   callback from comm->ring() in delete_molecule()
+delete_bonds.cpp:  // init entire system since comm->borders is done
+delete_bonds.cpp:  if (comm->me == 0 && screen)
+delete_bonds.cpp:  if (comm->me == 0 && screen) fprintf(screen,"Deleting bonds ...\n");
+delete_bonds.cpp:  comm->setup();
+delete_bonds.cpp:  comm->exchange();
+delete_bonds.cpp:  comm->borders();
+delete_bonds.cpp:  if (comm->me == 0) {
+dihedral_charmm.cpp:  if (comm->me == 0) {
+dihedral_charmmfsw.cpp:  if (comm->me == 0) {
+dihedral_class2.cpp:  if (comm->me == 0) {
+dihedral.cpp:      memory->create(eatom,comm->nthreads*maxeatom,"dihedral:eatom");
+dihedral.cpp:      memory->create(vatom,comm->nthreads*maxvatom,6,"dihedral:vatom");
+dihedral.cpp:  double bytes = comm->nthreads*maxeatom * sizeof(double);
+dihedral.cpp:  bytes += comm->nthreads*maxvatom*6 * sizeof(double);
+dihedral_harmonic.cpp:  if (comm->me == 0) {
+dihedral_helix.cpp:  if (comm->me == 0) {
+dihedral_hybrid.cpp:  int me = comm->me;
+dihedral_multi_harmonic.cpp:  if (comm->me == 0) {
+dihedral_opls.cpp:  if (comm->me == 0) {
+displace_atoms.cpp:  if (comm->me == 0 && screen) fprintf(screen,"Displacing atoms ...\n");
+displace_atoms.cpp:  if (natoms != atom->natoms && comm->me == 0) {
+domain.cpp:      else if (comm->me == 0)
+domain.cpp:   uses comm->xyz_split or comm->mysplit
+domain.cpp:  if (comm->layout != LAYOUT_TILED) {
+domain.cpp:    int *myloc = comm->myloc;
+domain.cpp:    double *xsplit = comm->xsplit;
+domain.cpp:    double *ysplit = comm->ysplit;
+domain.cpp:    double *zsplit = comm->zsplit;
+domain.cpp:    double (*mysplit)[2] = comm->mysplit;
+domain.cpp:   uses comm->xyz_split or comm->mysplit
+domain.cpp:  if (comm->layout != LAYOUT_TILED) {
+domain.cpp:    int *myloc = comm->myloc;
+domain.cpp:    int *procgrid = comm->procgrid;
+domain.cpp:    double *xsplit = comm->xsplit;
+domain.cpp:    double *ysplit = comm->ysplit;
+domain.cpp:    double *zsplit = comm->zsplit;
+domain.cpp:    double (*mysplit)[2] = comm->mysplit;
+domain.cpp:  comm->forward_comm_array(3,unwrap);
+domain.cpp:  if (flagall && comm->me == 0)
+domain.cpp:    if (all && comm->me == 0)
+domain.cpp:    if (all && comm->me == 0)
+domain.cpp:  if (flagall && comm->me == 0)
+domain.cpp:    since may lead to lost atoms in comm->exchange()
+domain.cpp:  if (flagall && comm->me == 0)
+domain.cpp:  if (comm->me == 0) {
+dump_image.cpp:    comm->forward_comm_dump(this);
+dump_movie.cpp:  if ((comm->me == 0) && (fp == NULL)) {
+dump_xtc.cpp:    if (comm->me == 0)
+ewald.cpp:  if (comm->me == 0) {
+ewald.cpp:  if (comm->me == 0) {
+ewald_disp.cpp:  if (!comm->me) {
+ewald_disp.cpp:  if (fabs(qsum) > SMALL && comm->me == 0) {
+ewald_disp.cpp:  if (!comm->me) {
+ewald_disp.cpp:  if (!(first_output||comm->me)) {
+finish.cpp:  const int nthreads = comm->nthreads;
+fix_append_atoms.cpp:      randomx = new RanMars(lmp,xseed + comm->me);
+fix_append_atoms.cpp:      randomt = new RanMars(lmp,tseed + comm->me);
+fix_append_atoms.cpp:    if (comm->me == 0)
+fix_append_atoms.cpp:    if (comm->layout != LAYOUT_TILED) {
+fix_append_atoms.cpp:      if (comm->myloc[2] == comm->procgrid[2]-1) addflag = 1;
+fix_append_atoms.cpp:      if (comm->mysplit[2][1] == 1.0) addflag = 1;
+fix_append_atoms.cpp:                       comm->myloc[1] == comm->procgrid[1]-1 &&
+fix_atom_swap.cpp:  comm->exchange();
+fix_atom_swap.cpp:  comm->borders();
+fix_atom_swap.cpp:    comm->exchange();
+fix_atom_swap.cpp:    comm->borders();
+fix_atom_swap.cpp:    comm->forward_comm_fix(this);
+fix_atom_swap.cpp:      comm->exchange();
+fix_atom_swap.cpp:      comm->borders();
+fix_atom_swap.cpp:      comm->forward_comm_fix(this);
+fix_atom_swap.cpp:    comm->exchange();
+fix_atom_swap.cpp:    comm->borders();
+fix_atom_swap.cpp:    comm->forward_comm_fix(this);
+fix_atom_swap.cpp:      comm->exchange();
+fix_atom_swap.cpp:      comm->borders();
+fix_atom_swap.cpp:      comm->forward_comm_fix(this);
+fix_atom_swap.cpp:  if (comm->me == 0) {
+fix_balance.cpp:  if (lbstyle == BISECTION && comm->style == 0)
+fix_balance.cpp:   compute final imbalance factor based on nlocal after comm->exchange()
+fix_balance.cpp:  // invoke balancer and reset comm->uniform flag
+fix_balance.cpp:    comm->layout = LAYOUT_NONUNIFORM;
+fix_balance.cpp:    comm->layout = LAYOUT_TILED;
+fix_balance.cpp:  // else allow caller's comm->exchange() to do it
+fix_balance.cpp:  // can only be done after atoms migrate in comm->exchange()
+fix_bond_break.cpp:  comm->forward_comm();
+fix_bond_break.cpp:  if (force->newton_bond) comm->reverse_comm_fix(this);
+fix_bond_break.cpp:  comm->forward_comm_fix(this,2);
+fix_bond_break.cpp:  comm->forward_comm_fix(this);
+fix_bond_create.cpp:  if (newton_bond) comm->reverse_comm_fix(this,1);
+fix_bond_create.cpp:  comm->forward_comm();
+fix_bond_create.cpp:  comm->forward_comm_fix(this,1);
+fix_bond_create.cpp:  if (force->newton_pair) comm->reverse_comm_fix(this);
+fix_bond_create.cpp:  comm->forward_comm_fix(this,2);
+fix_bond_create.cpp:  comm->forward_comm_fix(this);
+fix_bond_swap.cpp:  random = new RanMars(lmp,seed + comm->me);
+fix_bond_swap.cpp:  if (force->angle == NULL && atom->nangles > 0 && comm->me == 0)
+fix_bond_swap.cpp:    if (temperature->igroup != igroup && comm->me == 0)
+fix_box_relax.cpp:    if (temperature->igroup != 0 && comm->me == 0)
+fix_cmap.cpp:  if (comm->me == 0) {
+fix_cmap.cpp:    if (comm->me == 0)
+fix_cmap.cpp:  if (comm->me == 0) fclose(fp);
+fix_cmap.cpp:  if (comm->me == 0) {
+fix_conc_berendsen.cpp:      comm->exchange();
+fix_conc_berendsen.cpp:      comm->borders();
+fix_conc_berendsen.cpp:      comm->exchange();
+fix_conc_berendsen.cpp:      comm->borders();
+fix_conc_berendsen.cpp:    if (concentration->igroup != igroup && comm->me == 0)
+fix_deform.cpp:  if (comm->me == 0) {
+fix_deposit.cpp:    if (sqrt(nearsq) < separation && comm->me == 0) {
+fix_deposit.cpp:        if (comm->layout != LAYOUT_TILED) {
+fix_deposit.cpp:          if (comm->myloc[2] == comm->procgrid[2]-1 &&
+fix_deposit.cpp:          if (comm->mysplit[2][1] == 1.0 &&
+fix_deposit.cpp:        if (comm->layout != LAYOUT_TILED) {
+fix_deposit.cpp:          if (comm->myloc[1] == comm->procgrid[1]-1 &&
+fix_deposit.cpp:          if (comm->mysplit[1][1] == 1.0 &&
+fix_deposit.cpp:  if (!success && comm->me == 0)
+fix_deposit.cpp:  if (comm->me == 0) {
+fix_deprecated.cpp:    if (comm->me == 0) {
+fix_dt_reset.cpp:        strcmp(output->dump[i]->style,"xtc") == 0) && comm->me == 0)
+fix_efield.cpp:  if (muflag && update->whichflag == 2 && comm->me == 0)
+fix_evaporate.cpp:    if (flagall && comm->me == 0)
+fix_evaporate.cpp:        me = comm->me;
+fix_event_prd.cpp:  if (comm->me == 0) {
+fix_event_tad.cpp:  if (comm->me == 0) {
+fix_gcmc.cpp:      if (atom->molecules[imol]->nset > 1 && comm->me == 0)
+fix_gcmc.cpp:      if (comm->me == 0)
+fix_gcmc.cpp:    if (flagall && comm->me == 0)
+fix_gcmc.cpp:    if (flagall && comm->me == 0)
+fix_gcmc.cpp:  comm->exchange();
+fix_gcmc.cpp:  comm->borders();
+fix_gcmc.cpp:    comm->exchange();
+fix_gcmc.cpp:    comm->borders();
+fix_gcmc.cpp:    comm->exchange();
+fix_gcmc.cpp:    comm->borders();
+fix_gcmc.cpp:    comm->borders();
+fix_gcmc.cpp:    comm->borders();
+fix_gcmc.cpp:    comm->exchange();
+fix_gcmc.cpp:    comm->borders();
+fix_gcmc.cpp:    comm->exchange();
+fix_gcmc.cpp:    comm->borders();
+fix_gcmc.cpp:    comm->borders();
+fix_gcmc.cpp:    comm->borders();
+fix_gcmc.cpp:  comm->borders();
+fix_gcmc.cpp:  comm->borders();
+fix_gcmc.cpp:  comm->exchange();
+fix_gcmc.cpp:  comm->borders();
+fix_gcmc.cpp:  if (comm->me == 0) {
+fix_gld.cpp:  random = new RanMars(lmp,seed + comm->me);
+fix_gridforce.cpp:  if(comm->me == 0) printf("DFT-CES: weight factor    = %f\n", weight  );
+fix_gridforce.cpp:  if(comm->me == 0) printf("DFT-CES: supercell factor = %d\n", sfactor );
+fix_gridforce.cpp:  if(comm->me == 0) printf("DFT-CES: cubefile ID      = %d\n", cubeID  );
+fix_group.cpp:  if (warn && comm->me == 0)
+fix_halt.cpp:    if (comm->me == 0 && msgflag == YESMSG) error->message(FLERR,str);
+fix_langevin.cpp:  random = new RanMars(lmp,seed + comm->me);
+fix_langevin.cpp:  if (tallyflag && zeroflag && comm->me == 0)
+fix_langevin.cpp:    if (temperature->igroup != igroup && comm->me == 0)
+fix_move.cpp:  if (comm->me == 0) {
+fix_msst.cpp:  if (comm->me == 0) {
+fix_msst.cpp:    if (comm->me == 0) {
+fix_msst.cpp:    if ( comm->me == 0 ) {
+fix_msst.cpp:    if ( comm->me == 0 ) {
+fix_msst.cpp:    if ( comm->me == 0 && tscale != 1.0) {
+fix_msst.cpp:  if (comm->me == 0) {
+fix_msst.cpp:    if (temperature->igroup != 0 && comm->me == 0)
+fix_neb.cpp:  me = comm->me;
+fix_neb.cpp:  nprocs = comm->nprocs;
+fix_nh.cpp:  if (comm->me == 0) {
+fix_nh.cpp:    if (temperature->igroup != 0 && comm->me == 0)
+fix_nve_limit.cpp:      if (comm->me == 0)
+fix_orient_bcc.cpp:  comm->forward_comm_fix(this);
+fix_orient_fcc.cpp:  comm->forward_comm_fix(this);
+fix_peri_neigh.cpp:  comm->forward_comm_fix(this);
+fix_peri_neigh.cpp:  if (comm->me == 0) {
+fix_peri_neigh.cpp:  if (comm->me == 0) {
+fix_pour.cpp:        if (comm->layout != LAYOUT_TILED) {
+fix_pour.cpp:          if (comm->myloc[2] == comm->procgrid[2]-1 &&
+fix_pour.cpp:          if (comm->mysplit[2][1] == 1.0 &&
+fix_pour.cpp:        if (comm->layout != LAYOUT_TILED) {
+fix_pour.cpp:          if (comm->myloc[1] == comm->procgrid[1]-1 &&
+fix_pour.cpp:          if (comm->mysplit[1][1] == 1.0 &&
+fix_press_berendsen.cpp:    if (temperature->igroup != 0 && comm->me == 0)
+fix_property_atom.cpp:    if (flag && comm->me == 0)
+fix_qeq_comb.cpp:    comm->forward_comm_fix(this);
+fix_qeq.cpp:  comm->reverse_comm_fix( this );
+fix_qeq.cpp:    comm->forward_comm_fix(this);
+fix_qeq.cpp:    comm->reverse_comm_fix(this);
+fix_qeq.cpp:  if (loop >= maxiter && comm->me == 0) {
+fix_qeq.cpp:  comm->forward_comm_fix( this ); //Dist_vector( atom->q );
+fix_qeq.cpp:  if (comm->me == 0) {
+fix_qeq.cpp:    if (comm->me == 0) {
+fix_qeq_dynamic.cpp:    if (comm->me == 0)
+fix_qeq_dynamic.cpp:    comm->forward_comm_fix(this);
+fix_qeq_dynamic.cpp:  if (comm->me == 0) {
+fix_qeq_dynamic.cpp:  comm->forward_comm_fix(this);
+fix_qeq_dynamic.cpp:  comm->reverse_comm_fix(this);
+fix_qeq_fire.cpp:    if (comm->me == 0)
+fix_qeq_fire.cpp:    comm->forward_comm_fix(this);
+fix_qeq_fire.cpp:  if (comm->me == 0) {
+fix_qeq_fire.cpp:  comm->forward_comm_fix(this);
+fix_qeq_fire.cpp:  comm->reverse_comm_fix(this);
+fix_qeq_point.cpp:  comm->forward_comm_fix(this); //Dist_vector( s );
+fix_qeq_point.cpp:  comm->forward_comm_fix(this); //Dist_vector( t );
+fix_qeq_shielded.cpp:  if (fabs(swa) > 0.01 && comm->me == 0)
+fix_qeq_shielded.cpp:  else if (swb < 5 && comm->me == 0)
+fix_qeq_shielded.cpp:  comm->forward_comm_fix(this); //Dist_vector( s );
+fix_qeq_shielded.cpp:  comm->forward_comm_fix(this); //Dist_vector( t );
+fix_qeq_slater.cpp:  comm->forward_comm_fix(this); //Dist_vector( s );
+fix_qeq_slater.cpp:  comm->forward_comm_fix(this); //Dist_vector( t );
+fix_rattle.cpp:  if (flag && comm->me == 0)
+fix_rattle.cpp:    comm->forward_comm_fix(this);
+fix_rattle.cpp:    comm->forward_comm_fix(this);
+fix_rattle.cpp:    comm->forward_comm_fix(this);
+fix_rattle.cpp:    comm->forward_comm_fix(this);
+fix_rattle.cpp:       comm->forward_comm_fix(this);
+fix_recenter.cpp:  if (flag && comm->me == 0)
+fix_restrain.cpp:              comm->me,update->ntimestep);
+fix_restrain.cpp:              comm->me,update->ntimestep);
+fix_restrain.cpp:              comm->me,update->ntimestep);
+fix_restrain.cpp:              comm->me,update->ntimestep);
+fix_restrain.cpp:              comm->me,update->ntimestep);
+fix_restrain.cpp:              comm->me,update->ntimestep);
+fix_rigid.cpp:    if (comm->me == 0)
+fix_rigid.cpp:    eofflag = comm->read_lines_from_file(fp,nchunk,MAXLINE,buffer);
+fix_rigid_nh.cpp:  if (comm->me == 0) {
+fix_rigid_nh.cpp:    if (temperature->igroup != 0 && comm->me == 0)
+fix_rigid_nh_small.cpp:  comm->forward_comm_fix(this,26);
+fix_rigid_nh_small.cpp:  comm->reverse_comm_fix(this,6);
+fix_rigid_nh_small.cpp:  comm->forward_comm_fix(this,10);
+fix_rigid_nh_small.cpp:  if (comm->me == 0) {
+fix_rigid_nh_small.cpp:    if (temperature->igroup != 0 && comm->me == 0)
+fix_rigid_small.cpp:  if (langflag) random = new RanMars(lmp,seed + comm->me);
+fix_rigid_small.cpp:     cannot do this until now, b/c requires comm->setup() to have setup stencil
+fix_rigid_small.cpp:  comm->reverse_comm_fix(this,6);
+fix_rigid_small.cpp:  comm->forward_comm_fix(this,10);
+fix_rigid_small.cpp:  comm->forward_comm_fix(this,26);
+fix_rigid_small.cpp:  comm->reverse_comm_fix(this,6);
+fix_rigid_small.cpp:  comm->forward_comm_fix(this,10);
+fix_rigid_small.cpp:  comm->forward_comm_fix(this);
+fix_rigid_small.cpp:    if (comm->me == 0)
+fix_rigid_small.cpp:  comm->reverse_comm_fix(this,3);
+fix_rigid_small.cpp:  comm->ring(m,sizeof(double),buf,1,ring_bbox,NULL,(void *)this);
+fix_rigid_small.cpp:  comm->ring(m,sizeof(double),buf,2,ring_nearest,NULL,(void *)this);
+fix_rigid_small.cpp:  comm->ring(m,sizeof(double),buf,3,ring_farthest,NULL,(void *)this);
+fix_rigid_small.cpp:  comm->forward_comm_fix(this);
+fix_rigid_small.cpp:  comm->reverse_comm_fix(this,4);
+fix_rigid_small.cpp:  comm->reverse_comm_fix(this,6);
+fix_rigid_small.cpp:  comm->forward_comm_fix(this,26);
+fix_rigid_small.cpp:  comm->reverse_comm_fix(this,6);
+fix_rigid_small.cpp:  comm->reverse_comm_fix(this,6);
+fix_rigid_small.cpp:    eofflag = comm->read_lines_from_file(fp,nchunk,MAXLINE,buffer);
+fix_rigid_small.cpp:                atom->tag[i],bodytag[i],comm->me,update->ntimestep);
+fix_rigid_small.cpp:  comm->forward_comm_fix(this,10);
+fix_rigid_small.cpp:  comm->forward_comm_fix(this,10);
+fix_rigid_small.cpp:        printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+fix_rigid_small.cpp:        printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+fix_rigid_small.cpp:        printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+fix_rigid_small.cpp:        printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+fix_rigid_small.cpp:        printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+fix_rigid_small.cpp:        printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+fix_rigid_small.cpp:        printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+fix_rigid_small.cpp:        printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+fix_rigid_small.cpp:      printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+fix_rigid_small.cpp:      printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+fix_rigid_small.cpp:      printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+fix_rigid_small.cpp:      printf("Proc %d, step %ld, flag %d\n",comm->me,update->ntimestep,flag);
+fix_shake.cpp:      if (atom->molecules[imol]->nset > 1 && comm->me == 0)
+fix_shake.cpp:  if (nprocs > 1) comm->forward_comm_fix(this);
+fix_shake.cpp:  if (nprocs > 1) comm->forward_comm_fix(this);
+fix_shake.cpp:  comm->ring(size,sizeof(tagint),buf,1,ring_bonds,buf,(void *)this);
+fix_shake.cpp:  comm->ring(size,sizeof(tagint),buf,2,ring_nshake,buf,(void *)this);
+fix_shake.cpp:  comm->ring(size,sizeof(tagint),buf,3,ring_shake,NULL,(void *)this);
+fix_shake.cpp:    comm->forward_comm_fix(this);
+fix_shear_history.cpp:    int nmypage = comm->nthreads;
+fix_shear_history.cpp:  // bump up comm->maxexchange_fix if necessary
+fix_shear_history.cpp:  comm->maxexchange_fix = MAX(comm->maxexchange_fix,(dnum+1)*maxtouch+1);
+fix_shear_history.cpp:  comm->reverse_comm_fix(this,0);
+fix_shear_history.cpp:  comm->reverse_comm_fix_variable(this);
+fix_shear_history.cpp:  // bump up comm->maxexchange_fix if necessary
+fix_shear_history.cpp:  comm->maxexchange_fix = MAX(comm->maxexchange_fix,(dnum+1)*maxtouch+1);
+fix_shear_history.cpp:  // bump up comm->maxexchange_fix if necessary
+fix_shear_history.cpp:  comm->maxexchange_fix = MAX(comm->maxexchange_fix,(dnum+1)*maxtouch+1);
+fix_shear_history.cpp:  int nmypage = comm->nthreads;
+fix_srd.cpp:  me = comm->me;
+fix_srd.cpp:  nprocs = comm->nprocs;
+fix_srd.cpp:  if (bigexist && comm->ghost_velocity == 0)
+fix_srd.cpp:  if (comm->style != 0)
+fix_srd.cpp:    comm->reverse_comm_fix(this);
+fix_srd.cpp:  int *procgrid = comm->procgrid;
+fix_srd.cpp:  int *procgrid = comm->procgrid;
+fix_srd.cpp:  if (nbin1x < comm->procgrid[0] || nbin1y < comm->procgrid[1] ||
+fix_srd.cpp:      nbin1z < comm->procgrid[2])
+fix_srd.cpp:  //     max distance to move without being lost during comm->exchange()
+fix_srd.cpp:  double cut = MAX(neighbor->cutneighmax,comm->cutghostuser);
+fix_srd.cpp:      subsize = domain->prd[0]/comm->procgrid[0];
+fix_srd.cpp:      subsize = MIN(subsize,domain->prd[1]/comm->procgrid[1]);
+fix_srd.cpp:        subsize = MIN(subsize,domain->prd[2]/comm->procgrid[2]);
+fix_srd.cpp:      subsize = 1.0/comm->procgrid[0]/length0;
+fix_srd.cpp:      subsize = MIN(subsize,1.0/comm->procgrid[1]/length1);
+fix_srd.cpp:        subsize = MIN(subsize,1.0/comm->procgrid[2]/length2);
+fix_srd.cpp:  if (nbin1x % comm->procgrid[0]) shifts[0].commflag = 1;
+fix_srd.cpp:  if (nbin1y % comm->procgrid[1]) shifts[0].commflag = 1;
+fix_srd.cpp:  if (nbin1z % comm->procgrid[2]) shifts[0].commflag = 1;
+fix_srd.cpp:  int *procgrid = comm->procgrid;
+fix_srd.cpp:  int *myloc = comm->myloc;
+fix_srd.cpp:    shifts[ishift].bcomm[0].sendproc = comm->procneigh[0][0];
+fix_srd.cpp:    shifts[ishift].bcomm[0].recvproc = comm->procneigh[0][1];
+fix_srd.cpp:    shifts[ishift].bcomm[1].sendproc = comm->procneigh[0][1];
+fix_srd.cpp:    shifts[ishift].bcomm[1].recvproc = comm->procneigh[0][0];
+fix_srd.cpp:    shifts[ishift].bcomm[2].sendproc = comm->procneigh[1][0];
+fix_srd.cpp:    shifts[ishift].bcomm[2].recvproc = comm->procneigh[1][1];
+fix_srd.cpp:    shifts[ishift].bcomm[3].sendproc = comm->procneigh[1][1];
+fix_srd.cpp:    shifts[ishift].bcomm[3].recvproc = comm->procneigh[1][0];
+fix_srd.cpp:    shifts[ishift].bcomm[4].sendproc = comm->procneigh[2][0];
+fix_srd.cpp:    shifts[ishift].bcomm[4].recvproc = comm->procneigh[2][1];
+fix_srd.cpp:    shifts[ishift].bcomm[5].sendproc = comm->procneigh[2][1];
+fix_srd.cpp:    shifts[ishift].bcomm[5].recvproc = comm->procneigh[2][0];
+fix_store.cpp:  // PERATOM may be comm->exchanged before filled by caller
+fix_store.cpp:  if (comm->me == 0) {
+fix_temp_berendsen.cpp:    if (temperature->igroup != igroup && comm->me == 0)
+fix_temp_csld.cpp:  random = new RanMars(lmp,seed + comm->me);
+fix_temp_csld.cpp:    if (temperature->igroup != igroup && comm->me == 0)
+fix_temp_csvr.cpp:  random = new RanMars(lmp,seed + comm->me);
+fix_temp_csvr.cpp:  if (comm->me == 0) {
+fix_temp_csvr.cpp:    if (temperature->igroup != igroup && comm->me == 0)
+fix_temp_rescale.cpp:    if (temperature->igroup != igroup && comm->me == 0)
+fix_tfmc.cpp:  random_num = new RanMars(lmp,seed + comm->me);
+fix_ttm.cpp:  random = new RanMars(lmp,seed + comm->me);
+fix_ttm.cpp:  if (comm->me == 0) {
+fix_ttm.cpp:  random = new RanMars(lmp,seed+comm->me);
+fix_wall_gran_region.cpp:  if (comm->me) return;
+fix_wall_piston.cpp:      randomt = new RanMars(lmp,tseed + comm->me);
+fix_wall_piston.cpp:    if (comm->me == 0) {
+fix_wall_reflect.cpp:  if (nrigid && comm->me == 0)
+force.cpp:  if (comm->style == 1 && !kspace_match("ewald",0))
+force.cpp:    if (comm->me == 0) potential_date(fp,name);
+force.cpp:    if (comm->me == 0) potential_date(fp,name);
+grid.cpp:  int me = comm->me;
+grid.cpp:  int me = comm->me;
+grid.cpp:  int me = comm->me;
+group.cpp:  // pass list to all other procs via comm->ring()
+group.cpp:  comm->ring(n,sizeof(tagint),list,1,molring,NULL,(void *)this);
+group.cpp:   callback from comm->ring()
+imbalance_neigh.cpp:    if (comm->me == 0 && !did_warn)
+improper_class2.cpp:  if (comm->me == 0) {
+improper.cpp:      memory->create(eatom,comm->nthreads*maxeatom,"improper:eatom");
+improper.cpp:      memory->create(vatom,comm->nthreads*maxvatom,6,"improper:vatom");
+improper.cpp:  double bytes = comm->nthreads*maxeatom * sizeof(double);
+improper.cpp:  bytes += comm->nthreads*maxvatom*6 * sizeof(double);
+improper_cvff.cpp:  if (comm->me == 0) {
+improper_harmonic.cpp:  if (comm->me == 0) {
+improper_hybrid.cpp:  int me = comm->me;
+improper_umbrella.cpp:  if (comm->me == 0) {
+info.cpp:  if (comm->me != 0) return;
+info.cpp:    bytes += comm->memory_usage();
+info.cpp:            commstyles[comm->style], commlayout[comm->layout]);
+info.cpp:            comm->ghost_velocity ? "yes" : "no");
+info.cpp:    if (comm->mode == 0) {
+info.cpp:              MAX(comm->cutghostuser,neighbor->cutneighmax));
+info.cpp:    if (comm->mode == 1) {
+info.cpp:        if (comm->cutusermulti) cut = MAX(cut,comm->cutusermulti[i]);
+info.cpp:            comm->nprocs, comm->nthreads);
+info.cpp:      fprintf(out,"Processor grid = %d x %d x %d\n",comm->procgrid[0],
+info.cpp:            comm->procgrid[1], comm->procgrid[2]);
+info.cpp:    style = commstyles[comm->style];
+info.cpp:    bytes += comm->memory_usage();
+input.cpp:  comm->modify_params(narg,arg);
+input.cpp:    if (comm->style == 0) return;
+input.cpp:    if (comm->style == 1) return;
+input.cpp:  comm->set_processors(narg,arg);
+irregular.cpp:   can be used in place of comm->exchange()
+irregular.cpp:  if (!preassign) comm->coord2proc_setup();
+irregular.cpp:        mproclist[nsendatom] = comm->coord2proc(x[i],igx,igy,igz);
+irregular.cpp:   if not, caller can decide to use comm->exchange() instead
+irregular.cpp:  if (comm->layout == LAYOUT_TILED) return 1;
+irregular.cpp:  // cannot check via comm->procneigh since it ignores PBC
+irregular.cpp:  int *myloc = comm->myloc;
+irregular.cpp:  int *procgrid = comm->procgrid;
+irregular.cpp:      comm->coord2proc(x[i],igx,igy,igz);
+kspace.cpp:  if ((qsqsum == 0.0) && (comm->me == 0) && warn_nocharge) {
+kspace.cpp:    if (warn_nonneutral == 1 && comm->me == 0) error->warning(FLERR,str);
+kspace.cpp:  if (comm->me == 0) {
+kspace.cpp:    if ((table_accuracy > spr) && (comm->me == 0))
+kspace.cpp:        if (slab_volfactor < 2.0 && comm->me == 0)
+lammps.cpp:  const int me = comm->me;
+lammps.cpp:  comm->init();          // comm must come after force, modify, neighbor, atom
+lattice.cpp:  if (comm->me == 0) {
+library.cpp:  lmp->comm->set_proc_grid();
+library.cpp:      if (lmp->comm->me == 0)
+library.cpp:      if (lmp->comm->me == 0)
+library.cpp:      if (lmp->comm->me == 0)
+library.cpp:      if (lmp->comm->me == 0)
+library.cpp:      if (lmp->comm->me == 0)
+library.cpp:    int nprocs = lmp->comm->nprocs;
+min.cpp:    if (comm->me == 0)
+min.cpp:  if (comm->me == 0 && screen) {
+min.cpp:    if (comm->me == 0 && screen)
+min.cpp:  comm->setup();
+min.cpp:  comm->exchange();
+min.cpp:  comm->borders();
+min.cpp:  // atoms may have migrated in comm->exchange()
+min.cpp:  if (force->newton) comm->reverse_comm();
+min.cpp:    comm->setup();
+min.cpp:    comm->exchange();
+min.cpp:    comm->borders();
+min.cpp:  // atoms may have migrated in comm->exchange()
+min.cpp:  if (force->newton) comm->reverse_comm();
+min.cpp:    comm->forward_comm();
+min.cpp:      comm->setup();
+min.cpp:    comm->exchange();
+min.cpp:    comm->borders();
+min.cpp:    comm->reverse_comm();
+modify.cpp:  if (comm->me == 0 && checkall)
+modify.cpp:    if (fix[ifix]->igroup != igroup && comm->me == 0)
+modify.cpp:      if (comm->me == 0) {
+modify.cpp:      if (comm->me == 0) {
+modify.cpp:  int me = comm->me;
+modify.cpp:  int me = comm->me;
+modify.cpp:    if (flag && comm->me == 0) {
+modify.cpp:    if (flag && comm->me == 0) {
+molecule.cpp:  me = comm->me;
+msm.cpp:  if (comm->style != 0)
+msm.cpp:  int (*procneigh_all)[2] = comm->procneigh;
+msm.cpp:  int (*procneigh_all)[2] = comm->procneigh;
+msm.cpp:    nxlo_in[n] = static_cast<int> (comm->xsplit[comm->myloc[0]] * nx_msm[n]);
+msm.cpp:    nxhi_in[n] = static_cast<int> (comm->xsplit[comm->myloc[0]+1] * nx_msm[n]) - 1;
+msm.cpp:    nylo_in[n] = static_cast<int> (comm->ysplit[comm->myloc[1]] * ny_msm[n]);
+msm.cpp:    nyhi_in[n] = static_cast<int> (comm->ysplit[comm->myloc[1]+1] * ny_msm[n]) - 1;
+msm.cpp:    nzlo_in[n] = static_cast<int> (comm->zsplit[comm->myloc[2]] * nz_msm[n]);
+msm.cpp:    nzhi_in[n] = static_cast<int> (comm->zsplit[comm->myloc[2]+1] * nz_msm[n]) - 1;
+msm.cpp:      myloc[i] = comm->myloc[i];
+nbin_standard.cpp:  // bsubbox lo/hi = bounding box of my subdomain extended by comm->cutghost
+nbin_standard.cpp:  //   include dimension-dependent extension via comm->cutghost
+nbin_standard.cpp:  double *cutghost = comm->cutghost;
+neb.cpp:      eofflag = comm->read_lines_from_file_universe(fp,nchunk,MAXLINE,buffer);
+neb.cpp:      eofflag = comm->read_lines_from_file(fp,nchunk,MAXLINE,buffer);
+neighbor.cpp:  if (!same && comm->me == 0) print_pairwise_info();
+neighbor.cpp:  if (comm->me == 0) printf("SAME flag %d\n",same);
+neighbor.cpp:  const double cutghost = MAX(cutneighmax,comm->cutghostuser);
+neigh_list.cpp:  int nmypage = comm->nthreads;
+neigh_list.cpp:  if (comm->me != 0) return;
+neigh_list.cpp:  int nmypage = comm->nthreads;
+ntopo.cpp:  me = comm->me;
+ntopo.cpp:  nprocs = comm->nprocs;
+output.cpp:  if (thermo->modified && comm->me == 0)
+output.cpp:  if (strchr(arg[1],'%')) multiproc = comm->nprocs;
+output.cpp:  bytes += comm->memory_usage();
+output.cpp:  mbavg /= comm->nprocs;
+output.cpp:  if (comm->me == 0) {
+pair_adp.cpp:  if (newton_pair) comm->reverse_comm_pair(this);
+pair_adp.cpp:  comm->forward_comm_pair(this);
+pair_adp.cpp:  int me = comm->me;
+pair_airebo.cpp:    int nmypage= comm->nthreads;
+pair_airebo.cpp:  for (int i = 0; i < comm->nthreads; i++)
+pair_beck.cpp:  int me = comm->me;
+pair_beck.cpp:  int me = comm->me;
+pair_bop.cpp:  // check that user sets comm->cutghostuser to 3x the max BOP cutoff
+pair_bop.cpp:  if (comm->cutghostuser < 3.0*cutmax - EPSILON) {
+pair_born_coul_dsf.cpp:  int me = comm->me;
+pair_born_coul_dsf.cpp:  if (comm->me == 0) {
+pair_born_coul_long.cpp:  int me = comm->me;
+pair_born_coul_long.cpp:  if (comm->me == 0) {
+pair_born_coul_wolf.cpp:  int me = comm->me;
+pair_born_coul_wolf.cpp:  if (comm->me == 0) {
+pair_born.cpp:  int me = comm->me;
+pair_born.cpp:  if (comm->me == 0) {
+pair_brownian.cpp:  random = new RanMars(lmp,seed + comm->me);
+pair_brownian.cpp:  if (force->newton_pair == 0 && comm->me == 0)
+pair_brownian.cpp:  int me = comm->me;
+pair_brownian.cpp:  int me = comm->me;
+pair_brownian.cpp:  random = new RanMars(lmp,seed + comm->me);
+pair_buck_coul_cut.cpp:  int me = comm->me;
+pair_buck_coul_cut.cpp:  if (comm->me == 0) {
+pair_buck_coul_long.cpp:  int me = comm->me;
+pair_buck_coul_long.cpp:  if (comm->me == 0) {
+pair_buck.cpp:  int me = comm->me;
+pair_buck.cpp:  if (comm->me == 0) {
+pair_buck_long_coul_long.cpp:  if (!comm->me && ewald_order == ((1<<1) | (1<<6)))
+pair_buck_long_coul_long.cpp:  int me = comm->me;
+pair_buck_long_coul_long.cpp:  if (comm->me == 0) {
+pair_colloid.cpp:      if (comm->me == 0) fread(&setflag[i][j],sizeof(int),1,fp);
+pair_colloid.cpp:        if (comm->me == 0) {
+pair_colloid.cpp:  int me = comm->me;
+pair_comb3.cpp:    if (comm->me == 0 && screen) fprintf(screen,
+pair_comb3.cpp:    if (comm->me == 0 && screen) fprintf(screen,
+pair_comb3.cpp:      if( comm->me == 0 && screen) fprintf(screen,
+pair_comb3.cpp:    int nmypage = comm->nthreads;
+pair_comb3.cpp:  if (comm->me == 0) {
+pair_comb3.cpp:  if (comm->me == 0) {
+pair_comb3.cpp:    if (comm->me == 0) {
+pair_comb3.cpp:      if (comm->me == 0) {
+pair_comb3.cpp:  comm->forward_comm_pair(this);
+pair_comb3.cpp:    if (comm->me == 0 && screen)
+pair_comb3.cpp:  comm->forward_comm_pair(this);
+pair_comb3.cpp:  comm->reverse_comm_pair(this);
+pair_comb3.cpp:  for (int i = 0; i < comm->nthreads; i++)
+pair_comb.cpp:  if (comm->me == 0 && screen) fprintf(screen,"Pair COMB:\n");
+pair_comb.cpp:  if (comm->me == 0 && screen)
+pair_comb.cpp:  if (cor_flag && comm->me == 0 && screen)
+pair_comb.cpp:  if (!cor_flag&& comm->me == 0 && screen)
+pair_comb.cpp:    int nmypage = comm->nthreads;
+pair_comb.cpp:  if (comm->me == 0) {
+pair_comb.cpp:    if (comm->me == 0) {
+pair_comb.cpp:      if (comm->me == 0) {
+pair_comb.cpp:    if (comm->me == 0 && screen)
+pair_comb.cpp:  comm->forward_comm_pair(this);
+pair_comb.cpp:  comm->reverse_comm_pair(this);
+pair_comb.cpp:  for (int i = 0; i < comm->nthreads; i++)
+pair_coul_cut.cpp:  int me = comm->me;
+pair_coul_cut.cpp:  if (comm->me == 0) {
+pair_coul_cut_soft.cpp:  int me = comm->me;
+pair_coul_cut_soft.cpp:  if (comm->me == 0) {
+pair_coul_debye.cpp:  if (comm->me == 0) {
+pair_coul_dsf.cpp:  int me = comm->me;
+pair_coul_dsf.cpp:  if (comm->me == 0) {
+pair_coul_long.cpp:  int me = comm->me;
+pair_coul_long.cpp:  if (comm->me == 0) {
+pair_coul_long_soft.cpp:  int me = comm->me;
+pair_coul_long_soft.cpp:  if (comm->me == 0) {
+pair_coul_streitz.cpp:  if (comm->me == 0) {
+pair_coul_streitz.cpp:    if (comm->me == 0) {
+pair_coul_streitz.cpp:      if (comm->me == 0) {
+pair_coul_wolf.cpp:  int me = comm->me;
+pair_coul_wolf.cpp:  if (comm->me == 0) {
+pair.cpp:  if (tail_flag && domain->nonperiodic && comm->me == 0)
+pair.cpp:  if (!compute_flag && tail_flag && comm->me == 0)
+pair.cpp:  if (!compute_flag && offset_flag && comm->me == 0)
+pair.cpp:    if (flag && comm->me == 0)
+pair.cpp:      memory->create(eatom,comm->nthreads*maxeatom,"pair:eatom");
+pair.cpp:      memory->create(vatom,comm->nthreads*maxvatom,6,"pair:vatom");
+pair.cpp:  double bytes = comm->nthreads*maxeatom * sizeof(double);
+pair.cpp:  bytes += comm->nthreads*maxvatom*6 * sizeof(double);
+pair_dpd.cpp:  random = new RanMars(lmp,seed + comm->me);
+pair_dpd.cpp:  if (comm->ghost_velocity == 0)
+pair_dpd.cpp:  if (force->newton_pair == 0 && comm->me == 0) error->warning(FLERR,
+pair_dpd.cpp:  int me = comm->me;
+pair_dpd.cpp:  if (comm->me == 0) {
+pair_dpd.cpp:  random = new RanMars(lmp,seed + comm->me);
+pair_dpd_tstat.cpp:  random = new RanMars(lmp,seed + comm->me);
+pair_dpd_tstat.cpp:  int me = comm->me;
+pair_dpd_tstat.cpp:  if (comm->me == 0) {
+pair_dpd_tstat.cpp:  random = new RanMars(lmp,seed + comm->me);
+pair_dsmc.cpp:  random = new RanMars(lmp,seed + comm->me);
+pair_dsmc.cpp:  if (comm->me == 0) {
+pair_dsmc.cpp:  int me = comm->me;
+pair_dsmc.cpp:  if (comm->me == 0) {
+pair_dsmc.cpp:  random = new RanMars(lmp,seed + comm->me);
+pair_eam_alloy.cpp:  int me = comm->me;
+pair_eam.cpp:  if (newton_pair) comm->reverse_comm_pair(this);
+pair_eam.cpp:  comm->forward_comm_pair(this);
+pair_eam.cpp:  int me = comm->me;
+pair_eam_fs.cpp:  int me = comm->me;
+pair_eam_opt.cpp:  if (NEWTON_PAIR) comm->reverse_comm_pair(this);
+pair_eam_opt.cpp:  comm->forward_comm_pair(this);
+pair_eim.cpp:  if (newton_pair) comm->reverse_comm_pair(this);
+pair_eim.cpp:  comm->forward_comm_pair(this);
+pair_eim.cpp:  if (newton_pair) comm->reverse_comm_pair(this);
+pair_eim.cpp:  comm->forward_comm_pair(this);
+pair_eim.cpp:  int me = comm->me;
+pair_gauss.cpp:  int me = comm->me;
+pair_gauss.cpp:  if (comm->me == 0) {
+pair_gayberne.cpp:  int me = comm->me;
+pair_gayberne.cpp:  int me = comm->me;
+pair_gran_hertz_history.cpp:    comm->forward_comm_pair(this);
+pair_gran_hooke.cpp:    comm->forward_comm_pair(this);
+pair_gran_hooke_history.cpp:    comm->forward_comm_pair(this);
+pair_gran_hooke_history.cpp:  if (comm->ghost_velocity == 0)
+pair_gran_hooke_history.cpp:  int me = comm->me;
+pair_gran_hooke_history.cpp:  if (comm->me == 0) {
+pair_gw.cpp:  if (comm->me == 0) {
+pair_gw.cpp:    if (comm->me == 0) {
+pair_gw.cpp:      if (comm->me == 0) {
+pair_gw_zbl.cpp:  if (comm->me == 0) {
+pair_gw_zbl.cpp:    if (comm->me == 0) {
+pair_gw_zbl.cpp:      if (comm->me == 0) {
+pair_hybrid.cpp:  int me = comm->me;
+pair_lcbop.cpp:    int nmypage = comm->nthreads;
+pair_lcbop.cpp:  for (int i = 0; i < comm->nthreads; i++)
+pair_lj96_cut.cpp:  int me = comm->me;
+pair_lj96_cut.cpp:  int me = comm->me;
+pair_lj_charmm_coul_charmm.cpp:  int me = comm->me;
+pair_lj_charmm_coul_charmm.cpp:  if (comm->me == 0) {
+pair_lj_charmm_coul_long.cpp:  int me = comm->me;
+pair_lj_charmm_coul_long.cpp:  if (comm->me == 0) {
+pair_lj_charmm_coul_long_soft.cpp:  int me = comm->me;
+pair_lj_charmm_coul_long_soft.cpp:  if (comm->me == 0) {
+pair_lj_charmmfsw_coul_charmmfsh.cpp:    if ((comm->me == 0) && (force->qqr2e != force->qqr2e_charmm_real))
+pair_lj_charmmfsw_coul_charmmfsh.cpp:    if ((comm->me == 0) && (force->qqr2e == force->qqr2e_charmm_real))
+pair_lj_charmmfsw_coul_charmmfsh.cpp:  int me = comm->me;
+pair_lj_charmmfsw_coul_charmmfsh.cpp:  if (comm->me == 0) {
+pair_lj_charmmfsw_coul_long.cpp:    if ((comm->me == 0) && (force->qqr2e != force->qqr2e_charmm_real))
+pair_lj_charmmfsw_coul_long.cpp:    if ((comm->me == 0) && (force->qqr2e == force->qqr2e_charmm_real))
+pair_lj_charmmfsw_coul_long.cpp:  int me = comm->me;
+pair_lj_charmmfsw_coul_long.cpp:  if (comm->me == 0) {
+pair_lj_class2_coul_cut.cpp:  int me = comm->me;
+pair_lj_class2_coul_cut.cpp:  if (comm->me == 0) {
+pair_lj_class2_coul_long.cpp:  int me = comm->me;
+pair_lj_class2_coul_long.cpp:  if (comm->me == 0) {
+pair_lj_class2.cpp:  int me = comm->me;
+pair_lj_class2.cpp:  int me = comm->me;
+pair_lj_cubic.cpp:  int me = comm->me;
+pair_lj_cubic.cpp:  int me = comm->me;
+pair_lj_cut_coul_cut.cpp:  int me = comm->me;
+pair_lj_cut_coul_cut.cpp:  if (comm->me == 0) {
+pair_lj_cut_coul_cut_soft.cpp:  int me = comm->me;
+pair_lj_cut_coul_cut_soft.cpp:  if (comm->me == 0) {
+pair_lj_cut_coul_debye.cpp:  if (comm->me == 0) {
+pair_lj_cut_coul_dsf.cpp:  int me = comm->me;
+pair_lj_cut_coul_dsf.cpp:  if (comm->me == 0) {
+pair_lj_cut_coul_long.cpp:  int me = comm->me;
+pair_lj_cut_coul_long.cpp:  if (comm->me == 0) {
+pair_lj_cut_coul_long_soft.cpp:  int me = comm->me;
+pair_lj_cut_coul_long_soft.cpp:  if (comm->me == 0) {
+pair_lj_cut.cpp:  int me = comm->me;
+pair_lj_cut.cpp:  int me = comm->me;
+pair_lj_cut_dipole_cut.cpp:  int me = comm->me;
+pair_lj_cut_dipole_cut.cpp:  if (comm->me == 0) {
+pair_lj_cut_dipole_long.cpp:  int me = comm->me;
+pair_lj_cut_dipole_long.cpp:  if (comm->me == 0) {
+pair_lj_cut_soft.cpp:  int me = comm->me;
+pair_lj_cut_soft.cpp:  int me = comm->me;
+pair_lj_cut_tip4p_cut.cpp:  int me = comm->me;
+pair_lj_cut_tip4p_cut.cpp:  if (comm->me == 0) {
+pair_lj_cut_tip4p_long.cpp:  if (comm->me == 0) {
+pair_lj_cut_tip4p_long_soft.cpp:  if (comm->me == 0) {
+pair_lj_expand.cpp:  int me = comm->me;
+pair_lj_expand.cpp:  if (comm->me == 0) {
+pair_lj_gromacs_coul_gromacs.cpp:  int me = comm->me;
+pair_lj_gromacs_coul_gromacs.cpp:  if (comm->me == 0) {
+pair_lj_gromacs.cpp:  int me = comm->me;
+pair_lj_gromacs.cpp:  int me = comm->me;
+pair_lj_long_coul_long.cpp:  if (!comm->me && ewald_order == ((1<<1) | (1<<6)))
+pair_lj_long_coul_long.cpp:  int me = comm->me;
+pair_lj_long_coul_long.cpp:  if (comm->me == 0) {
+pair_lj_long_dipole_long.cpp:  if (!comm->me && ewald_order&(1<<6))
+pair_lj_long_dipole_long.cpp:  if (!comm->me && ewald_order==((1<<3)|(1<<6)))
+pair_lj_long_dipole_long.cpp:  int me = comm->me;
+pair_lj_long_dipole_long.cpp:  if (comm->me == 0) {
+pair_lj_long_tip4p_long.cpp:  if (!comm->me && ewald_order&(1<<6))
+pair_lj_long_tip4p_long.cpp:  if (!comm->me && ewald_order==((1<<1)|(1<<6)))
+pair_lj_long_tip4p_long.cpp:  if (comm->me == 0) {
+pair_lj_smooth.cpp:  int me = comm->me;
+pair_lj_smooth.cpp:  int me = comm->me;
+pair_lj_smooth_linear.cpp:  int me = comm->me;
+pair_lj_smooth_linear.cpp:  int me = comm->me;
+pair_lubricate.cpp:    // no need to do this if not shearing since comm->ghost_velocity is set
+pair_lubricate.cpp:    comm->forward_comm_pair(this);
+pair_lubricate.cpp:  if (comm->ghost_velocity == 0)
+pair_lubricate.cpp:  int me = comm->me;
+pair_lubricate.cpp:  int me = comm->me;
+pair_lubricate_poly.cpp:    // no need to do this if not shearing since comm->ghost_velocity is set
+pair_lubricate_poly.cpp:    comm->forward_comm_pair(this);
+pair_lubricate_poly.cpp:  if (comm->ghost_velocity == 0)
+pair_lubricateU.cpp:  if (newton_pair) comm->reverse_comm();
+pair_lubricateU.cpp:  comm->forward_comm_pair(this);
+pair_lubricateU.cpp:  if (newton_pair) comm->reverse_comm();
+pair_lubricateU.cpp:    comm->forward_comm_pair(this);
+pair_lubricateU.cpp:    if (newton_pair) comm->reverse_comm();
+pair_lubricateU.cpp:  comm->forward_comm_pair(this);
+pair_lubricateU.cpp:  if (newton_pair) comm->reverse_comm();
+pair_lubricateU.cpp:  comm->forward_comm_pair(this);
+pair_lubricateU.cpp:  if (newton_pair) comm->reverse_comm();
+pair_lubricateU.cpp:    comm->forward_comm_pair(this);
+pair_lubricateU.cpp:    if (newton_pair) comm->reverse_comm();
+pair_lubricateU.cpp:  comm->forward_comm_pair(this);
+pair_lubricateU.cpp:  if (newton_pair) comm->reverse_comm(); // not really needed
+pair_lubricateU.cpp:  if (comm->ghost_velocity == 0)
+pair_lubricateU.cpp:  int me = comm->me;
+pair_lubricateU.cpp:  int me = comm->me;
+pair_lubricateU_poly.cpp:  if (newton_pair) comm->reverse_comm();
+pair_lubricateU_poly.cpp:  comm->forward_comm_pair(this);
+pair_lubricateU_poly.cpp:  if (newton_pair) comm->reverse_comm();
+pair_lubricateU_poly.cpp:    comm->forward_comm_pair(this);
+pair_lubricateU_poly.cpp:    if (newton_pair) comm->reverse_comm();
+pair_lubricateU_poly.cpp:  comm->forward_comm_pair(this);
+pair_lubricateU_poly.cpp:  if (newton_pair) comm->reverse_comm(); // not really needed
+pair_lubricateU_poly.cpp:  if (comm->ghost_velocity == 0)
+pair_lubricateU_poly.cpp:  if (!comm->me) {
+pair_mie_cut.cpp:  int me = comm->me;
+pair_mie_cut.cpp:  int me = comm->me;
+pair_morse.cpp:  int me = comm->me;
+pair_morse.cpp:  if (comm->me == 0) {
+pair_morse_soft.cpp:  int me = comm->me;
+pair_nb3b_harmonic.cpp:  if (comm->me == 0) {
+pair_nb3b_harmonic.cpp:    if (comm->me == 0) {
+pair_nb3b_harmonic.cpp:      if (comm->me == 0) {
+pair_nm_cut_coul_cut.cpp:  int me = comm->me;
+pair_nm_cut_coul_cut.cpp:  if (comm->me == 0) {
+pair_nm_cut_coul_long.cpp:  int me = comm->me;
+pair_nm_cut_coul_long.cpp:  if (comm->me == 0) {
+pair_nm_cut.cpp:  int me = comm->me;
+pair_nm_cut.cpp:  if (comm->me == 0) {
+pair_peri_eps.cpp:  comm->forward_comm_pair(this);
+pair_peri_eps.cpp:    comm->forward_comm_fix(modify->fix[ifix_peri]);
+pair_peri_eps.cpp:  int me = comm->me;
+pair_peri_lps.cpp:  comm->forward_comm_pair(this);
+pair_peri_lps.cpp:    comm->forward_comm_fix(modify->fix[ifix_peri]);
+pair_peri_lps.cpp:  int me = comm->me;
+pair_peri_pmb.cpp:  int me = comm->me;
+pair_peri_ves.cpp:  comm->forward_comm_pair(this);
+pair_peri_ves.cpp:    comm->forward_comm_fix(modify->fix[ifix_peri]);
+pair_peri_ves.cpp:  int me = comm->me;
+pair_polymorphic.cpp:  if (comm->me == 0) {
+pair_polymorphic.cpp:    if (comm->me == 0) {
+pair_polymorphic.cpp:  if (comm->me == 0) {
+pair_polymorphic.cpp:    if (comm->me == 0) {
+pair_polymorphic.cpp:    if (comm->me == 0) {
+pair_polymorphic.cpp:    if (comm->me == 0) {
+pair_polymorphic.cpp:    if (comm->me == 0) {
+pair_polymorphic.cpp:    if (comm->me == 0) {
+pair_polymorphic.cpp:    if (comm->me == 0) {
+pair_polymorphic.cpp:    if (comm->me == 0) {
+pair_polymorphic.cpp:  if (comm->me == 0) {
+pair_polymorphic.cpp://   if (comm->me == 0) {
+pair_polymorphic.cpp:  if (comm->me != 0) sprintf(tag,"%d",comm->me);
+pair_resquared.cpp:  int me = comm->me;
+pair_resquared.cpp:  int me = comm->me;
+pair_snap.cpp:  int ***grid2proc = comm->grid2proc;
+pair_snap.cpp:  int* procgrid = comm->procgrid;
+pair_snap.cpp:  if (comm->cutghostuser <
+pair_snap.cpp:        int sendloc[3] = {comm->myloc[0],
+pair_snap.cpp:                          comm->myloc[1], comm->myloc[2]
+pair_snap.cpp:        int recvloc[3] = {comm->myloc[0],
+pair_snap.cpp:                          comm->myloc[1], comm->myloc[2]
+pair_snap.cpp:      comm->nthreads=nthreads;
+pair_snap.cpp:	if (comm->cutghostuser < mincutoff) {
+pair_snap.cpp:	  if (comm->me==0)
+pair_snap.cpp:	  comm->cutghostuser = tmp;
+pair_snap.cpp:    nthreads = comm->nthreads;
+pair_snap.cpp:  if (comm->me == 0) {
+pair_snap.cpp:    if (comm->me == 0) {
+pair_snap.cpp:    if (comm->me == 0) {
+pair_snap.cpp:      if (comm->me == 0)
+pair_snap.cpp:      if (comm->me == 0)
+pair_snap.cpp:    if (comm->me == 0) {
+pair_snap.cpp:      if (comm->me == 0) {
+pair_snap.cpp:  if (comm->me == 0) {
+pair_snap.cpp:    if (comm->me == 0) {
+pair_snap.cpp:    if (comm->me == 0) {
+pair_soft.cpp:  int me = comm->me;
+pair_soft.cpp:  if (comm->me == 0) {
+pair_sw.cpp:  if (comm->me == 0) {
+pair_sw.cpp:    if (comm->me == 0) {
+pair_sw.cpp:      if (comm->me == 0) {
+pair_table.cpp:  if (comm->me == 0) {
+pair_tersoff.cpp:  if (comm->me == 0) {
+pair_tersoff.cpp:    if (comm->me == 0) {
+pair_tersoff.cpp:      if (comm->me == 0) {
+pair_tersoff_mod_c.cpp:  if (comm->me == 0) {
+pair_tersoff_mod_c.cpp:    if (comm->me == 0) {
+pair_tersoff_mod_c.cpp:      if (comm->me == 0) {
+pair_tersoff_mod.cpp:  if (comm->me == 0) {
+pair_tersoff_mod.cpp:    if (comm->me == 0) {
+pair_tersoff_mod.cpp:      if (comm->me == 0) {
+pair_tersoff_zbl.cpp:  if (comm->me == 0) {
+pair_tersoff_zbl.cpp:    if (comm->me == 0) {
+pair_tersoff_zbl.cpp:      if (comm->me == 0) {
+pair_tip4p_cut.cpp:  int me = comm->me;
+pair_tip4p_cut.cpp:  if (comm->me == 0) {
+pair_tip4p_long.cpp:  if (comm->me == 0) {
+pair_tip4p_long_soft.cpp:  if (comm->me == 0) {
+pair_vashishta.cpp:  if (comm->me == 0) {
+pair_vashishta.cpp:    if (comm->me == 0) {
+pair_vashishta.cpp:      if (comm->me == 0) {
+pair_yukawa.cpp:  int me = comm->me;
+pair_yukawa.cpp:  if (comm->me == 0) {
+pair_zero.cpp:  int me = comm->me;
+pair_zero.cpp:  int me = comm->me;
+pppm.cpp:  if (comm->style != 0)
+pppm.cpp:  int (*procneigh)[2] = comm->procneigh;
+pppm.cpp:  int (*procneigh)[2] = comm->procneigh;
+pppm.cpp:  int (*procneigh)[2] = comm->procneigh;
+pppm.cpp:  nxlo_in = static_cast<int> (comm->xsplit[comm->myloc[0]] * nx_pppm);
+pppm.cpp:  nxhi_in = static_cast<int> (comm->xsplit[comm->myloc[0]+1] * nx_pppm) - 1;
+pppm.cpp:  nylo_in = static_cast<int> (comm->ysplit[comm->myloc[1]] * ny_pppm);
+pppm.cpp:  nyhi_in = static_cast<int> (comm->ysplit[comm->myloc[1]+1] * ny_pppm) - 1;
+pppm.cpp:      (comm->zsplit[comm->myloc[2]] * nz_pppm/slab_volfactor);
+pppm.cpp:      (comm->zsplit[comm->myloc[2]+1] * nz_pppm/slab_volfactor) - 1;
+pppm.cpp:    if (comm->myloc[2] == comm->procgrid[2]-1)
+pppm_disp.cpp:  if (comm->style != 0)
+pppm_disp.cpp:  int (*procneigh)[2] = comm->procneigh;
+pppm_disp.cpp:  int (*procneigh)[2] = comm->procneigh;
+pppm_disp.cpp:  int (*procneigh)[2] = comm->procneigh;
+pppm_disp.cpp:  nxlo_i = static_cast<int> (comm->xsplit[comm->myloc[0]] * nx_p);
+pppm_disp.cpp:  nxhi_i = static_cast<int> (comm->xsplit[comm->myloc[0]+1] * nx_p) - 1;
+pppm_disp.cpp:  nylo_i = static_cast<int> (comm->ysplit[comm->myloc[1]] * ny_p);
+pppm_disp.cpp:  nyhi_i = static_cast<int> (comm->ysplit[comm->myloc[1]+1] * ny_p) - 1;
+pppm_disp.cpp:      (comm->zsplit[comm->myloc[2]] * nz_p/slab_volfactor);
+pppm_disp.cpp:      (comm->zsplit[comm->myloc[2]+1] * nz_p/slab_volfactor) - 1;
+pppm_disp.cpp:  if (slabflag && (comm->myloc[2] == comm->procgrid[2]-1)) {
+prd.cpp:  if (universe->nworlds == 1 && comm->me == 0)
+read_data.cpp:      if (comm->nprocs == 1) n = static_cast<int> (atom->natoms);
+read_data.cpp:      else n = static_cast<int> (LB_FACTOR * atom->natoms / comm->nprocs);
+read_data.cpp:      comm->set_proc_grid();
+read_data.cpp:      comm->set_proc_grid();
+read_data.cpp:  // do comm->init() but not comm->setup() b/c pair/neigh cutoffs not yet set
+read_data.cpp:  // need call to map_set() b/c comm->exchange clears atom map
+read_data.cpp:    comm->init();
+read_data.cpp:    comm->exchange();
+read_data.cpp:    eof = comm->read_lines_from_file(fp,nchunk,MAXLINE,buffer);
+read_data.cpp:    eof = comm->read_lines_from_file(fp,nchunk,MAXLINE,buffer);
+read_data.cpp:    eof = comm->read_lines_from_file(fp,nchunk,MAXLINE,buffer);
+read_data.cpp:    eof = comm->read_lines_from_file(fp,nchunk,MAXLINE,buffer);
+read_data.cpp:    eof = comm->read_lines_from_file(fp,nchunk,MAXLINE,buffer);
+read_data.cpp:    eof = comm->read_lines_from_file(fp,nchunk,MAXLINE,buffer);
+read_data.cpp:    eof = comm->read_lines_from_file(fp,nchunk,MAXLINE,buffer);
+read_data.cpp:  int eof = comm->read_lines_from_file(fp,ntypes,MAXLINE,buf);
+read_data.cpp:  int eof = comm->read_lines_from_file(fp,ntypes,MAXLINE,buf);
+read_data.cpp:  int eof = comm->read_lines_from_file(fp,nsq,MAXLINE,buf);
+read_data.cpp:  int eof = comm->read_lines_from_file(fp,nbondtypes,MAXLINE,buf);
+read_data.cpp:  int eof = comm->read_lines_from_file(fp,nangletypes,MAXLINE,buf);
+read_data.cpp:  int eof = comm->read_lines_from_file(fp,ndihedraltypes,MAXLINE,buf);
+read_data.cpp:  int eof = comm->read_lines_from_file(fp,nimpropertypes,MAXLINE,buf);
+read_data.cpp:    eof = comm->read_lines_from_file(fp,nchunk,MAXLINE,buffer);
+read_dump.cpp:    comm->set_proc_grid(0);
+read_restart.cpp:  comm->set_proc_grid();
+read_restart.cpp:      if (nprocs_file != comm->nprocs && me == 0)
+read_restart.cpp:      if (comm->user_procgrid[0] != 0 &&
+read_restart.cpp:          procgrid[0] != comm->user_procgrid[0]) flag = 1;
+read_restart.cpp:      if (comm->user_procgrid[1] != 0 &&
+read_restart.cpp:          procgrid[1] != comm->user_procgrid[1]) flag = 1;
+read_restart.cpp:      if (comm->user_procgrid[2] != 0 &&
+read_restart.cpp:          procgrid[2] != comm->user_procgrid[2]) flag = 1;
+read_restart.cpp:      comm->mode = read_int();
+read_restart.cpp:      comm->cutghostuser = read_double();
+read_restart.cpp:      comm->ghost_velocity = read_int();
+replicate.cpp:  int me = comm->me;
+replicate.cpp:  int nprocs = comm->nprocs;
+replicate.cpp:    if (comm->me == 0)
+replicate.cpp:  comm->set_proc_grid();
+replicate.cpp:  if (comm->layout != LAYOUT_TILED) {
+replicate.cpp:      if (comm->myloc[0] == 0) sublo[0] -= epsilon[0];
+replicate.cpp:      if (comm->myloc[0] == comm->procgrid[0]-1) subhi[0] += epsilon[0];
+replicate.cpp:      if (comm->myloc[1] == 0) sublo[1] -= epsilon[1];
+replicate.cpp:      if (comm->myloc[1] == comm->procgrid[1]-1) subhi[1] += epsilon[1];
+replicate.cpp:      if (comm->myloc[2] == 0) sublo[2] -= epsilon[2];
+replicate.cpp:      if (comm->myloc[2] == comm->procgrid[2]-1) subhi[2] += epsilon[2];
+replicate.cpp:      if (comm->mysplit[0][0] == 0.0) sublo[0] -= epsilon[0];
+replicate.cpp:      if (comm->mysplit[0][1] == 1.0) subhi[0] += epsilon[0];
+replicate.cpp:      if (comm->mysplit[1][0] == 0.0) sublo[1] -= epsilon[1];
+replicate.cpp:      if (comm->mysplit[1][1] == 1.0) subhi[1] += epsilon[1];
+replicate.cpp:      if (comm->mysplit[2][0] == 0.0) sublo[2] -= epsilon[2];
+replicate.cpp:      if (comm->mysplit[2][1] == 1.0) subhi[2] += epsilon[2];
+reset_ids.cpp:  if (comm->me == 0) {
+reset_ids.cpp:  // initialize system since comm->borders() will be invoked
+reset_ids.cpp:  comm->setup();
+reset_ids.cpp:  comm->exchange();
+reset_ids.cpp:  comm->borders();
+reset_ids.cpp:  comm->forward_comm_array(1,newIDs);
+respa.cpp:  if (comm->me == 0) {
+respa.cpp:  if (flag && comm->me == 0)
+respa.cpp:  if (modify->nfix == 0 && comm->me == 0)
+respa.cpp:  if (comm->me == 0 && screen) {
+respa.cpp:  comm->setup();
+respa.cpp:  comm->exchange();
+respa.cpp:  comm->borders();
+respa.cpp:    if (newton[ilevel]) comm->reverse_comm();
+respa.cpp:    comm->setup();
+respa.cpp:    comm->exchange();
+respa.cpp:    comm->borders();
+respa.cpp:    if (newton[ilevel]) comm->reverse_comm();
+respa.cpp:          comm->setup();
+respa.cpp:        comm->exchange();
+respa.cpp:        comm->borders();
+respa.cpp:        comm->forward_comm();
+respa.cpp:      comm->forward_comm();
+respa.cpp:      comm->reverse_comm();
+set.cpp:  if (comm->me == 0 && screen) fprintf(screen,"Setting atom values ...\n");
+set.cpp:    if (comm->me == 0) {
+set.cpp:  // init entire system since comm->exchange is done
+set.cpp:  if (comm->me == 0 && screen) fprintf(screen,"  system init for set ...\n");
+set.cpp:  comm->setup();
+set.cpp:  comm->exchange();
+set.cpp:  comm->borders();
+special.cpp:    comm->ring(size,sizeof(tagint),buf,1,ring_one,NULL,(void *)this);
+special.cpp:    comm->ring(size,sizeof(tagint),buf,2,ring_two,NULL,(void *)this);
+special.cpp:  comm->ring(size,sizeof(tagint),buf,3,ring_three,buf,(void *)this);
+special.cpp:  comm->ring(size,sizeof(tagint),buf,4,ring_four,buf,(void *)this);
+special.cpp:  comm->ring(size,sizeof(tagint),buf,5,ring_five,buf,(void *)this);
+special.cpp:  comm->ring(size,sizeof(tagint),buf,6,ring_six,buf,(void *)this);
+special.cpp:    comm->ring(size,sizeof(tagint),buf,7,ring_seven,NULL,(void *)this);
+special.cpp:    comm->ring(size,sizeof(tagint),buf,8,ring_eight,NULL,(void *)this);
+thermo.cpp:      if (temperature->igroup != 0 && comm->me == 0)
+timer.cpp:    if (comm->me == 0)
+timer.cpp:  if (comm->me == 0) {
+variable.cpp:  me = comm->me;
+variable.cpp:    eof = comm->read_lines_from_file(fp,nchunk,MAXLINE,buffer);
+velocity.cpp:    comm->setup();
+velocity.cpp:    comm->exchange();
+velocity.cpp:    comm->borders();
+velocity.cpp:  if (igroup != temperature->igroup && comm->me == 0)
+velocity.cpp:    random = new RanPark(lmp,seed + comm->me);
+velocity.cpp:  if (igroup != temperature->igroup && comm->me == 0)
+verlet.cpp:  if (modify->nfix == 0 && comm->me == 0)
+verlet.cpp:  if (comm->me == 0 && screen) {
+verlet.cpp:  comm->setup();
+verlet.cpp:  comm->exchange();
+verlet.cpp:  comm->borders();
+verlet.cpp:  if (force->newton) comm->reverse_comm();
+verlet.cpp:    comm->setup();
+verlet.cpp:    comm->exchange();
+verlet.cpp:    comm->borders();
+verlet.cpp:  if (force->newton) comm->reverse_comm();
+verlet.cpp:      comm->forward_comm();
+verlet.cpp:        comm->setup();
+verlet.cpp:      comm->exchange();
+verlet.cpp:      comm->borders();
+verlet.cpp:      comm->reverse_comm();
+verlet_split.cpp:  if (comm->style != 0)
+verlet_split.cpp:    kspace_procgrid[0] = comm->procgrid[0];
+verlet_split.cpp:    kspace_procgrid[1] = comm->procgrid[1];
+verlet_split.cpp:    kspace_procgrid[2] = comm->procgrid[2];
+verlet_split.cpp:    for (int i = 0; i < comm->procgrid[0]; i++)
+verlet_split.cpp:      for (int j = 0; j < comm->procgrid[1]; j++)
+verlet_split.cpp:        for (int k = 0; k < comm->procgrid[2]; k++)
+verlet_split.cpp:          kspace_grid2proc[i][j][k] = comm->grid2proc[i][j][k];
+verlet_split.cpp:    if (comm->procgrid[0] % kspace_procgrid[0]) flag = 1;
+verlet_split.cpp:    if (comm->procgrid[1] % kspace_procgrid[1]) flag = 1;
+verlet_split.cpp:    if (comm->procgrid[2] % kspace_procgrid[2]) flag = 1;
+verlet_split.cpp:    iblock = comm->me;
+verlet_split.cpp:    int kpx = comm->myloc[0] / (comm->procgrid[0]/kspace_procgrid[0]);
+verlet_split.cpp:    int kpy = comm->myloc[1] / (comm->procgrid[1]/kspace_procgrid[1]);
+verlet_split.cpp:    int kpz = comm->myloc[2] / (comm->procgrid[2]/kspace_procgrid[2]);
+verlet_split.cpp:  if (comm->style != 0)
+verlet_split.cpp:  if (!force->kspace && comm->me == 0)
+verlet_split.cpp:  if (comm->me == 0 && screen)
+verlet_split.cpp:        comm->forward_comm();
+verlet_split.cpp:          comm->setup();
+verlet_split.cpp:        comm->exchange();
+verlet_split.cpp:        comm->borders();
+verlet_split.cpp:        comm->reverse_comm();
+verlet_split.cpp:        comm->reverse_comm();
+verlet_split.cpp:  // map_clear() call is in lieu of comm->exchange() which performs map_clear
+verlet_split.cpp:      if (domain->box_change) comm->setup();
+verlet_split.cpp:      comm->borders();
+verlet_split.cpp:    comm->forward_comm();
+write_coeff.cpp:  if (comm->me == 0) {
+write_data.cpp:  // init entire system since comm->exchange is done
+write_data.cpp:    if (comm->me == 0 && screen)
+write_data.cpp:    comm->setup();
+write_data.cpp:    comm->exchange();
+write_data.cpp:    comm->borders();
+write_restart.cpp:  // init entire system since comm->exchange is done
+write_restart.cpp:    if (comm->me == 0 && screen)
+write_restart.cpp:    comm->setup();
+write_restart.cpp:    comm->exchange();
+write_restart.cpp:    comm->borders();
+write_restart.cpp:  write_int_vec(PROCGRID,3,comm->procgrid);
+write_restart.cpp:  write_int(COMM_MODE,comm->mode);
+write_restart.cpp:  write_double(COMM_CUTOFF,comm->cutghostuser);
+write_restart.cpp:  write_int(COMM_VEL,comm->ghost_velocity);

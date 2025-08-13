@@ -1,0 +1,42 @@
+# Makefile for coupling library
+
+SHELL = /bin/sh
+
+# System-specific settings
+
+CC =		icpc
+CCFLAGS =	-g -O3 -DMPICH_IGNORE_CXX_SEEK -I${I_MPI_ROOT}/intel64/include
+DEPFLAGS =	-M
+LINK =		icpc
+LINKFLAGS =	-g -O -L${I_MPI_ROOT}/intel64/lib/release_mt -lmpi
+ARCHIVE =	ar
+ARFLAGS =	-rc
+SIZE =		size
+
+# Files
+
+LIB = 	libcouple.a
+SRC =	$(wildcard *.cpp)
+INC =	$(wildcard *.h)
+OBJ = 	$(SRC:.cpp=.o)
+
+# Targets
+
+lib:	$(OBJ)
+	$(ARCHIVE) $(ARFLAGS) $(LIB) $(OBJ)
+
+clean:
+	rm $(LIB) *.o *.d
+
+# Compilation rules
+
+%.o:%.cpp
+	$(CC) $(CCFLAGS) -c $<
+
+%.d:%.cpp
+	$(CC) $(CCFLAGS) $(DEPFLAGS) $< > $@
+
+# Individual dependencies
+
+DEPENDS = $(OBJ:.o=.d)
+include $(DEPENDS)

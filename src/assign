@@ -1,0 +1,397 @@
+atom.cpp:    firstgroup = group->find(firstgroupname);
+atom.cpp:  int bitmask = group->bitmask[firstgroup];
+atom.h:  char *firstgroupname;         // group-ID to store first, NULL if unset
+change_box.cpp:  int igroup = group->find(arg[0]);
+change_box.cpp:  int groupbit = group->bitmask[igroup];
+comm.cpp:      bordergroup = group->find(arg[iarg+1]);
+compute_chunk_atom.cpp:    newarg[1] = group->names[igroup];
+compute_cluster_atom.cpp:  if (group->dynamic[igroup]) {
+compute_com.cpp:  masstotal = group->mass(igroup);
+compute_com.cpp:  if (group->dynamic[igroup]) masstotal = group->mass(igroup);
+compute_com.cpp:  group->xcm(igroup,masstotal,vector);
+compute_conc.cpp:  if (dynamic_user || group->dynamic[igroup]) dynamic = 1;
+compute.cpp:  igroup = group->find(arg[1]);
+compute.cpp:  groupbit = group->bitmask[igroup];
+compute_displace_atom.cpp:  newarg[1] = group->names[igroup];
+compute_force_tally.cpp:  igroup2 = group->find(arg[3]);
+compute_force_tally.cpp:  groupbit2 = group->bitmask[igroup2];
+compute_group_group.cpp:  jgroup = group->find(group2);
+compute_group_group.cpp:  jgroupbit = group->bitmask[jgroup];
+compute_group_group.cpp:  jgroup = group->find(group2);
+compute_group_group.cpp:  jgroupbit = group->bitmask[jgroup];
+compute_group_group.cpp:  //   real-space style of compute group-group
+compute_gyration.cpp:  masstotal = group->mass(igroup);
+compute_gyration.cpp:  if (group->dynamic[igroup]) masstotal = group->mass(igroup);
+compute_gyration.cpp:  group->xcm(igroup,masstotal,xcm);
+compute_gyration.cpp:  scalar = group->gyration(igroup,masstotal,xcm);
+compute_gyration.cpp:  group->xcm(igroup,masstotal,xcm);
+compute_heat_flux_tally.cpp:  igroup2 = group->find(arg[3]);
+compute_heat_flux_tally.cpp:  groupbit2 = group->bitmask[igroup2];
+compute_msd_chunk.cpp:  newarg[1] = group->names[igroup];
+compute_msd.cpp:  newarg[1] = group->names[igroup];
+compute_msd.cpp:      masstotal = group->mass(igroup);
+compute_msd.cpp:      group->xcm(igroup,masstotal,cm);
+compute_msd.cpp:  nmsd = group->count(igroup);
+compute_msd.cpp:  masstotal = group->mass(igroup);
+compute_msd.cpp:  if (comflag) group->xcm(igroup,masstotal,cm);
+compute_msd_nongauss.cpp:  if (comflag) group->xcm(igroup,masstotal,cm);
+compute_pe_mol_tally.cpp:  igroup2 = group->find(arg[3]);
+compute_pe_mol_tally.cpp:  groupbit2 = group->bitmask[igroup2];
+compute_pe_tally.cpp:  igroup2 = group->find(arg[3]);
+compute_pe_tally.cpp:  groupbit2 = group->bitmask[igroup2];
+compute_rdf.cpp:  dynamic = group->dynamic[igroup];
+compute_reduce.cpp:    return group->count(igroup);
+compute_reduce.cpp:      return group->count(igroup);
+compute_reduce.cpp:      return group->count(igroup);
+compute_reduce.cpp:    return group->count(igroup);
+compute_reduce_region.cpp:    return group->count(igroup,iregion);
+compute_reduce_region.cpp:      return group->count(igroup,iregion);
+compute_reduce_region.cpp:      return group->count(igroup,iregion);
+compute_reduce_region.cpp:    return group->count(igroup,iregion);
+compute_stress_tally.cpp:  igroup2 = group->find(arg[3]);
+compute_stress_tally.cpp:  groupbit2 = group->bitmask[igroup2];
+compute_temp_asphere.cpp:  if (dynamic_user || group->dynamic[igroup]) dynamic = 1;
+compute_temp_asphere.cpp:  natoms_temp = group->count(igroup);
+compute_temp_body.cpp:  if (dynamic_user || group->dynamic[igroup]) dynamic = 1;
+compute_temp_body.cpp:  natoms_temp = group->count(igroup);
+compute_temp_com.cpp:  masstotal = group->mass(igroup);
+compute_temp_com.cpp:  if (dynamic_user || group->dynamic[igroup]) dynamic = 1;
+compute_temp_com.cpp:  natoms_temp = group->count(igroup);
+compute_temp_com.cpp:  if (dynamic) masstotal = group->mass(igroup);
+compute_temp_com.cpp:  group->vcm(igroup,masstotal,vbias);
+compute_temp_com.cpp:  if (dynamic) masstotal = group->mass(igroup);
+compute_temp_com.cpp:  group->vcm(igroup,masstotal,vbias);
+compute_temp.cpp:  if (dynamic_user || group->dynamic[igroup]) dynamic = 1;
+compute_temp.cpp:  natoms_temp = group->count(igroup);
+compute_temp_cs.cpp:  cgroup = group->find(arg[3]);
+compute_temp_cs.cpp:  groupbit_c = group->bitmask[cgroup];
+compute_temp_cs.cpp:  sgroup = group->find(arg[4]);
+compute_temp_cs.cpp:  groupbit_s = group->bitmask[sgroup];
+compute_temp_cs.cpp:  newarg[1] = group->names[igroup];
+compute_temp_cs.cpp:    int ncores = group->count(cgroup);
+compute_temp_cs.cpp:    nshells = group->count(sgroup);
+compute_temp_cs.cpp:  natoms_temp = group->count(igroup);
+compute_temp_deform.cpp:  if (dynamic_user || group->dynamic[igroup]) dynamic = 1;
+compute_temp_deform.cpp:  natoms_temp = group->count(igroup);
+compute_temp_partial.cpp:  if (dynamic_user || group->dynamic[igroup]) dynamic = 1;
+compute_temp_partial.cpp:  natoms_temp = group->count(igroup);
+compute_temp_profile.cpp:  if (dynamic_user || group->dynamic[igroup]) dynamic = 1;
+compute_temp_profile.cpp:  natoms_temp = group->count(igroup);
+compute_temp_ramp.cpp:  if (dynamic_user || group->dynamic[igroup]) dynamic = 1;
+compute_temp_ramp.cpp:  natoms_temp = group->count(igroup);
+compute_temp_region.cpp:  if (dynamic_user || group->dynamic[igroup]) dynamic = 1;
+compute_temp_sphere.cpp:  if (dynamic_user || group->dynamic[igroup]) dynamic = 1;
+compute_temp_sphere.cpp:  natoms_temp = group->count(igroup);
+compute_vacf.cpp:  newarg[1] = group->names[igroup];
+compute_vacf.cpp:  nvacf = group->count(igroup);
+create_bonds.cpp:    igroup = group->find(arg[1]);
+create_bonds.cpp:    group1bit = group->bitmask[igroup];
+create_bonds.cpp:    igroup = group->find(arg[2]);
+create_bonds.cpp:    group2bit = group->bitmask[igroup];
+delete_atoms.cpp:    int igroup = group->find("all");
+delete_atoms.cpp:    if ((igroup >= 0) && modify->check_rigid_group_overlap(group->bitmask[igroup]))
+delete_atoms.cpp:  int igroup = group->find(arg[1]);
+delete_atoms.cpp:  int groupbit = group->bitmask[igroup];
+delete_atoms.cpp:  int igroup1 = group->find(arg[2]);
+delete_atoms.cpp:  int igroup2 = group->find(arg[3]);
+delete_atoms.cpp:  int group1bit = group->bitmask[igroup1];
+delete_atoms.cpp:  int group2bit = group->bitmask[igroup2];
+delete_bonds.cpp:  int igroup = group->find(arg[0]);
+delete_bonds.cpp:  int groupbit = group->bitmask[igroup];
+displace_atoms.cpp:  igroup = group->find(arg[0]);
+displace_atoms.cpp:  groupbit = group->bitmask[igroup];
+dump.cpp:  igroup = group->find(arg[1]);
+dump.cpp:  groupbit = group->bitmask[igroup];
+dump.cpp:    bigint size = group->count(igroup);
+dump_custom.cpp:      newarg[1] = group->names[igroup];
+dump_dcd.cpp:  bigint n = group->count(igroup);
+dump_xtc.cpp:  bigint n = group->count(igroup);
+ewald.cpp:   group-group interactions
+ewald.cpp:   allocate group-group memory that depends on # of K-vectors
+ewald.cpp:   deallocate group-group memory that depends on # of K-vectors
+ewald.h:  // group-group interactions
+ewald.h:  // group-group interactions
+fix_adapt.cpp:  newarg[1] = group->names[igroup];
+fix_adapt.cpp:  if (group->dynamic[igroup])
+fix_adapt_fep.cpp:  newarg[1] = group->names[igroup];
+fix_adapt_fep.cpp:  if (group->dynamic[igroup])
+fix_atom_swap.cpp:    int firstgroupbit = group->bitmask[atom->firstgroup];
+fix_conc_berendsen.cpp:  newarg[1] = group->names[igroup];
+fix_conc_berendsen.cpp://  if (group->dynamic[igroup])
+fix_conc_berendsen.cpp:    int jgroup = group->find(groupstrings[igroup]);
+fix_conc_berendsen.cpp:    groupbitall |= group->bitmask[jgroup];
+fix_conc_berendsen.cpp:      int jgroup = group->find(grouptypestrings[igroup]);
+fix_conc_berendsen.cpp:      grouptypebits[igroup] = group->bitmask[jgroup];
+fix_conc_berendsen.h:  int ngroups;              // number of group-ids for inserted atoms
+fix_conc_berendsen.h:  char** groupstrings;      // list of group-ids for inserted atoms
+fix_conc_berendsen.h:  int ngrouptypes;          // number of type-based group-ids for inserted atoms
+fix_conc_berendsen.h:  char** grouptypestrings;  // list of type-based group-ids for inserted atoms
+fix.cpp:  igroup = group->find(arg[1]);
+fix.cpp:  groupbit = group->bitmask[igroup];
+fix_ehex.cpp:  if (group->count(igroup) == 0)
+fix_evaporate.cpp:    int firstgroupbit = group->bitmask[atom->firstgroup];
+fix_gcmc.cpp:    int igroupall = group->find("all");
+fix_gcmc.cpp:    group->assign(4,group_arg);
+fix_gcmc.cpp:    exclusion_group = group->find(group_arg[0]);
+fix_gcmc.cpp:    exclusion_group_bit = group->bitmask[exclusion_group];
+fix_gcmc.cpp:    group->assign(3,group_arg);
+fix_gcmc.cpp:    molecule_group = group->find(group_arg[0]);
+fix_gcmc.cpp:    molecule_group_bit = group->bitmask[molecule_group];
+fix_gcmc.cpp:    int firstgroupbit = group->bitmask[atom->firstgroup];
+fix_gcmc.cpp:    int jgroup = group->find(groupstrings[igroup]);
+fix_gcmc.cpp:    groupbitall |= group->bitmask[jgroup];
+fix_gcmc.cpp:      int jgroup = group->find(grouptypestrings[igroup]);
+fix_gcmc.cpp:      grouptypebits[igroup] = group->bitmask[jgroup];
+fix_gcmc.cpp:    group->xcm(molecule_group,gas_mass,com);
+fix_gcmc.cpp:  group->xcm(molecule_group,gas_mass,com);
+fix_gcmc.cpp:    group->xcm(molecule_group,gas_mass,com);
+fix_gcmc.cpp:  group->xcm(molecule_group,gas_mass,com);
+fix_gcmc.cpp:        group->xcm(molecule_group,gas_mass,com);
+fix_gcmc.h:  int ngroups;              // number of group-ids for inserted atoms
+fix_gcmc.h:  char** groupstrings;      // list of group-ids for inserted atoms
+fix_gcmc.h:  int ngrouptypes;          // number of type-based group-ids for inserted atoms
+fix_gcmc.h:  char** grouptypestrings;  // list of type-based group-ids for inserted atoms
+fix_gld.cpp:    count = group->count(igroup);
+fix_group.cpp:  gbit = group->bitmask[group->find(dgroup)];
+fix_group.cpp:  gbitinverse = group->inversemask[group->find(dgroup)];
+fix_group.cpp:  if (group->dynamic[igroup])
+fix_heat.cpp:  if (group->count(igroup) == 0)
+fix_heat.cpp:  masstotal = group->mass(igroup);
+fix_heat.cpp:    ke = group->ke(igroup)*force->ftm2v;
+fix_heat.cpp:    group->vcm(igroup,masstotal,vcm);
+fix_heat.cpp:    masstotal = group->mass(igroup,iregion);
+fix_heat.cpp:    ke = group->ke(igroup,iregion)*force->ftm2v;
+fix_heat.cpp:    group->vcm(igroup,masstotal,vcm,iregion);
+fix_langevin.cpp:    count = group->count(igroup);
+fix_momentum.cpp:  if (group->dynamic[igroup]) {
+fix_momentum.cpp:   if (group->count(igroup) == 0)
+fix_momentum.cpp:  masstotal = group->mass(igroup);
+fix_momentum.cpp:    masstotal = group->mass(igroup);
+fix_momentum.cpp:    group->vcm(igroup,masstotal,vcm);
+fix_momentum.cpp:    group->xcm(igroup,masstotal,xcm);
+fix_momentum.cpp:    group->angmom(igroup,xcm,angmom);
+fix_momentum.cpp:    group->inertia(igroup,xcm,inertia);
+fix_momentum.cpp:    group->omega(angmom,inertia,omega);
+fix_neb.cpp:  bigint count = group->count(igroup);
+fix_nh.cpp:        int idilate = group->find(id_dilate);
+fix_nh.cpp:    int idilate = group->find(id_dilate);
+fix_nh.cpp:    dilate_group_bit = group->bitmask[idilate];
+fix_nphug.cpp:  double masstot = group->mass(igroup);
+fix_nvt_asphere.cpp:  newarg[1] = group->names[igroup];
+fix_nvt_body.cpp:  newarg[1] = group->names[igroup];
+fix_nvt.cpp:  newarg[1] = group->names[igroup];
+fix_nvt_sllod.cpp:  newarg[1] = group->names[igroup];
+fix_nvt_sphere.cpp:  newarg[1] = group->names[igroup];
+fix_qeq_comb.cpp:  ngroup = group->count(igroup);
+fix_qeq_dynamic.cpp:  ngroup = group->count(igroup);
+fix_qeq_fire.cpp:  ngroup = group->count(igroup);
+fix_qeq_point.cpp:  ngroup = group->count(igroup);
+fix_qeq_shielded.cpp:  ngroup = group->count(igroup);
+fix_qeq_slater.cpp:  ngroup = group->count(igroup);
+fix_recenter.cpp:      int igroup2 = group->find(arg[iarg+1]);
+fix_recenter.cpp:      group2bit = group->bitmask[igroup2];
+fix_recenter.cpp:  if (group->count(igroup) == 0)
+fix_recenter.cpp:  masstotal = group->mass(igroup);
+fix_recenter.cpp:    group->xcm(igroup,masstotal,xcm);
+fix_recenter.cpp:  if (group->dynamic[igroup])
+fix_recenter.cpp:    masstotal = group->mass(igroup);
+fix_recenter.cpp:  group->xcm(igroup,masstotal,xcm);
+fix_rigid.cpp:      igroups[ibody] = group->find(arg[5+ibody]);
+fix_rigid.cpp:          if (mask[i] & group->bitmask[igroups[ibody]]) {
+fix_rigid.cpp:        int idilate = group->find(id_dilate);
+fix_rigid.cpp:  int tgroupbit = group->bitmask[tgroup];
+fix_rigid_nh.cpp:    int idilate = group->find(id_dilate);
+fix_rigid_nh.cpp:    dilate_group_bit = group->bitmask[idilate];
+fix_rigid_nh_small.cpp:    int idilate = group->find(id_dilate);
+fix_rigid_nh_small.cpp:    dilate_group_bit = group->bitmask[idilate];
+fix_rigid_small.cpp:        int idilate = group->find(id_dilate);
+fix_rigid_small.cpp:  int tgroupbit = group->bitmask[tgroup];
+fix_shake.cpp:  int groupbit = group->bitmask[igroup];
+fix_spring.cpp:    igroup2 = group->find(arg[4]);
+fix_spring.cpp:    group2bit = group->bitmask[igroup2];
+fix_spring.cpp:    igroup2 = group->find(group2);
+fix_spring.cpp:    group2bit = group->bitmask[igroup2];
+fix_spring.cpp:  masstotal = group->mass(igroup);
+fix_spring.cpp:  if (styleflag == COUPLE) masstotal2 = group->mass(igroup2);
+fix_spring.cpp:  if (group->dynamic[igroup])
+fix_spring.cpp:    masstotal = group->mass(igroup);
+fix_spring.cpp:  group->xcm(igroup,masstotal,xcm);
+fix_spring.cpp:  if (group->dynamic[igroup])
+fix_spring.cpp:    masstotal = group->mass(igroup);
+fix_spring.cpp:  if (group->dynamic[igroup2])
+fix_spring.cpp:    masstotal2 = group->mass(igroup2);
+fix_spring.cpp:  group->xcm(igroup,masstotal,xcm);
+fix_spring.cpp:  group->xcm(igroup2,masstotal2,xcm2);
+fix_spring_rg.cpp:  masstotal = group->mass(igroup);
+fix_spring_rg.cpp:    group->xcm(igroup,masstotal,xcm);
+fix_spring_rg.cpp:    rg0 = group->gyration(igroup,masstotal,xcm);
+fix_spring_rg.cpp:  if (group->dynamic[igroup])
+fix_spring_rg.cpp:    masstotal = group->mass(igroup);
+fix_spring_rg.cpp:  group->xcm(igroup,masstotal,xcm);
+fix_spring_rg.cpp:  double rg = group->gyration(igroup,masstotal,xcm);
+fix_srd.cpp:  else biggroup = group->find(arg[4]);
+fix_srd.cpp:  if (bigexist) biggroupbit = group->bitmask[biggroup];
+fix_srd.cpp:  if (bigexist) mbig = group->count(biggroup);
+fix_srd.cpp:  bigint nsrd = group->count(igroup);
+fix_srd.cpp:  int bitmask = group->bitmask[groupnum];
+fix_srd.cpp:  double count = group->count(groupnum);
+fix_srd.cpp:              group->names[groupnum],vave,vmax);
+fix_srd.cpp:              group->names[groupnum],vave,vmax);
+fix_store_state.cpp:    double masstotal = group->mass(igroup);
+fix_store_state.cpp:    group->xcm(igroup,masstotal,cm);
+fix_temp_berendsen.cpp:  newarg[1] = group->names[igroup];
+fix_temp_csld.cpp:  newarg[1] = group->names[igroup];
+fix_temp_csvr.cpp:  newarg[1] = group->names[igroup];
+fix_temp_rescale.cpp:  newarg[1] = group->names[igroup];
+fix_tfmc.cpp:  if (comflag || rotflag) masstotal = group->mass(igroup);
+fix_tfmc.cpp:  if (comflag == 1 && group->count(igroup) != 0) {
+fix_tfmc.cpp:  if (rotflag == 1 && group->count(igroup) != 0) {
+fix_tfmc.cpp:    group->xcm(igroup,masstotal,cm);
+fix_tfmc.cpp:	// this of course requires "forking" group->angmom(), which is
+fix_tfmc.cpp:    group->inertia(igroup,cm,inertia);
+fix_tfmc.cpp:    group->omega(angmom,inertia,omega);
+fix_tmd.cpp:  masstotal = group->mass(igroup);
+group.cpp:    ngroup--;
+imbalance_group.cpp:    id[i] = group->find(arg[2*i+1]);
+imbalance_group.cpp:  const int * const bitmask = group->bitmask;
+imbalance_group.cpp:    const char * const * const names = group->names;
+imbalance_var.cpp:  const int all = group->find("all");
+info.cpp:    int ngroup = group->ngroup;
+info.cpp:    char **names = group->names;
+info.cpp:    int *dynamic = group->dynamic;
+info.cpp:    char **names = group->names;
+info.cpp:    char **names = group->names;
+info.cpp:    char **names = group->names;
+info.cpp:    int ngroup = group->ngroup;
+info.cpp:    char **names = group->names;
+input.cpp:  group->assign(narg,arg);
+kspace.h:  double e2group;                // accumulated group-group energy
+kspace.h:  double f2group[3];             // accumulated group-group force
+Binary file liblammps.a matches
+Binary file liblammps_mpi.a matches
+Binary file liblammps_mpi.so matches
+Binary file liblammps.so matches
+library.cpp:      int igroup = lmp->group->find(group);
+Binary file lmp_mpi matches
+modify.cpp:    if (!fix[i]->dynamic_group_allow && group->dynamic[fix[i]->igroup]) {
+modify.cpp:        group->dynamic[compute[i]->igroup]) {
+modify.cpp:  int igroup = group->find(arg[1]);
+nbin_standard.cpp:    int bitmask = group->bitmask[includegroup];
+neighbor.cpp:      ex1_bit[i] = group->bitmask[ex1_group[i]];
+neighbor.cpp:      ex2_bit[i] = group->bitmask[ex2_group[i]];
+neighbor.cpp:      ex_mol_bit[i] = group->bitmask[ex_mol_group[i]];
+neighbor.cpp:      includegroup = group->find(arg[iarg+1]);
+neighbor.cpp:        ex1_group[nex_group] = group->find(arg[iarg+2]);
+neighbor.cpp:        ex2_group[nex_group] = group->find(arg[iarg+3]);
+neighbor.cpp:        ex_mol_group[nex_mol] = group->find(arg[iarg+2]);
+neighbor.cpp:   remove the first group-group exclusion matching group1, group2
+neighbor.cpp:    error->all(FLERR,"Unable to find group-group exclusion");
+neighbor.cpp:  nex_group--;
+neighbor.h:  void exclusion_group_group_delete(int, int);  // rm a group-group exclusion
+npair_full_nsq.cpp:    bitmask = group->bitmask[includegroup];
+npair_half_nsq_newtoff.cpp:    bitmask = group->bitmask[includegroup];
+npair_half_nsq_newtoff_ghost.cpp:    bitmask = group->bitmask[includegroup];
+npair_half_nsq_newton.cpp:    bitmask = group->bitmask[includegroup];
+npair_half_respa_nsq_newtoff.cpp:    bitmask = group->bitmask[includegroup];
+npair_half_respa_nsq_newton.cpp:    bitmask = group->bitmask[includegroup];
+npair_half_size_nsq_newtoff.cpp:    bitmask = group->bitmask[includegroup];
+npair_half_size_nsq_newton.cpp:    bitmask = group->bitmask[includegroup];
+output.cpp:  int igroup = group->find(arg[1]);
+pair_comb3.cpp:  int groupbit = group->bitmask[igroup];
+pair_comb.cpp:  int groupbit = group->bitmask[igroup];
+pppm_cg.cpp: in global grid for group-group interactions
+pppm.cpp:   group-group interactions
+pppm.cpp:  //   portion of group-group energy/force on this proc's FFT grid
+pppm.cpp: allocate group-group memory that depends on # of K-vectors and order
+pppm.cpp: deallocate group-group memory that depends on # of K-vectors and order
+pppm.cpp: in global grid for group-group interactions
+pppm.cpp:   FFT-based Poisson solver for group-group interactions
+pppm.cpp:  // group-group energy and force contribution,
+pppm.cpp:   FFT-based Poisson solver for group-group interactions
+pppm.h:  // group-group interactions
+pppm.h:  // group-group interactions
+read_data.cpp:      int igroup = group->find_or_create(arg[iarg+1]);
+read_data.cpp:      groupbit = group->bitmask[igroup];
+read_restart.cpp:  group->read_restart(fp);
+set.cpp:    int igroup = group->find(id);
+set.cpp:    int groupbit = group->bitmask[igroup];
+thermo.cpp:  double mass = group->mass(0);
+variable.cpp:  int groupbit = group->bitmask[igroup];
+variable.cpp:  int igroup = group->find(args[0]);
+variable.cpp:    if (narg == 1) value = group->count(igroup);
+variable.cpp:    else if (narg == 2) value = group->count(igroup,region_function(args[1]));
+variable.cpp:    if (narg == 1) value = group->mass(igroup);
+variable.cpp:    else if (narg == 2) value = group->mass(igroup,region_function(args[1]));
+variable.cpp:    if (narg == 1) value = group->charge(igroup);
+variable.cpp:    else if (narg == 2) value = group->charge(igroup,region_function(args[1]));
+variable.cpp:      double masstotal = group->mass(igroup);
+variable.cpp:      group->xcm(igroup,masstotal,xcm);
+variable.cpp:      double masstotal = group->mass(igroup,iregion);
+variable.cpp:      group->xcm(igroup,masstotal,xcm,iregion);
+variable.cpp:      double masstotal = group->mass(igroup);
+variable.cpp:      group->vcm(igroup,masstotal,vcm);
+variable.cpp:      double masstotal = group->mass(igroup,iregion);
+variable.cpp:      group->vcm(igroup,masstotal,vcm,iregion);
+variable.cpp:    if (narg == 2) group->fcm(igroup,fcm);
+variable.cpp:    else if (narg == 3) group->fcm(igroup,fcm,region_function(args[2]));
+variable.cpp:    if (narg == 2) group->bounds(igroup,minmax);
+variable.cpp:    else if (narg == 3) group->bounds(igroup,minmax,region_function(args[2]));
+variable.cpp:      double masstotal = group->mass(igroup);
+variable.cpp:      group->xcm(igroup,masstotal,xcm);
+variable.cpp:      value = group->gyration(igroup,masstotal,xcm);
+variable.cpp:      double masstotal = group->mass(igroup,iregion);
+variable.cpp:      group->xcm(igroup,masstotal,xcm,iregion);
+variable.cpp:      value = group->gyration(igroup,masstotal,xcm,iregion);
+variable.cpp:    if (narg == 1) value = group->ke(igroup);
+variable.cpp:    else if (narg == 2) value = group->ke(igroup,region_function(args[1]));
+variable.cpp:      double masstotal = group->mass(igroup);
+variable.cpp:      group->xcm(igroup,masstotal,xcm);
+variable.cpp:      group->angmom(igroup,xcm,lmom);
+variable.cpp:      double masstotal = group->mass(igroup,iregion);
+variable.cpp:      group->xcm(igroup,masstotal,xcm,iregion);
+variable.cpp:      group->angmom(igroup,xcm,lmom,iregion);
+variable.cpp:      double masstotal = group->mass(igroup);
+variable.cpp:      group->xcm(igroup,masstotal,xcm);
+variable.cpp:      group->torque(igroup,xcm,tq);
+variable.cpp:      double masstotal = group->mass(igroup,iregion);
+variable.cpp:      group->xcm(igroup,masstotal,xcm,iregion);
+variable.cpp:      group->torque(igroup,xcm,tq,iregion);
+variable.cpp:      double masstotal = group->mass(igroup);
+variable.cpp:      group->xcm(igroup,masstotal,xcm);
+variable.cpp:      group->inertia(igroup,xcm,inertia);
+variable.cpp:      double masstotal = group->mass(igroup,iregion);
+variable.cpp:      group->xcm(igroup,masstotal,xcm,iregion);
+variable.cpp:      group->inertia(igroup,xcm,inertia,iregion);
+variable.cpp:      double masstotal = group->mass(igroup);
+variable.cpp:      group->xcm(igroup,masstotal,xcm);
+variable.cpp:      group->angmom(igroup,xcm,angmom);
+variable.cpp:      group->inertia(igroup,xcm,inertia);
+variable.cpp:      group->omega(angmom,inertia,omega);
+variable.cpp:      double masstotal = group->mass(igroup,iregion);
+variable.cpp:      group->xcm(igroup,masstotal,xcm,iregion);
+variable.cpp:      group->angmom(igroup,xcm,angmom,iregion);
+variable.cpp:      group->inertia(igroup,xcm,inertia,iregion);
+variable.cpp:      group->omega(angmom,inertia,omega);
+variable.cpp:    int igroup = group->find(args[0]);
+variable.cpp:    newtree->ivalue1 = group->bitmask[igroup];
+variable.cpp:    int igroup = group->find(args[0]);
+variable.cpp:    newtree->ivalue1 = group->bitmask[igroup];
+velocity.cpp:  igroup = group->find(arg[0]);
+velocity.cpp:  groupbit = group->bitmask[igroup];
+velocity.cpp:  igroup = group->find(extgroup);
+velocity.cpp:  groupbit = group->bitmask[igroup];
+velocity.cpp:    arg[1] = group->names[igroup];
+velocity.cpp:    arg[1] = group->names[igroup];
+velocity.cpp:  if (group->count(igroup) == 0)
+velocity.cpp:  double masstotal = group->mass(igroup);
+velocity.cpp:  group->vcm(igroup,masstotal,vcm);
+velocity.cpp:  if (group->count(igroup) == 0)
+velocity.cpp:  double masstotal = group->mass(igroup);
+velocity.cpp:  group->xcm(igroup,masstotal,xcm);
+velocity.cpp:  group->angmom(igroup,xcm,angmom);
+velocity.cpp:  group->inertia(igroup,xcm,inertia);
+velocity.cpp:  group->omega(angmom,inertia,omega);
+write_restart.cpp:    group->write_restart(fp);
+x:fix_atom_swap.cpp:    int firstgroupbit = group->bitmask[atom->firstgroup];
+x:fix_evaporate.cpp:    int firstgroupbit = group->bitmask[atom->firstgroup];
+x:fix_gcmc.cpp:    int firstgroupbit = group->bitmask[atom->firstgroup];
