@@ -256,6 +256,9 @@ FixConcBerendsen::FixConcBerendsen(LAMMPS *lmp, int narg, char **arg) :
     chgflag = 1;
     adapt[2].ilo = typeCat_frac;
     adapt[2].ihi = typeAni_frac;
+    // For the case where addtional atom types exist between typeAni_max & typeCat_frac
+    adapt[2].jlo = typeCat;
+    adapt[2].jhi = typeAni;
   }
   else if (mode == MOLECULE) {
     //molecule
@@ -264,6 +267,9 @@ FixConcBerendsen::FixConcBerendsen(LAMMPS *lmp, int narg, char **arg) :
     chgflag = 1;
     adapt[2].ilo = typeCat_frac;
     adapt[2].ihi = typeAni_frac_max;
+    // For the case where addtional atom types exist between typeAni_max & typeCat_frac
+    adapt[2].jlo = typeCat;
+    adapt[2].jhi = typeAni_max;
   }
   // optional keywords for fix_adapt_fep
   // reset=no, scale=no, after=no
@@ -1653,7 +1659,7 @@ void FixConcBerendsen::change_param(double value)
         for (i = 0; i < nall; i++) {
           if (atype[i] >= ad->ilo && atype[i] <= ad->ihi) {
             if (mask[i] & groupbit) {
-              if (value == 1.0) atom->type[i] -= ad->ihi - ad->ilo + 1;
+              if (value == 1.0) atom->type[i] -= ad->ihi - ad->jhi; // typeAni_frac_max - typeAni_max
 	    }
 	  }
 	}
