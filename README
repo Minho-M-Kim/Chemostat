@@ -1,42 +1,45 @@
-This is the LAMMPS software package.
+Chemostat is a Molecular Dynamics simulation method which maintains the bulk electrolyte concentration, implemented in LAMMPS (LAMMPS 11 Aug 2017 Version) (https://www.lammps.org/).
 
-LAMMPS stands for Large-scale Atomic/Molecular Massively Parallel
-Simulator.
+1. System requirements
+System requirements of Chemostat are the same as LAMMPS software.
+This package is supported for Linux, macOS, and Windows.
+Please refer LAMMPS documentation for more system requirements (https://docs.lammps.org/Build_prerequisites.html).
 
-Copyright (2003) Sandia Corporation.  Under the terms of Contract
-DE-AC04-94AL85000 with Sandia Corporation, the U.S. Government retains
-certain rights in this software.  This software is distributed under
-the GNU General Public License.
+Oracle Linux Server, 8.4 Version and icpc version 2021.3.0 (gcc version 8.4.1 compatibility) were used for compilation and simulation test.
 
-----------------------------------------------------------------------
+Any non-standard hardware is not required.
 
-LAMMPS is a classical molecular dynamics simulation code designed to
-run efficiently on parallel computers.  It was developed at Sandia
-National Laboratories, a US Department of Energy facility, with
-funding from the DOE.  It is an open-source code, distributed freely
-under the terms of the GNU Public License (GPL).
+2. Installation guide
+git clone https://github.com/Minho-M-Kim/Cont.C
+cd Chemostat/src
+make mpi
 
-The primary author of the code is Steve Plimpton, who can be emailed
-at sjplimp@sandia.gov.  The LAMMPS WWW Site at lammps.sandia.gov has
-more information about the code and its uses.
+Then, the simulation can be performed using lmp_mpi executable file.
 
-The LAMMPS distribution includes the following files and directories:
+5-15 minute is required to install on a normal computer
 
-README			   this file
-LICENSE			   the GNU General Public License (GPL)
-bench			   benchmark problems
-couple			   code coupling examples using LAMMPS as a library
-doc			   documentation
-examples		   simple test problems
-lib			   libraries LAMMPS can be linked with
-potentials		   interatomic potential files
-python			   Python wrapper on LAMMPS as a library
-src			   source files
-tools			   pre- and post-processing tools
 
-Point your browser at any of these files to get started:
+3. Demo
+#Instructions to run on data
+cd example_chemostat
+../src/lmp_mpi -in in.demo
 
-doc/Manual.html	           the LAMMPS manual
-doc/Section_intro.html	   hi-level introduction to LAMMPS
-doc/Section_start.html	   how to build and use LAMMPS
-doc/Developer.pdf          LAMMPS developer guide
+log.lammps and trajectory file will be printed as outputs.
+These results can be compared with the sample outputs in example_chemostat/sample_outputs/
+
+The demo simulation will be done within a minute on a "normal" desktop computer.
+
+4. Instructions for use
+a. Create a LAMMPS data or restart file based on the system of interests.
+b. Write a LAMMPS input file based on the required simulation setup.
+c. To use chemostat, fix conc/berendsen, group dynamics, .. are needed.
+d. Run the simulation as in the demo.
+
+#All software dependencies and operating systems (including version numbers)
+#Versions the software has been tested on
+#Any required non-standard hardware
+#Instuctions
+#Typical install time on a "normal" desktop computer
+#Expected output
+#Expected run time for demo on a "normal" desktop computer
+#How to run the software on your data
