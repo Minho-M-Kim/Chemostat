@@ -540,7 +540,11 @@ void FixConcBerendsen::pre_exchange()
   double delta = update->ntimestep - update->beginstep;
   if (delta != 0.0) delta /= update->endstep - update->beginstep;
   int del_t;
-  del_t = update->ntimestep - next_reneighbor;
+
+  // For the case when you read restart & reset timestep -> next_reneighbor is not well-defined at the initial.
+  // If you set the unrelated timestep at the initial, it will cause error.
+  if (next_reneighbor < update->ntimestep) del_t = update->ntimestep - next_reneighbor;
+  else del_t = update->ntimestep;
 
   // set current c_target
   // if variable conc, evaluate variable, wrap with clear/add
