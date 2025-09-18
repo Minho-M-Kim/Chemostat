@@ -74,7 +74,6 @@ FixSpringBound::FixSpringBound(LAMMPS *lmp, int narg, char **arg) :
 
 FixSpringBound::~FixSpringBound()
 {
-  delete [] group2;
 }
 
 /* ---------------------------------------------------------------------- */

@@ -43,8 +43,6 @@ class FixSpringBound : public Fix {
   double k_spring;
   int xflag,yflag,zflag;
   int styleflag;
-  char *group2;
-  int igroup2,group2bit;
   double masstotal,masstotal2;
   int ilevel_respa;
   double espring,ftotal[4];
