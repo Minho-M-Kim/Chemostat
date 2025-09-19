@@ -1,0 +1,67 @@
+
+     Program POST-PROC v.6.3 starts on 20Jan2024 at  1:41:41 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on    24 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =      24
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation      = PBE ( 1  4  3  4 0 0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+     Message from routine read_upf::
+     Pseudo file /groups/wag/minhokim/pseudo/Ag.pbe-dn-kjpaw_psl.0.1.UPF has been successfully fixed on the fly.
+To avoid this message in the future you can permanently fix 
+ your pseudo files following instructions given in: 
+https://gitlab.com/QEF/q-e/blob/master/upftools/how_to_fix_upf.md
+               file Ag.pbe-dn-kjpaw_psl.0.1.UPF: wavefunction(s)  5S 5P 4D renormalized
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         101      40     11               136707    34560    5243
+     Max         102      41     12               136812    34713    5378
+     Sum        2441     973    285              3282217   830785  127751
+ 
+
+     negative rho (up, down):  9.588E-04 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole                0.0026 Ry au,          0.0066 Debye
+        Dipole field          0.0000 Ry au, 
+ 
+        Potential amp.       -0.0010 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     Calling punch_plot, plot_num =   0
+     Writing data to file  tmp
+     Reading data from file  tmp
+
+     Writing data to be plotted to file val.rho.cube
+     Plot Type: 3D                     Output format: Gaussian cube
+ 
+     POST-PROC    :    15.56s CPU        32.89s WALL
+
+ 
+   This run was terminated on:   1:42:14  20Jan2024            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

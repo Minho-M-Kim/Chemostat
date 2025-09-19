@@ -1,0 +1,16 @@
+example_chemostat/DFT-CES/results/mm_0/anifrac_final.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/mm_0/cat_final.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/mm_0/empty.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/qm_0/total.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/qm_0/v_saw.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/mm_0/MOBILE_final.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/mm_0/SOLVENT_final.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/mm_0/ani_final.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/qm_0/solute.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/mm_0/Ag100_4sl_t3p0_2MF.emd.lammpstrj filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/mm_0/add.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/qm_0/refval.rho.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/qm_0/v_saw_pw.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/chemostat/solute.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/mm_0/catfrac_final.cube filter=lfs diff=lfs merge=lfs -text
+example_chemostat/DFT-CES/results/qm_0/v_hartree.cube filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,2323 @@
+
+     Program PWSCF v.6.3 starts on 20Jan2024 at  0:21: 8 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on    24 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =      24
+     Waiting for input...
+     Reading input from standard input
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  3
+     Presently no symmetry can be used with electric field
+
+     Message from routine read_upf::
+     Pseudo file /groups/wag/minhokim/pseudo/Ag.pbe-dn-kjpaw_psl.0.1.UPF has been successfully fixed on the fly.
+To avoid this message in the future you can permanently fix 
+ your pseudo files following instructions given in: 
+https://gitlab.com/QEF/q-e/blob/master/upftools/how_to_fix_upf.md
+               file Ag.pbe-dn-kjpaw_psl.0.1.UPF: wavefunction(s)  5S 5P 4D renormalized
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+     Found symmetry operation: I + (  0.5000  0.5000  0.0000)
+     This is a supercell, fractional translations are disabled
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         101      40     11               136707    34560    5243
+     Max         102      41     12               136812    34713    5378
+     Sum        2441     973    285              3282217   830785  127751
+ 
+
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =       7.8313  a.u.
+     unit-cell volume          =   17384.5315 (a.u.)^3
+     number of atoms/cell      =            8
+     number of atomic types    =            1
+     number of electrons       =        88.00
+     number of Kohn-Sham states=           53
+     kinetic-energy cutoff     =      50.0000  Ry
+     charge density cutoff     =     500.0000  Ry
+     convergence threshold     =      1.0E-06
+     mixing beta               =       0.7000
+     number of iterations used =            8  local-TF  mixing
+     Exchange-correlation      = SLA PW PBX PBC ( 1  4  3  4 0 0)
+
+     celldm(1)=   7.831346  celldm(2)=   0.000000  celldm(3)=   0.000000
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (   1.000000   0.000000   0.000000 )  
+               a(2) = (   0.000000   1.000000   0.000000 )  
+               a(3) = (   0.000000   0.000000  36.195426 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  1.000000  0.000000  0.000000 )  
+               b(2) = (  0.000000  1.000000  0.000000 )  
+               b(3) = (  0.000000  0.000000  0.027628 )  
+
+
+     PseudoPot. # 1 for Ag read from file:
+     /groups/wag/minhokim/pseudo/Ag.pbe-dn-kjpaw_psl.0.1.UPF
+     MD5 check sum: 82209186bd0980b993734dd1b6cd6311
+     Pseudo is Projector augmented-wave + core cor, Zval = 11.0
+     Generated using "atomic" code by A. Dal Corso v.5.0.2 svn rev. 9415
+     Shape of augmentation charge: PSQ
+     Using radial grid of 1237 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+     Q(r) pseudized with 0 coefficients 
+
+
+     atomic species   valence    mass     pseudopotential
+        Ag            11.00     1.00000     Ag( 1.00)
+
+     No symmetry found
+
+
+
+   Cartesian axes
+
+     site n.     atom                  positions (alat units)
+         1           Ag  tau(   1) = (   0.3318759   0.3318759   0.0000000  )
+         2           Ag  tau(   2) = (   0.3318759   0.3318759   1.0000000  )
+         3           Ag  tau(   3) = (   0.8318747   0.8318747   0.0000000  )
+         4           Ag  tau(   4) = (   0.8318747   0.8318747   1.0000000  )
+         5           Ag  tau(   5) = (   0.8318747   0.3318759   0.4999988  )
+         6           Ag  tau(   6) = (   0.8318747   0.3318759   1.4999988  )
+         7           Ag  tau(   7) = (   0.3318759   0.8318747   0.4999988  )
+         8           Ag  tau(   8) = (   0.3318759   0.8318747   1.4999988  )
+
+     number of k points=    41  gaussian smearing, width (Ry)=  0.0147
+                       cart. coord. in units 2pi/alat
+        k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   0.0246914
+        k(    2) = (   0.0000000   0.1111111   0.0000000), wk =   0.0493827
+        k(    3) = (   0.0000000   0.2222222   0.0000000), wk =   0.0493827
+        k(    4) = (   0.0000000   0.3333333   0.0000000), wk =   0.0493827
+        k(    5) = (   0.0000000   0.4444444   0.0000000), wk =   0.0493827
+        k(    6) = (   0.1111111   0.0000000   0.0000000), wk =   0.0493827
+        k(    7) = (   0.1111111   0.1111111   0.0000000), wk =   0.0493827
+        k(    8) = (   0.1111111   0.2222222   0.0000000), wk =   0.0493827
+        k(    9) = (   0.1111111   0.3333333   0.0000000), wk =   0.0493827
+        k(   10) = (   0.1111111   0.4444444   0.0000000), wk =   0.0493827
+        k(   11) = (   0.1111111  -0.4444444   0.0000000), wk =   0.0493827
+        k(   12) = (   0.1111111  -0.3333333   0.0000000), wk =   0.0493827
+        k(   13) = (   0.1111111  -0.2222222   0.0000000), wk =   0.0493827
+        k(   14) = (   0.1111111  -0.1111111   0.0000000), wk =   0.0493827
+        k(   15) = (   0.2222222   0.0000000   0.0000000), wk =   0.0493827
+        k(   16) = (   0.2222222   0.1111111   0.0000000), wk =   0.0493827
+        k(   17) = (   0.2222222   0.2222222   0.0000000), wk =   0.0493827
+        k(   18) = (   0.2222222   0.3333333   0.0000000), wk =   0.0493827
+        k(   19) = (   0.2222222   0.4444444   0.0000000), wk =   0.0493827
+        k(   20) = (   0.2222222  -0.4444444   0.0000000), wk =   0.0493827
+        k(   21) = (   0.2222222  -0.3333333   0.0000000), wk =   0.0493827
+        k(   22) = (   0.2222222  -0.2222222   0.0000000), wk =   0.0493827
+        k(   23) = (   0.2222222  -0.1111111   0.0000000), wk =   0.0493827
+        k(   24) = (   0.3333333   0.0000000   0.0000000), wk =   0.0493827
+        k(   25) = (   0.3333333   0.1111111   0.0000000), wk =   0.0493827
+        k(   26) = (   0.3333333   0.2222222   0.0000000), wk =   0.0493827
+        k(   27) = (   0.3333333   0.3333333   0.0000000), wk =   0.0493827
+        k(   28) = (   0.3333333   0.4444444   0.0000000), wk =   0.0493827
+        k(   29) = (   0.3333333  -0.4444444   0.0000000), wk =   0.0493827
+        k(   30) = (   0.3333333  -0.3333333   0.0000000), wk =   0.0493827
+        k(   31) = (   0.3333333  -0.2222222   0.0000000), wk =   0.0493827
+        k(   32) = (   0.3333333  -0.1111111   0.0000000), wk =   0.0493827
+        k(   33) = (   0.4444444   0.0000000   0.0000000), wk =   0.0493827
+        k(   34) = (   0.4444444   0.1111111   0.0000000), wk =   0.0493827
+        k(   35) = (   0.4444444   0.2222222   0.0000000), wk =   0.0493827
+        k(   36) = (   0.4444444   0.3333333   0.0000000), wk =   0.0493827
+        k(   37) = (   0.4444444   0.4444444   0.0000000), wk =   0.0493827
+        k(   38) = (   0.4444444  -0.4444444   0.0000000), wk =   0.0493827
+        k(   39) = (   0.4444444  -0.3333333   0.0000000), wk =   0.0493827
+        k(   40) = (   0.4444444  -0.2222222   0.0000000), wk =   0.0493827
+        k(   41) = (   0.4444444  -0.1111111   0.0000000), wk =   0.0493827
+
+     Dense  grid:  3282217 G-vectors     FFT dimensions: (  60,  60,2025)
+
+     Smooth grid:   830785 G-vectors     FFT dimensions: (  36,  36,1280)
+
+     Estimated max dynamical RAM per process >     670.68 MB
+
+     Estimated total dynamical RAM >      15.72 GB
+
+     Initial potential from superposition of free atoms
+     Check: negative starting charge=   -0.001013
+
+     starting charge   87.99681, renormalised to   88.00000
+
+     negative rho (up, down):  1.013E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0000 Ry au,         -0.0000 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0000 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+     Starting wfcs are   72 atomic wfcs
+     Checking if some PAW data can be deallocated... 
+
+     total cpu time spent up to now is       27.9 secs
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  1.00E-02,  avg # of iterations =  2.3
+
+     Threshold (ethr) on eigenvalues was too large:
+     Diagonalizing with lowered threshold
+
+     CG style diagonalization
+     ethr =  1.59E-04,  avg # of iterations =  4.4
+
+     negative rho (up, down):  6.790E-04 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0001 Ry au,         -0.0003 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0000 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is      212.9 secs
+
+     total energy              =   -2842.32095250 Ry
+     Harris-Foulkes estimate   =   -2842.34366918 Ry
+     estimated scf accuracy    <       0.15021722 Ry
+
+     iteration #  2     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  1.71E-04,  avg # of iterations =  3.2
+
+     negative rho (up, down):  7.971E-04 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0009 Ry au,         -0.0024 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0004 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is      296.5 secs
+
+     total energy              =   -2842.30853518 Ry
+     Harris-Foulkes estimate   =   -2842.33019143 Ry
+     estimated scf accuracy    <       0.08599991 Ry
+
+     iteration #  3     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  9.77E-05,  avg # of iterations =  3.2
+
+     negative rho (up, down):  6.753E-04 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0027 Ry au,         -0.0070 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0011 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is      378.4 secs
+
+     total energy              =   -2842.31651418 Ry
+     Harris-Foulkes estimate   =   -2842.31760191 Ry
+     estimated scf accuracy    <       0.00958469 Ry
+
+     iteration #  4     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     ethr =  1.09E-05,  avg # of iterations =  5.8
+
+     negative rho (up, down):  5.739E-04 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0046 Ry au,         -0.0118 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0019 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is      520.3 secs
+
+     total energy              =   -2842.32274838 Ry
+     Harris-Foulkes estimate   =   -2842.32519237 Ry
+     estimated scf accuracy    <       0.00784511 Ry
+
+     iteration #  5     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     ethr =  8.91E-06,  avg # of iterations =  3.3
+
+     negative rho (up, down):  5.301E-04 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0121 Ry au,         -0.0306 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0049 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is      606.5 secs
+
+     total energy              =   -2842.32287777 Ry
+     Harris-Foulkes estimate   =   -2842.32386407 Ry
+     estimated scf accuracy    <       0.00407761 Ry
+
+     iteration #  6     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  4.63E-06,  avg # of iterations =  3.4
+
+     negative rho (up, down):  4.801E-04 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0270 Ry au,         -0.0687 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0110 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is      694.7 secs
+
+     total energy              =   -2842.32296869 Ry
+     Harris-Foulkes estimate   =   -2842.32333315 Ry
+     estimated scf accuracy    <       0.00261140 Ry
+
+     iteration #  7     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.97E-06,  avg # of iterations =  3.5
+
+     negative rho (up, down):  2.198E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0601 Ry au,         -0.1527 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0244 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is      784.3 secs
+
+     total energy              =   -2842.32301188 Ry
+     Harris-Foulkes estimate   =   -2842.32329072 Ry
+     estimated scf accuracy    <       0.00223693 Ry
+
+     iteration #  8     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     ethr =  2.54E-06,  avg # of iterations =  3.3
+
+     negative rho (up, down):  3.872E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.1048 Ry au,         -0.2663 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0425 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is      868.3 secs
+
+     total energy              =   -2842.32293759 Ry
+     Harris-Foulkes estimate   =   -2842.32322694 Ry
+     estimated scf accuracy    <       0.00194590 Ry
+
+     iteration #  9     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.21E-06,  avg # of iterations =  3.2
+
+     negative rho (up, down):  4.226E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.1527 Ry au,         -0.3882 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0620 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is      949.5 secs
+
+     total energy              =   -2842.32301578 Ry
+     Harris-Foulkes estimate   =   -2842.32305202 Ry
+     estimated scf accuracy    <       0.00087302 Ry
+
+     iteration # 10     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     ethr =  9.92E-07,  avg # of iterations =  3.3
+
+     negative rho (up, down):  1.553E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2458 Ry au,         -0.6247 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.0997 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1033.4 secs
+
+     total energy              =   -2842.32294715 Ry
+     Harris-Foulkes estimate   =   -2842.32303652 Ry
+     estimated scf accuracy    <       0.00071721 Ry
+
+     iteration # 11     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  8.15E-07,  avg # of iterations =  3.1
+
+     negative rho (up, down):  1.755E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2979 Ry au,         -0.7572 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.1209 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1110.9 secs
+
+     total energy              =   -2842.32303247 Ry
+     Harris-Foulkes estimate   =   -2842.32298820 Ry
+     estimated scf accuracy    <       0.00083452 Ry
+
+     iteration # 12     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     ethr =  8.15E-07,  avg # of iterations =  3.1
+
+     negative rho (up, down):  9.234E-04 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.3310 Ry au,         -0.8412 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.1343 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1189.6 secs
+
+     total energy              =   -2842.32300563 Ry
+     Harris-Foulkes estimate   =   -2842.32303521 Ry
+     estimated scf accuracy    <       0.00076319 Ry
+
+     iteration # 13     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     ethr =  8.15E-07,  avg # of iterations =  3.2
+
+     negative rho (up, down):  5.662E-04 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.3445 Ry au,         -0.8756 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.1398 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1269.1 secs
+
+     total energy              =   -2842.32304010 Ry
+     Harris-Foulkes estimate   =   -2842.32303143 Ry
+     estimated scf accuracy    <       0.00058859 Ry
+
+     iteration # 14     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  6.69E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  3.070E-04 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.3819 Ry au,         -0.9707 Debye
+        Dipole field         -0.0003 Ry au, 
+ 
+        Potential amp.        0.1549 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1344.9 secs
+
+     total energy              =   -2842.32305262 Ry
+     Harris-Foulkes estimate   =   -2842.32302837 Ry
+     estimated scf accuracy    <       0.00058639 Ry
+
+     iteration # 15     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  6.66E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  8.438E-04 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.4079 Ry au,         -1.0368 Debye
+        Dipole field         -0.0003 Ry au, 
+ 
+        Potential amp.        0.1655 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1421.8 secs
+
+     total energy              =   -2842.32305510 Ry
+     Harris-Foulkes estimate   =   -2842.32304305 Ry
+     estimated scf accuracy    <       0.00058242 Ry
+
+     iteration # 16     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     ethr =  6.62E-07,  avg # of iterations =  3.1
+
+     negative rho (up, down):  3.414E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.4030 Ry au,         -1.0242 Debye
+        Dipole field         -0.0003 Ry au, 
+ 
+        Potential amp.        0.1635 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1500.5 secs
+
+     total energy              =   -2842.32304691 Ry
+     Harris-Foulkes estimate   =   -2842.32306303 Ry
+     estimated scf accuracy    <       0.00055415 Ry
+
+     iteration # 17     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     ethr =  6.30E-07,  avg # of iterations =  3.2
+
+     negative rho (up, down):  3.867E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.4072 Ry au,         -1.0350 Debye
+        Dipole field         -0.0003 Ry au, 
+ 
+        Potential amp.        0.1652 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1580.5 secs
+
+     total energy              =   -2842.32305489 Ry
+     Harris-Foulkes estimate   =   -2842.32305851 Ry
+     estimated scf accuracy    <       0.00054604 Ry
+
+     iteration # 18     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     ethr =  6.20E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  5.182E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.3233 Ry au,         -0.8218 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.1312 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1656.5 secs
+
+     total energy              =   -2842.32296351 Ry
+     Harris-Foulkes estimate   =   -2842.32310202 Ry
+     estimated scf accuracy    <       0.00053457 Ry
+
+     iteration # 19     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  6.07E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  5.268E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2717 Ry au,         -0.6905 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.1102 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1733.8 secs
+
+     total energy              =   -2842.32290589 Ry
+     Harris-Foulkes estimate   =   -2842.32300696 Ry
+     estimated scf accuracy    <       0.00040697 Ry
+
+     iteration # 20     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  4.62E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  8.089E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2022 Ry au,         -0.5139 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0820 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1810.0 secs
+
+     total energy              =   -2842.32287677 Ry
+     Harris-Foulkes estimate   =   -2842.32295087 Ry
+     estimated scf accuracy    <       0.00033196 Ry
+
+     iteration # 21     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  2 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     ethr =  3.77E-07,  avg # of iterations =  3.2
+
+     negative rho (up, down):  8.711E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2187 Ry au,         -0.5559 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.0887 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1891.4 secs
+
+     total energy              =   -2842.32287250 Ry
+     Harris-Foulkes estimate   =   -2842.32288209 Ry
+     estimated scf accuracy    <       0.00029017 Ry
+
+     iteration # 22     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  2 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  2 eigenvalues not converged
+     ethr =  3.30E-07,  avg # of iterations =  3.2
+
+     negative rho (up, down):  8.934E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2208 Ry au,         -0.5613 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.0896 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     1973.5 secs
+
+     total energy              =   -2842.32289451 Ry
+     Harris-Foulkes estimate   =   -2842.32288717 Ry
+     estimated scf accuracy    <       0.00022227 Ry
+
+     iteration # 23     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     ethr =  2.53E-07,  avg # of iterations =  3.2
+
+     negative rho (up, down):  8.997E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2155 Ry au,         -0.5478 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.0874 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2054.1 secs
+
+     total energy              =   -2842.32289473 Ry
+     Harris-Foulkes estimate   =   -2842.32289854 Ry
+     estimated scf accuracy    <       0.00022422 Ry
+
+     iteration # 24     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     ethr =  2.53E-07,  avg # of iterations =  3.1
+
+     negative rho (up, down):  9.068E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2141 Ry au,         -0.5443 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.0869 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2130.7 secs
+
+     total energy              =   -2842.32289719 Ry
+     Harris-Foulkes estimate   =   -2842.32289701 Ry
+     estimated scf accuracy    <       0.00022522 Ry
+
+     iteration # 25     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  8.416E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2312 Ry au,         -0.5876 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.0938 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2206.0 secs
+
+     total energy              =   -2842.32289948 Ry
+     Harris-Foulkes estimate   =   -2842.32289329 Ry
+     estimated scf accuracy    <       0.00022807 Ry
+
+     iteration # 26     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  8.652E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2066 Ry au,         -0.5252 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0838 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2282.1 secs
+
+     total energy              =   -2842.32289590 Ry
+     Harris-Foulkes estimate   =   -2842.32290907 Ry
+     estimated scf accuracy    <       0.00024622 Ry
+
+     iteration # 27     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  7.964E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2186 Ry au,         -0.5557 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.0887 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2358.9 secs
+
+     total energy              =   -2842.32289298 Ry
+     Harris-Foulkes estimate   =   -2842.32289379 Ry
+     estimated scf accuracy    <       0.00024459 Ry
+
+     iteration # 28     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  8.208E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2111 Ry au,         -0.5366 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.0857 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2434.5 secs
+
+     total energy              =   -2842.32289625 Ry
+     Harris-Foulkes estimate   =   -2842.32289629 Ry
+     estimated scf accuracy    <       0.00024108 Ry
+
+     iteration # 29     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  7.953E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2185 Ry au,         -0.5554 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.0887 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2508.4 secs
+
+     total energy              =   -2842.32289431 Ry
+     Harris-Foulkes estimate   =   -2842.32289484 Ry
+     estimated scf accuracy    <       0.00024852 Ry
+
+     iteration # 30     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  7.445E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2026 Ry au,         -0.5151 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0822 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2584.7 secs
+
+     total energy              =   -2842.32288756 Ry
+     Harris-Foulkes estimate   =   -2842.32290006 Ry
+     estimated scf accuracy    <       0.00025505 Ry
+
+     iteration # 31     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  8.589E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.1823 Ry au,         -0.4632 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0739 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2659.8 secs
+
+     total energy              =   -2842.32289232 Ry
+     Harris-Foulkes estimate   =   -2842.32289414 Ry
+     estimated scf accuracy    <       0.00025422 Ry
+
+     iteration # 32     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  8.627E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.1907 Ry au,         -0.4847 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0774 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2734.8 secs
+
+     total energy              =   -2842.32289085 Ry
+     Harris-Foulkes estimate   =   -2842.32289073 Ry
+     estimated scf accuracy    <       0.00024481 Ry
+
+     iteration # 33     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  7.055E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.1890 Ry au,         -0.4803 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0767 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2810.4 secs
+
+     total energy              =   -2842.32287389 Ry
+     Harris-Foulkes estimate   =   -2842.32289236 Ry
+     estimated scf accuracy    <       0.00023501 Ry
+
+     iteration # 34     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  7.766E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.1915 Ry au,         -0.4866 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0777 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2885.9 secs
+
+     total energy              =   -2842.32288546 Ry
+     Harris-Foulkes estimate   =   -2842.32287525 Ry
+     estimated scf accuracy    <       0.00025693 Ry
+
+     iteration # 35     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  7.063E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2046 Ry au,         -0.5199 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0830 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     2960.2 secs
+
+     total energy              =   -2842.32287724 Ry
+     Harris-Foulkes estimate   =   -2842.32288206 Ry
+     estimated scf accuracy    <       0.00025102 Ry
+
+     iteration # 36     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  7.247E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2272 Ry au,         -0.5775 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.0922 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     3036.5 secs
+
+     total energy              =   -2842.32289445 Ry
+     Harris-Foulkes estimate   =   -2842.32287043 Ry
+     estimated scf accuracy    <       0.00026063 Ry
+
+     iteration # 37     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     ethr =  2.53E-07,  avg # of iterations =  3.1
+
+     negative rho (up, down):  7.892E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2285 Ry au,         -0.5809 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.0927 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     3115.1 secs
+
+     total energy              =   -2842.32290250 Ry
+     Harris-Foulkes estimate   =   -2842.32289528 Ry
+     estimated scf accuracy    <       0.00023491 Ry
+
+     iteration # 38     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  8.203E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.2218 Ry au,         -0.5636 Debye
+        Dipole field         -0.0002 Ry au, 
+ 
+        Potential amp.        0.0900 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     3190.3 secs
+
+     total energy              =   -2842.32290283 Ry
+     Harris-Foulkes estimate   =   -2842.32290645 Ry
+     estimated scf accuracy    <       0.00023056 Ry
+
+     iteration # 39     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  7.641E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.1740 Ry au,         -0.4422 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0706 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     3267.8 secs
+
+     total energy              =   -2842.32283388 Ry
+     Harris-Foulkes estimate   =   -2842.32291720 Ry
+     estimated scf accuracy    <       0.00022385 Ry
+
+     iteration # 40     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.53E-07,  avg # of iterations =  3.0
+
+     negative rho (up, down):  7.352E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.1740 Ry au,         -0.4423 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0706 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     3344.9 secs
+
+     total energy              =   -2842.32281697 Ry
+     Harris-Foulkes estimate   =   -2842.32284423 Ry
+     estimated scf accuracy    <       0.00018586 Ry
+
+     iteration # 41     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.11E-07,  avg # of iterations =  3.1
+
+     negative rho (up, down):  5.710E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0854 Ry au,         -0.2171 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0347 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     3422.8 secs
+
+     total energy              =   -2842.32271288 Ry
+     Harris-Foulkes estimate   =   -2842.32283919 Ry
+     estimated scf accuracy    <       0.00013237 Ry
+
+     iteration # 42     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     ethr =  1.50E-07,  avg # of iterations =  3.9
+
+     negative rho (up, down):  4.482E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0941 Ry au,         -0.2391 Debye
+        Dipole field         -0.0001 Ry au, 
+ 
+        Potential amp.        0.0382 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     3520.6 secs
+
+     total energy              =   -2842.32268863 Ry
+     Harris-Foulkes estimate   =   -2842.32275451 Ry
+     estimated scf accuracy    <       0.00016968 Ry
+
+     iteration # 43     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     ethr =  1.50E-07,  avg # of iterations =  3.7
+
+     negative rho (up, down):  3.425E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0427 Ry au,         -0.1084 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0173 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     3614.0 secs
+
+     total energy              =   -2842.32269162 Ry
+     Harris-Foulkes estimate   =   -2842.32272806 Ry
+     estimated scf accuracy    <       0.00005832 Ry
+
+     iteration # 44     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  6.63E-08,  avg # of iterations =  3.1
+
+     negative rho (up, down):  3.166E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0352 Ry au,         -0.0896 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0143 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     3691.1 secs
+
+     total energy              =   -2842.32269065 Ry
+     Harris-Foulkes estimate   =   -2842.32269612 Ry
+     estimated scf accuracy    <       0.00003712 Ry
+
+     iteration # 45     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  4.22E-08,  avg # of iterations =  3.0
+
+     negative rho (up, down):  2.733E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0435 Ry au,         -0.1106 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0177 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     3768.6 secs
+
+     total energy              =   -2842.32269072 Ry
+     Harris-Foulkes estimate   =   -2842.32269107 Ry
+     estimated scf accuracy    <       0.00002734 Ry
+
+     iteration # 46     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  3.11E-08,  avg # of iterations =  3.0
+
+     negative rho (up, down):  2.253E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0539 Ry au,         -0.1370 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0219 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     3845.4 secs
+
+     total energy              =   -2842.32269256 Ry
+     Harris-Foulkes estimate   =   -2842.32269053 Ry
+     estimated scf accuracy    <       0.00002188 Ry
+
+     iteration # 47     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.49E-08,  avg # of iterations =  3.0
+
+     negative rho (up, down):  2.244E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0474 Ry au,         -0.1205 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0192 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     3923.2 secs
+
+     total energy              =   -2842.32269398 Ry
+     Harris-Foulkes estimate   =   -2842.32269398 Ry
+     estimated scf accuracy    <       0.00001806 Ry
+
+     iteration # 48     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.05E-08,  avg # of iterations =  3.1
+
+     negative rho (up, down):  1.700E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0389 Ry au,         -0.0989 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0158 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     4000.9 secs
+
+     total energy              =   -2842.32269634 Ry
+     Harris-Foulkes estimate   =   -2842.32269506 Ry
+     estimated scf accuracy    <       0.00000911 Ry
+
+     iteration # 49     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     ethr =  1.04E-08,  avg # of iterations =  3.7
+
+     negative rho (up, down):  1.578E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0312 Ry au,         -0.0794 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0127 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     4093.1 secs
+
+     total energy              =   -2842.32269467 Ry
+     Harris-Foulkes estimate   =   -2842.32269877 Ry
+     estimated scf accuracy    <       0.00001462 Ry
+
+     iteration # 50     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  1.04E-08,  avg # of iterations =  3.2
+
+     negative rho (up, down):  1.447E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0193 Ry au,         -0.0491 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0078 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     4173.0 secs
+
+     total energy              =   -2842.32269405 Ry
+     Harris-Foulkes estimate   =   -2842.32269600 Ry
+     estimated scf accuracy    <       0.00000647 Ry
+
+     iteration # 51     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  7.35E-09,  avg # of iterations =  3.0
+
+     negative rho (up, down):  1.347E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0191 Ry au,         -0.0484 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0077 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     4251.3 secs
+
+     total energy              =   -2842.32269418 Ry
+     Harris-Foulkes estimate   =   -2842.32269438 Ry
+     estimated scf accuracy    <       0.00000455 Ry
+
+     iteration # 52     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  5.17E-09,  avg # of iterations =  3.0
+
+     negative rho (up, down):  1.390E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0146 Ry au,         -0.0370 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0059 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     4327.2 secs
+
+     total energy              =   -2842.32269341 Ry
+     Harris-Foulkes estimate   =   -2842.32269438 Ry
+     estimated scf accuracy    <       0.00000423 Ry
+
+     iteration # 53     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  4.81E-09,  avg # of iterations =  3.0
+
+     negative rho (up, down):  1.373E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0098 Ry au,         -0.0250 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0040 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     4403.2 secs
+
+     total energy              =   -2842.32269272 Ry
+     Harris-Foulkes estimate   =   -2842.32269358 Ry
+     estimated scf accuracy    <       0.00000366 Ry
+
+     iteration # 54     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  4.15E-09,  avg # of iterations =  3.0
+
+     negative rho (up, down):  1.388E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0018 Ry au,         -0.0045 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0007 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     4478.2 secs
+
+     total energy              =   -2842.32269150 Ry
+     Harris-Foulkes estimate   =   -2842.32269290 Ry
+     estimated scf accuracy    <       0.00000297 Ry
+
+     iteration # 55     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  3.38E-09,  avg # of iterations =  3.0
+
+     negative rho (up, down):  1.297E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole                0.0024 Ry au,          0.0062 Debye
+        Dipole field          0.0000 Ry au, 
+ 
+        Potential amp.       -0.0010 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     4554.7 secs
+
+     total energy              =   -2842.32269036 Ry
+     Harris-Foulkes estimate   =   -2842.32269160 Ry
+     estimated scf accuracy    <       0.00000213 Ry
+
+     iteration # 56     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  2.42E-09,  avg # of iterations =  3.0
+
+     negative rho (up, down):  1.236E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole                0.0017 Ry au,          0.0043 Debye
+        Dipole field          0.0000 Ry au, 
+ 
+        Potential amp.       -0.0007 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     4632.5 secs
+
+     total energy              =   -2842.32269006 Ry
+     Harris-Foulkes estimate   =   -2842.32269039 Ry
+     estimated scf accuracy    <       0.00000146 Ry
+
+     iteration # 57     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  1.66E-09,  avg # of iterations =  3.0
+
+     negative rho (up, down):  1.119E-03 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0045 Ry au,         -0.0115 Debye
+        Dipole field         -0.0000 Ry au, 
+ 
+        Potential amp.        0.0018 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     4709.2 secs
+
+     total energy              =   -2842.32268983 Ry
+     Harris-Foulkes estimate   =   -2842.32269008 Ry
+     estimated scf accuracy    <       0.00000121 Ry
+
+     iteration # 58     ecut=    50.00 Ry     beta= 0.70
+     CG style diagonalization
+     ethr =  1.38E-09,  avg # of iterations =  3.0
+
+     negative rho (up, down):  9.588E-04 0.000E+00
+                                   
+   ## Hartree pot for val. elec. (v_hartree.cube) has been written. ## 
+ 
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole                0.0026 Ry au,          0.0066 Debye
+        Dipole field          0.0000 Ry au, 
+ 
+        Potential amp.       -0.0010 Ry
+        Total length        280.6243 bohr
+ 
+                                   
+   ## Saw potential for dipc (v_saw.cube) has been written.## 
+
+     total cpu time spent up to now is     4780.6 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 (103879 PWs)   bands (ev):
+
+   -10.3793  -9.3964  -9.2869  -9.2867  -9.2509  -9.1490  -9.1490  -9.0723
+    -8.8164  -8.8087  -8.6503  -8.6501  -8.4117  -8.4117  -8.3358  -8.0816
+    -7.8134  -7.8134  -7.3988  -7.3988  -7.2701  -7.2701  -7.2079  -7.1361
+    -6.9562  -6.7877  -6.7876  -6.6813  -6.6399  -6.6399  -6.4813  -6.4813
+    -6.4471  -6.4470  -6.3887  -6.3087  -6.2345  -6.2345  -6.1348  -6.1345
+    -5.9206  -5.8844  -5.8843  -3.5044  -1.9697  -0.9442  -0.9442   0.9502
+     0.9502   3.1556   3.1558   3.4369   3.4372
+
+          k = 0.0000 0.1111 0.0000 (103833 PWs)   bands (ev):
+
+   -10.2613  -9.3203  -9.2357  -9.2299  -9.1974  -9.1155  -9.1098  -8.9887
+    -8.7668  -8.7398  -8.5943  -8.5919  -8.4018  -8.3935  -8.3087  -8.0391
+    -7.8349  -7.8031  -7.4339  -7.4104  -7.3927  -7.2855  -7.2157  -7.1278
+    -6.9487  -6.8402  -6.8203  -6.8051  -6.6502  -6.5357  -6.5323  -6.5079
+    -6.5045  -6.4814  -6.4613  -6.3916  -6.3508  -6.2615  -6.2380  -6.2134
+    -6.0038  -5.9765  -5.6552  -3.3310  -1.7975  -1.7392  -0.6598  -0.1208
+     0.7363   1.1785   1.8340   3.1143   4.0519
+
+          k = 0.0000 0.2222 0.0000 (103752 PWs)   bands (ev):
+
+    -9.9215  -9.1131  -9.0931  -9.0732  -9.0383  -9.0184  -8.9907  -8.7644
+    -8.6476  -8.5268  -8.4419  -8.4339  -8.3635  -8.3443  -8.2651  -7.9154
+    -7.8584  -7.7619  -7.6221  -7.5134  -7.4708  -7.3219  -7.2765  -7.1844
+    -7.0411  -7.0203  -6.9178  -6.8738  -6.7395  -6.6780  -6.6666  -6.6310
+    -6.5911  -6.5859  -6.5470  -6.5055  -6.4962  -6.4096  -6.3675  -6.2631
+    -6.2475  -6.1642  -5.1585  -3.3159  -2.8552  -1.7592  -1.1271   0.0924
+     0.1652   1.0557   1.8128   2.2771   4.0548
+
+          k = 0.0000 0.3333 0.0000 (103688 PWs)   bands (ev):
+
+    -9.4205  -8.8938  -8.8681  -8.8608  -8.8373  -8.7979  -8.7793  -8.5109
+    -8.4758  -8.3391  -8.3207  -8.2833  -8.2356  -8.2273  -8.1802  -7.8998
+    -7.7591  -7.7260  -7.6691  -7.6671  -7.5872  -7.4083  -7.3692  -7.3410
+    -7.2221  -7.1393  -7.0693  -7.0027  -6.9404  -6.9269  -6.8439  -6.7622
+    -6.7495  -6.7132  -6.6953  -6.6946  -6.6835  -6.5873  -6.5356  -6.2631
+    -6.2607  -6.0497  -4.7672  -4.4974  -3.2731  -2.1561  -1.3351  -0.2704
+     0.9469   1.1408   1.5786   2.7478   3.1195
+
+          k = 0.0000 0.4444 0.0000 (103700 PWs)   bands (ev):
+
+    -8.9327  -8.7547  -8.6824  -8.6690  -8.6276  -8.5408  -8.4983  -8.4174
+    -8.3793  -8.3167  -8.3151  -8.2521  -8.2251  -8.0456  -8.0290  -7.9903
+    -7.9081  -7.6721  -7.6690  -7.6495  -7.5239  -7.5084  -7.3762  -7.2544
+    -7.2503  -7.2445  -7.2344  -7.2125  -7.1019  -6.9971  -6.9920  -6.9870
+    -6.9813  -6.9415  -6.8902  -6.7355  -6.7297  -6.7006  -6.4954  -6.2804
+    -6.2739  -5.9017  -5.4602  -4.5307  -3.6581  -2.6113  -1.2834  -0.2503
+     0.7418   1.8753   2.3138   2.3648   2.4361
+
+          k = 0.1111 0.0000 0.0000 (103833 PWs)   bands (ev):
+
+   -10.2613  -9.3203  -9.2357  -9.2299  -9.1974  -9.1155  -9.1098  -8.9887
+    -8.7668  -8.7398  -8.5943  -8.5919  -8.4018  -8.3935  -8.3087  -8.0391
+    -7.8349  -7.8031  -7.4339  -7.4104  -7.3927  -7.2855  -7.2157  -7.1278
+    -6.9487  -6.8402  -6.8203  -6.8051  -6.6502  -6.5357  -6.5323  -6.5079
+    -6.5045  -6.4814  -6.4613  -6.3916  -6.3508  -6.2615  -6.2380  -6.2134
+    -6.0038  -5.9765  -5.6552  -3.3310  -1.7975  -1.7392  -0.6598  -0.1208
+     0.7419   1.1785   1.8340   3.1143   4.0519
+
+          k = 0.1111 0.1111 0.0000 (103823 PWs)   bands (ev):
+
+   -10.1496  -9.2812  -9.1794  -9.1792  -9.1168  -9.0805  -9.0805  -8.9350
+    -8.7908  -8.6055  -8.5372  -8.5370  -8.3902  -8.3902  -8.2438  -7.9965
+    -7.8619  -7.7824  -7.4551  -7.4332  -7.4332  -7.3530  -7.2452  -7.0964
+    -6.9441  -6.9054  -6.8491  -6.8490  -6.6628  -6.6105  -6.5657  -6.5657
+    -6.5342  -6.5341  -6.5116  -6.4972  -6.3714  -6.2933  -6.2930  -6.2084
+    -6.0718  -6.0718  -5.4909  -3.1700  -1.5405  -1.5404  -1.5234   0.0759
+     0.0760   0.8356   2.0034   2.0034   3.8712
+
+          k = 0.1111 0.2222 0.0000 (103703 PWs)   bands (ev):
+
+    -9.8323  -9.1552  -9.0390  -9.0244  -8.9982  -8.9758  -8.9042  -8.8075
+    -8.7238  -8.4048  -8.3889  -8.3678  -8.3526  -8.3514  -8.0896  -7.8821
+    -7.8750  -7.7355  -7.6303  -7.4815  -7.4668  -7.4197  -7.3248  -7.0922
+    -7.0712  -7.0472  -6.9679  -6.9632  -6.8022  -6.7895  -6.7120  -6.7101
+    -6.6631  -6.6607  -6.5847  -6.5113  -6.4813  -6.3634  -6.3609  -6.2429
+    -6.2317  -6.1997  -5.0604  -3.0768  -2.7200  -1.5958  -0.9425  -0.8714
+     0.2846   0.6218   1.1625   2.1513   2.8357
+
+          k = 0.1111 0.3333 0.0000 (103670 PWs)   bands (ev):
+
+    -9.3796  -8.9502  -8.8817  -8.8492  -8.8155  -8.8134  -8.6947  -8.6128
+    -8.5775  -8.3620  -8.3062  -8.1853  -8.1348  -8.1195  -8.0908  -7.8382
+    -7.7997  -7.7115  -7.6452  -7.5579  -7.5199  -7.4717  -7.3652  -7.3467
+    -7.2482  -7.1677  -7.1107  -7.0811  -7.0386  -6.9924  -6.9174  -6.8068
+    -6.7913  -6.7835  -6.6829  -6.6772  -6.5791  -6.4548  -6.4173  -6.2828
+    -6.2710  -6.0633  -4.5440  -4.4247  -3.1420  -2.0448  -1.2341  -0.1182
+     0.0189   1.0221   1.3795   1.7037   3.3066
+
+          k = 0.1111 0.4444 0.0000 (103658 PWs)   bands (ev):
+
+    -8.9627  -8.7804  -8.7711  -8.7528  -8.6152  -8.6107  -8.5844  -8.4402
+    -8.4166  -8.3768  -8.2059  -8.1382  -8.1298  -8.0377  -7.9347  -7.8946
+    -7.8704  -7.7030  -7.6978  -7.5847  -7.5341  -7.5085  -7.3804  -7.3542
+    -7.3442  -7.3399  -7.2436  -7.2154  -7.1329  -7.0547  -6.9660  -6.9591
+    -6.9111  -6.8209  -6.7590  -6.6371  -6.5847  -6.5738  -6.4928  -6.3124
+    -6.2925  -5.7352  -5.4367  -4.4482  -3.5880  -2.5296  -1.1892  -0.1695
+     0.8597   1.0438   1.8587   2.1325   2.5131
+
+          k = 0.1111-0.4444 0.0000 (103658 PWs)   bands (ev):
+
+    -8.9627  -8.7804  -8.7711  -8.7528  -8.6152  -8.6107  -8.5844  -8.4402
+    -8.4166  -8.3768  -8.2059  -8.1382  -8.1298  -8.0377  -7.9347  -7.8946
+    -7.8704  -7.7030  -7.6978  -7.5847  -7.5341  -7.5085  -7.3804  -7.3542
+    -7.3442  -7.3399  -7.2436  -7.2154  -7.1329  -7.0547  -6.9660  -6.9591
+    -6.9111  -6.8209  -6.7590  -6.6371  -6.5847  -6.5738  -6.4928  -6.3124
+    -6.2925  -5.7352  -5.4367  -4.4482  -3.5880  -2.5296  -1.1892  -0.1695
+     0.8597   1.0438   1.8587   2.1325   2.5131
+
+          k = 0.1111-0.3333 0.0000 (103670 PWs)   bands (ev):
+
+    -9.3796  -8.9502  -8.8817  -8.8492  -8.8155  -8.8134  -8.6947  -8.6128
+    -8.5775  -8.3620  -8.3062  -8.1853  -8.1348  -8.1195  -8.0908  -7.8382
+    -7.7997  -7.7115  -7.6452  -7.5579  -7.5199  -7.4717  -7.3652  -7.3467
+    -7.2482  -7.1677  -7.1107  -7.0811  -7.0386  -6.9924  -6.9174  -6.8068
+    -6.7913  -6.7835  -6.6829  -6.6772  -6.5791  -6.4548  -6.4173  -6.2828
+    -6.2710  -6.0633  -4.5440  -4.4247  -3.1420  -2.0448  -1.2341  -0.1182
+     0.0189   1.0221   1.3795   1.6929   3.3066
+
+          k = 0.1111-0.2222 0.0000 (103703 PWs)   bands (ev):
+
+    -9.8323  -9.1552  -9.0390  -9.0244  -8.9982  -8.9758  -8.9042  -8.8075
+    -8.7238  -8.4048  -8.3889  -8.3678  -8.3526  -8.3514  -8.0896  -7.8821
+    -7.8750  -7.7355  -7.6303  -7.4815  -7.4668  -7.4197  -7.3248  -7.0922
+    -7.0712  -7.0472  -6.9679  -6.9632  -6.8022  -6.7895  -6.7120  -6.7101
+    -6.6631  -6.6607  -6.5847  -6.5113  -6.4813  -6.3634  -6.3609  -6.2429
+    -6.2317  -6.1997  -5.0604  -3.0768  -2.7200  -1.5958  -0.9425  -0.8714
+     0.2846   0.6218   1.1668   2.1513   2.8357
+
+          k = 0.1111-0.1111 0.0000 (103823 PWs)   bands (ev):
+
+   -10.1496  -9.2812  -9.1794  -9.1792  -9.1168  -9.0805  -9.0805  -8.9350
+    -8.7908  -8.6055  -8.5372  -8.5370  -8.3902  -8.3902  -8.2438  -7.9965
+    -7.8619  -7.7824  -7.4551  -7.4333  -7.4332  -7.3530  -7.2452  -7.0964
+    -6.9441  -6.9054  -6.8491  -6.8490  -6.6628  -6.6105  -6.5657  -6.5657
+    -6.5342  -6.5341  -6.5116  -6.4972  -6.3714  -6.2933  -6.2930  -6.2084
+    -6.0718  -6.0718  -5.4909  -3.1700  -1.5405  -1.5404  -1.5234   0.0759
+     0.0760   0.8527   2.0034   2.0034   3.8712
+
+          k = 0.2222 0.0000 0.0000 (103752 PWs)   bands (ev):
+
+    -9.9215  -9.1131  -9.0931  -9.0732  -9.0383  -9.0184  -8.9907  -8.7644
+    -8.6476  -8.5268  -8.4419  -8.4339  -8.3635  -8.3443  -8.2651  -7.9154
+    -7.8584  -7.7619  -7.6221  -7.5134  -7.4708  -7.3219  -7.2765  -7.1844
+    -7.0411  -7.0203  -6.9178  -6.8738  -6.7395  -6.6780  -6.6666  -6.6310
+    -6.5911  -6.5859  -6.5470  -6.5055  -6.4962  -6.4096  -6.3675  -6.2631
+    -6.2475  -6.1642  -5.1585  -3.3159  -2.8552  -1.7592  -1.1271   0.0924
+     0.1652   1.0682   1.8128   2.2771   4.0548
+
+          k = 0.2222 0.1111 0.0000 (103703 PWs)   bands (ev):
+
+    -9.8323  -9.1552  -9.0390  -9.0244  -8.9982  -8.9758  -8.9042  -8.8075
+    -8.7238  -8.4048  -8.3889  -8.3678  -8.3526  -8.3514  -8.0896  -7.8821
+    -7.8750  -7.7355  -7.6303  -7.4815  -7.4668  -7.4197  -7.3248  -7.0922
+    -7.0712  -7.0472  -6.9679  -6.9632  -6.8022  -6.7895  -6.7120  -6.7101
+    -6.6631  -6.6607  -6.5847  -6.5113  -6.4813  -6.3634  -6.3609  -6.2429
+    -6.2317  -6.1997  -5.0604  -3.0768  -2.7200  -1.5958  -0.9425  -0.8714
+     0.2846   0.6218   1.1650   2.1513   2.8357
+
+          k = 0.2222 0.2222 0.0000 (103583 PWs)   bands (ev):
+
+    -9.5926  -9.1406  -8.9438  -8.9436  -8.8918  -8.8917  -8.8320  -8.7420
+    -8.6674  -8.3836  -8.3835  -8.2301  -8.2299  -8.1422  -7.9294  -7.7933
+    -7.7224  -7.7033  -7.5961  -7.5368  -7.4603  -7.4603  -7.3828  -7.1629
+    -7.1569  -7.1313  -7.1311  -7.0476  -7.0475  -7.0071  -6.9171  -6.7810
+    -6.7809  -6.6413  -6.6004  -6.4991  -6.4266  -6.4265  -6.3500  -6.2487
+    -6.2487  -6.2436  -4.7438  -2.4759  -2.4758  -2.3301  -1.1526  -1.1524
+    -0.4343   0.6880   0.6882   1.4835   3.0079
+
+          k = 0.2222 0.3333 0.0000 (103716 PWs)   bands (ev):
+
+    -9.2962  -9.0726  -8.9260  -8.8987  -8.7693  -8.7158  -8.6952  -8.6507
+    -8.4218  -8.3750  -8.3068  -8.0749  -8.0393  -8.0237  -7.9491  -7.7736
+    -7.7250  -7.6604  -7.6410  -7.5543  -7.5113  -7.4886  -7.3616  -7.3551
+    -7.3236  -7.2713  -7.2346  -7.1571  -7.0828  -7.0005  -6.9281  -6.8017
+    -6.7907  -6.7394  -6.6097  -6.5703  -6.4464  -6.4448  -6.3167  -6.3052
+    -6.3018  -6.0846  -4.1828  -3.9863  -2.7835  -1.7229  -1.6594  -1.1426
+    -0.1548   0.2959   0.8918   1.6447   2.1077
+
+          k = 0.2222 0.4444 0.0000 (103883 PWs)   bands (ev):
+
+    -9.0666  -8.9975  -8.9450  -8.9362  -8.6128  -8.5410  -8.5015  -8.4979
+    -8.4323  -8.3535  -8.1142  -8.0819  -8.0264  -7.9221  -7.8517  -7.8434
+    -7.7930  -7.7594  -7.6841  -7.6449  -7.5914  -7.5825  -7.5669  -7.5344
+    -7.2781  -7.2267  -7.2045  -7.1638  -7.0513  -6.9939  -6.9094  -6.8509
+    -6.7297  -6.6507  -6.6159  -6.5219  -6.5103  -6.4369  -6.3704  -6.3662
+    -6.1894  -5.3207  -5.2576  -4.1862  -3.3734  -2.3222  -0.9538  -0.7776
+     0.1419   0.4461   0.5546   1.0254   1.9772
+
+          k = 0.2222-0.4444 0.0000 (103883 PWs)   bands (ev):
+
+    -9.0666  -8.9975  -8.9450  -8.9362  -8.6128  -8.5410  -8.5015  -8.4979
+    -8.4323  -8.3535  -8.1142  -8.0819  -8.0264  -7.9221  -7.8517  -7.8434
+    -7.7930  -7.7594  -7.6841  -7.6449  -7.5914  -7.5825  -7.5669  -7.5344
+    -7.2781  -7.2267  -7.2045  -7.1638  -7.0513  -6.9939  -6.9094  -6.8509
+    -6.7297  -6.6507  -6.6159  -6.5219  -6.5103  -6.4369  -6.3704  -6.3662
+    -6.1894  -5.3207  -5.2576  -4.1862  -3.3734  -2.3222  -0.9538  -0.7776
+     0.1419   0.4461   0.5546   1.0254   1.9772
+
+          k = 0.2222-0.3333 0.0000 (103716 PWs)   bands (ev):
+
+    -9.2962  -9.0726  -8.9260  -8.8987  -8.7693  -8.7158  -8.6952  -8.6507
+    -8.4218  -8.3750  -8.3068  -8.0749  -8.0393  -8.0237  -7.9491  -7.7736
+    -7.7250  -7.6604  -7.6410  -7.5543  -7.5113  -7.4886  -7.3616  -7.3551
+    -7.3236  -7.2713  -7.2346  -7.1571  -7.0828  -7.0005  -6.9281  -6.8017
+    -6.7907  -6.7394  -6.6097  -6.5703  -6.4464  -6.4448  -6.3167  -6.3052
+    -6.3018  -6.0846  -4.1828  -3.9863  -2.7835  -1.7229  -1.6594  -1.1426
+    -0.1548   0.2959   0.8918   1.6447   2.1077
+
+          k = 0.2222-0.2222 0.0000 (103583 PWs)   bands (ev):
+
+    -9.5926  -9.1406  -8.9438  -8.9436  -8.8918  -8.8917  -8.8320  -8.7420
+    -8.6674  -8.3836  -8.3835  -8.2301  -8.2299  -8.1422  -7.9294  -7.7933
+    -7.7224  -7.7033  -7.5961  -7.5368  -7.4603  -7.4603  -7.3828  -7.1629
+    -7.1569  -7.1313  -7.1311  -7.0476  -7.0475  -7.0071  -6.9171  -6.7810
+    -6.7809  -6.6413  -6.6004  -6.4991  -6.4266  -6.4265  -6.3500  -6.2487
+    -6.2487  -6.2436  -4.7438  -2.4759  -2.4758  -2.3300  -1.1526  -1.1524
+    -0.4343   0.6880   0.6882   1.4725   3.0079
+
+          k = 0.2222-0.1111 0.0000 (103703 PWs)   bands (ev):
+
+    -9.8323  -9.1552  -9.0390  -9.0244  -8.9982  -8.9758  -8.9042  -8.8075
+    -8.7238  -8.4048  -8.3889  -8.3678  -8.3526  -8.3514  -8.0896  -7.8821
+    -7.8750  -7.7355  -7.6303  -7.4815  -7.4668  -7.4197  -7.3248  -7.0922
+    -7.0712  -7.0472  -6.9679  -6.9632  -6.8022  -6.7895  -6.7120  -6.7101
+    -6.6631  -6.6607  -6.5847  -6.5113  -6.4813  -6.3634  -6.3609  -6.2429
+    -6.2317  -6.1997  -5.0604  -3.0768  -2.7200  -1.5958  -0.9425  -0.8714
+     0.2846   0.6218   1.1674   2.1513   2.8357
+
+          k = 0.3333 0.0000 0.0000 (103688 PWs)   bands (ev):
+
+    -9.4205  -8.8938  -8.8681  -8.8608  -8.8373  -8.7979  -8.7793  -8.5109
+    -8.4758  -8.3391  -8.3207  -8.2833  -8.2356  -8.2273  -8.1802  -7.8998
+    -7.7591  -7.7260  -7.6691  -7.6671  -7.5872  -7.4083  -7.3692  -7.3410
+    -7.2221  -7.1393  -7.0693  -7.0027  -6.9404  -6.9269  -6.8439  -6.7622
+    -6.7495  -6.7132  -6.6953  -6.6946  -6.6835  -6.5873  -6.5356  -6.2631
+    -6.2607  -6.0497  -4.7672  -4.4974  -3.2731  -2.1561  -1.3351  -0.2704
+     0.9469   1.1408   1.5776   2.7478   3.1195
+
+          k = 0.3333 0.1111 0.0000 (103670 PWs)   bands (ev):
+
+    -9.3796  -8.9502  -8.8817  -8.8492  -8.8155  -8.8134  -8.6947  -8.6128
+    -8.5775  -8.3620  -8.3062  -8.1853  -8.1348  -8.1195  -8.0908  -7.8382
+    -7.7997  -7.7115  -7.6452  -7.5579  -7.5199  -7.4717  -7.3652  -7.3467
+    -7.2482  -7.1677  -7.1107  -7.0811  -7.0386  -6.9924  -6.9174  -6.8068
+    -6.7913  -6.7835  -6.6829  -6.6772  -6.5791  -6.4548  -6.4173  -6.2828
+    -6.2710  -6.0633  -4.5440  -4.4247  -3.1420  -2.0448  -1.2341  -0.1182
+     0.0189   1.0221   1.3795   1.6901   3.3066
+
+          k = 0.3333 0.2222 0.0000 (103716 PWs)   bands (ev):
+
+    -9.2962  -9.0726  -8.9260  -8.8987  -8.7693  -8.7158  -8.6952  -8.6507
+    -8.4218  -8.3750  -8.3068  -8.0749  -8.0393  -8.0237  -7.9491  -7.7736
+    -7.7250  -7.6604  -7.6410  -7.5543  -7.5113  -7.4886  -7.3616  -7.3551
+    -7.3236  -7.2713  -7.2346  -7.1571  -7.0828  -7.0005  -6.9281  -6.8017
+    -6.7907  -6.7394  -6.6097  -6.5703  -6.4464  -6.4448  -6.3167  -6.3052
+    -6.3018  -6.0846  -4.1828  -3.9863  -2.7835  -1.7229  -1.6594  -1.1426
+    -0.1548   0.2959   0.8918   1.6447   2.1077
+
+          k = 0.3333 0.3333 0.0000 (103990 PWs)   bands (ev):
+
+    -9.2334  -9.1512  -9.0095  -9.0093  -8.7346  -8.6123  -8.5705  -8.5705
+    -8.2732  -8.2732  -8.2580  -8.0419  -7.9392  -7.9391  -7.9335  -7.7403
+    -7.7237  -7.7125  -7.7124  -7.7003  -7.6004  -7.5778  -7.5777  -7.4117
+    -7.2997  -7.1841  -7.1195  -7.1195  -7.0610  -6.8654  -6.8653  -6.7945
+    -6.6930  -6.5737  -6.5275  -6.5275  -6.3529  -6.3275  -6.3241  -6.3168
+    -6.3168  -5.8377  -3.7217  -3.2468  -3.2468  -2.2871  -2.2867  -1.2559
+    -0.1462  -0.1459   0.2211   0.7283   1.7937
+
+          k = 0.3333 0.4444 0.0000 (104048 PWs)   bands (ev):
+
+    -9.1808  -9.1619  -9.1085  -9.1053  -8.6204  -8.5247  -8.5061  -8.4972
+    -8.2898  -8.2376  -8.0827  -8.0477  -7.9920  -7.9025  -7.8959  -7.8650
+    -7.7842  -7.7718  -7.7524  -7.7192  -7.6344  -7.6043  -7.5636  -7.4879
+    -7.2716  -7.1274  -7.1174  -7.0654  -6.9192  -6.8608  -6.8313  -6.7964
+    -6.5633  -6.5291  -6.5178  -6.5006  -6.4143  -6.4053  -6.3963  -6.3785
+    -5.6146  -4.9447  -4.5726  -3.7344  -3.0291  -2.3221  -2.2895  -1.3638
+    -0.5856  -0.2731   0.1061   0.1202   1.6961
+
+          k = 0.3333-0.4444 0.0000 (104048 PWs)   bands (ev):
+
+    -9.1808  -9.1619  -9.1085  -9.1053  -8.6204  -8.5247  -8.5061  -8.4972
+    -8.2898  -8.2376  -8.0827  -8.0477  -7.9920  -7.9025  -7.8959  -7.8650
+    -7.7842  -7.7718  -7.7524  -7.7192  -7.6344  -7.6043  -7.5636  -7.4879
+    -7.2716  -7.1274  -7.1174  -7.0654  -6.9192  -6.8608  -6.8313  -6.7964
+    -6.5633  -6.5291  -6.5178  -6.5006  -6.4143  -6.4053  -6.3963  -6.3785
+    -5.6146  -4.9447  -4.5726  -3.7344  -3.0291  -2.3221  -2.2895  -1.3638
+    -0.5856  -0.2731   0.1061   0.1202   1.6961
+
+          k = 0.3333-0.3333 0.0000 (103990 PWs)   bands (ev):
+
+    -9.2334  -9.1512  -9.0095  -9.0093  -8.7346  -8.6123  -8.5705  -8.5705
+    -8.2732  -8.2732  -8.2580  -8.0419  -7.9392  -7.9391  -7.9335  -7.7403
+    -7.7237  -7.7125  -7.7124  -7.7003  -7.6004  -7.5778  -7.5777  -7.4117
+    -7.2997  -7.1841  -7.1195  -7.1195  -7.0610  -6.8654  -6.8653  -6.7945
+    -6.6930  -6.5737  -6.5275  -6.5275  -6.3529  -6.3275  -6.3241  -6.3168
+    -6.3168  -5.8377  -3.7217  -3.2468  -3.2468  -2.2871  -2.2867  -1.2559
+    -0.1462  -0.1459   0.2211   0.7283   1.7937
+
+          k = 0.3333-0.2222 0.0000 (103716 PWs)   bands (ev):
+
+    -9.2962  -9.0726  -8.9260  -8.8987  -8.7693  -8.7158  -8.6952  -8.6507
+    -8.4218  -8.3750  -8.3068  -8.0749  -8.0393  -8.0237  -7.9491  -7.7736
+    -7.7250  -7.6604  -7.6410  -7.5543  -7.5113  -7.4886  -7.3616  -7.3551
+    -7.3236  -7.2713  -7.2346  -7.1571  -7.0828  -7.0005  -6.9281  -6.8017
+    -6.7907  -6.7394  -6.6097  -6.5703  -6.4464  -6.4448  -6.3167  -6.3052
+    -6.3018  -6.0846  -4.1828  -3.9863  -2.7835  -1.7229  -1.6594  -1.1426
+    -0.1548   0.2959   0.8918   1.6447   2.1077
+
+          k = 0.3333-0.1111 0.0000 (103670 PWs)   bands (ev):
+
+    -9.3796  -8.9502  -8.8817  -8.8492  -8.8155  -8.8134  -8.6947  -8.6128
+    -8.5775  -8.3620  -8.3062  -8.1853  -8.1348  -8.1195  -8.0908  -7.8382
+    -7.7997  -7.7115  -7.6452  -7.5579  -7.5199  -7.4717  -7.3652  -7.3467
+    -7.2482  -7.1677  -7.1107  -7.0811  -7.0386  -6.9924  -6.9174  -6.8068
+    -6.7913  -6.7835  -6.6829  -6.6772  -6.5791  -6.4548  -6.4173  -6.2828
+    -6.2710  -6.0633  -4.5440  -4.4247  -3.1420  -2.0448  -1.2341  -0.1182
+     0.0189   1.0221   1.3795   1.6922   3.3066
+
+          k = 0.4444 0.0000 0.0000 (103700 PWs)   bands (ev):
+
+    -8.9327  -8.7547  -8.6824  -8.6690  -8.6276  -8.5408  -8.4983  -8.4174
+    -8.3793  -8.3167  -8.3151  -8.2521  -8.2251  -8.0456  -8.0290  -7.9903
+    -7.9081  -7.6721  -7.6690  -7.6495  -7.5239  -7.5084  -7.3762  -7.2544
+    -7.2503  -7.2445  -7.2344  -7.2125  -7.1019  -6.9971  -6.9920  -6.9870
+    -6.9813  -6.9415  -6.8902  -6.7355  -6.7297  -6.7006  -6.4954  -6.2804
+    -6.2739  -5.9017  -5.4602  -4.5307  -3.6581  -2.6113  -1.2834  -0.2503
+     0.7418   1.8753   2.3175   2.3648   2.4356
+
+          k = 0.4444 0.1111 0.0000 (103658 PWs)   bands (ev):
+
+    -8.9627  -8.7804  -8.7711  -8.7528  -8.6152  -8.6107  -8.5844  -8.4402
+    -8.4166  -8.3768  -8.2059  -8.1382  -8.1298  -8.0377  -7.9347  -7.8946
+    -7.8704  -7.7030  -7.6978  -7.5847  -7.5341  -7.5085  -7.3804  -7.3542
+    -7.3442  -7.3399  -7.2436  -7.2154  -7.1329  -7.0547  -6.9660  -6.9591
+    -6.9111  -6.8209  -6.7590  -6.6371  -6.5847  -6.5738  -6.4928  -6.3124
+    -6.2925  -5.7352  -5.4367  -4.4482  -3.5880  -2.5296  -1.1892  -0.1695
+     0.8597   1.0438   1.8587   2.1325   2.5131
+
+          k = 0.4444 0.2222 0.0000 (103883 PWs)   bands (ev):
+
+    -9.0666  -8.9975  -8.9450  -8.9362  -8.6128  -8.5410  -8.5015  -8.4979
+    -8.4323  -8.3535  -8.1142  -8.0819  -8.0264  -7.9221  -7.8517  -7.8434
+    -7.7930  -7.7594  -7.6841  -7.6449  -7.5914  -7.5825  -7.5669  -7.5344
+    -7.2781  -7.2267  -7.2045  -7.1638  -7.0513  -6.9939  -6.9094  -6.8509
+    -6.7297  -6.6507  -6.6159  -6.5219  -6.5103  -6.4369  -6.3704  -6.3662
+    -6.1894  -5.3207  -5.2576  -4.1862  -3.3734  -2.3222  -0.9538  -0.7776
+     0.1419   0.4461   0.5546   1.0254   1.9772
+
+          k = 0.4444 0.3333 0.0000 (104048 PWs)   bands (ev):
+
+    -9.1808  -9.1619  -9.1085  -9.1053  -8.6204  -8.5247  -8.5061  -8.4972
+    -8.2898  -8.2376  -8.0827  -8.0477  -7.9920  -7.9025  -7.8959  -7.8650
+    -7.7842  -7.7718  -7.7524  -7.7192  -7.6344  -7.6043  -7.5636  -7.4879
+    -7.2716  -7.1274  -7.1174  -7.0654  -6.9192  -6.8608  -6.8313  -6.7964
+    -6.5633  -6.5291  -6.5178  -6.5006  -6.4143  -6.4053  -6.3963  -6.3785
+    -5.6146  -4.9447  -4.5726  -3.7344  -3.0291  -2.3221  -2.2895  -1.3638
+    -0.5856  -0.2731   0.1061   0.1202   1.6961
+
+          k = 0.4444 0.4444 0.0000 (104046 PWs)   bands (ev):
+
+    -9.2369  -9.2339  -9.2124  -9.2124  -8.5941  -8.5404  -8.5340  -8.5340
+    -8.1440  -8.1109  -8.1107  -8.0467  -7.9538  -7.9537  -7.9341  -7.9062
+    -7.8334  -7.8260  -7.8108  -7.8107  -7.5000  -7.4999  -7.3692  -7.3454
+    -7.3184  -7.2676  -7.1491  -7.1491  -6.7591  -6.7503  -6.7502  -6.6111
+    -6.6109  -6.4621  -6.4621  -6.4598  -6.4094  -6.4093  -6.4077  -6.3562
+    -4.7974  -4.1808  -3.7427  -3.7426  -3.0646  -3.0640  -2.7636  -2.5863
+    -0.7278  -0.5302  -0.5298  -0.1359   1.5700
+
+          k = 0.4444-0.4444 0.0000 (104046 PWs)   bands (ev):
+
+    -9.2369  -9.2339  -9.2124  -9.2124  -8.5941  -8.5404  -8.5340  -8.5340
+    -8.1440  -8.1109  -8.1107  -8.0467  -7.9538  -7.9537  -7.9341  -7.9062
+    -7.8334  -7.8260  -7.8108  -7.8107  -7.5000  -7.4999  -7.3692  -7.3454
+    -7.3184  -7.2676  -7.1491  -7.1491  -6.7591  -6.7503  -6.7502  -6.6111
+    -6.6109  -6.4621  -6.4621  -6.4598  -6.4094  -6.4093  -6.4077  -6.3562
+    -4.7974  -4.1808  -3.7427  -3.7426  -3.0646  -3.0640  -2.7636  -2.5863
+    -0.7278  -0.5302  -0.5298  -0.1359   1.5700
+
+          k = 0.4444-0.3333 0.0000 (104048 PWs)   bands (ev):
+
+    -9.1808  -9.1619  -9.1085  -9.1053  -8.6204  -8.5247  -8.5061  -8.4972
+    -8.2898  -8.2376  -8.0827  -8.0477  -7.9920  -7.9025  -7.8959  -7.8650
+    -7.7842  -7.7718  -7.7524  -7.7192  -7.6344  -7.6043  -7.5636  -7.4879
+    -7.2716  -7.1274  -7.1174  -7.0654  -6.9192  -6.8608  -6.8313  -6.7964
+    -6.5633  -6.5291  -6.5178  -6.5006  -6.4143  -6.4053  -6.3963  -6.3785
+    -5.6146  -4.9447  -4.5726  -3.7344  -3.0291  -2.3221  -2.2895  -1.3638
+    -0.5856  -0.2731   0.1061   0.1202   1.6961
+
+          k = 0.4444-0.2222 0.0000 (103883 PWs)   bands (ev):
+
+    -9.0666  -8.9975  -8.9450  -8.9362  -8.6128  -8.5410  -8.5015  -8.4979
+    -8.4323  -8.3535  -8.1142  -8.0819  -8.0264  -7.9221  -7.8517  -7.8434
+    -7.7930  -7.7594  -7.6841  -7.6449  -7.5914  -7.5825  -7.5669  -7.5344
+    -7.2781  -7.2267  -7.2045  -7.1638  -7.0513  -6.9939  -6.9094  -6.8509
+    -6.7297  -6.6507  -6.6159  -6.5219  -6.5103  -6.4369  -6.3704  -6.3662
+    -6.1894  -5.3207  -5.2576  -4.1862  -3.3734  -2.3222  -0.9538  -0.7776
+     0.1419   0.4461   0.5546   1.0254   1.9772
+
+          k = 0.4444-0.1111 0.0000 (103658 PWs)   bands (ev):
+
+    -8.9627  -8.7804  -8.7711  -8.7528  -8.6152  -8.6107  -8.5844  -8.4402
+    -8.4166  -8.3768  -8.2059  -8.1382  -8.1298  -8.0377  -7.9347  -7.8946
+    -7.8704  -7.7030  -7.6978  -7.5847  -7.5341  -7.5085  -7.3804  -7.3542
+    -7.3442  -7.3399  -7.2436  -7.2154  -7.1329  -7.0547  -6.9660  -6.9591
+    -6.9111  -6.8209  -6.7590  -6.6371  -6.5847  -6.5738  -6.4928  -6.3124
+    -6.2925  -5.7352  -5.4367  -4.4482  -3.5880  -2.5296  -1.1892  -0.1695
+     0.8597   1.0438   1.8587   2.1325   2.5131
+
+     the Fermi energy is    -3.3105 ev
+
+!    total energy              =   -2842.32268898 Ry
+     Harris-Foulkes estimate   =   -2842.32268987 Ry
+     estimated scf accuracy    <       0.00000071 Ry
+
+     total all-electron energy =    -85058.051133 Ry
+
+     The total energy is the sum of the following terms:
+
+     one-electron contribution =  -67059.06078834 Ry
+     hartree contribution      =   33589.37076933 Ry
+     xc contribution           =    -285.12528252 Ry
+     ewald contribution        =   33012.48824117 Ry
+     electric field correction =       0.00000000 Ry
+     one-center paw contrib.   =   -2099.99157624 Ry
+     smearing contrib. (-TS)   =      -0.00405239 Ry
+
+     convergence has been achieved in  58 iterations
+
+     negative rho (up, down):  9.588E-04 0.000E+00
+
+     Forces acting on atoms (cartesian axes, Ry/au):
+
+     atom    1 type  1   force =    -0.00000041   -0.00000033    0.00135808
+     atom    2 type  1   force =    -0.00000049   -0.00000053    0.00334219
+     atom    3 type  1   force =     0.00000057    0.00000053    0.00135796
+     atom    4 type  1   force =     0.00000062    0.00000067    0.00334237
+     atom    5 type  1   force =     0.00000074   -0.00000043   -0.00309772
+     atom    6 type  1   force =    -0.00000012   -0.00000060   -0.00160258
+     atom    7 type  1   force =    -0.00000052    0.00000065   -0.00309782
+     atom    8 type  1   force =    -0.00000039    0.00000004   -0.00160248
+
+     Total force =     0.007096     Total SCF correction =     0.002756
+     SCF correction compared to forces is large: reduce conv_thr to get better values
+
+     Writing output data file solute.save/
+ 
+     init_run     :     18.31s CPU     26.90s WALL (       1 calls)
+     electrons    :   4152.46s CPU   4752.92s WALL (       1 calls)
+     forces       :      4.48s CPU      5.04s WALL (       1 calls)
+
+     Called by init_run:
+     wfcinit      :      9.10s CPU      9.43s WALL (       1 calls)
+     potinit      :      6.69s CPU     14.52s WALL (       1 calls)
+     hinit0       :      0.96s CPU      1.02s WALL (       1 calls)
+
+     Called by electrons:
+     c_bands      :   3272.37s CPU   3355.25s WALL (      59 calls)
+     sum_band     :    222.12s CPU    253.89s WALL (      59 calls)
+     v_of_rho     :    352.31s CPU    819.25s WALL (      59 calls)
+     newd         :     24.04s CPU     43.49s WALL (      59 calls)
+     PAW_pot      :     12.38s CPU     12.58s WALL (      59 calls)
+     mix_rho      :    274.14s CPU    280.91s WALL (      59 calls)
+
+     Called by c_bands:
+     init_us_2    :     15.56s CPU     15.75s WALL (    4920 calls)
+     ccgdiagg     :   2903.31s CPU   2976.09s WALL (    2419 calls)
+     wfcrot       :    361.02s CPU    368.94s WALL (    2378 calls)
+
+     Called by sum_band:
+     sum_band:bec :      0.21s CPU      0.22s WALL (    2419 calls)
+     addusdens    :     33.44s CPU     59.14s WALL (      59 calls)
+
+     Called by *cgdiagg:
+     h_psi        :   1805.07s CPU   1846.03s WALL (  286026 calls)
+     s_psi        :    674.15s CPU    681.89s WALL (  569674 calls)
+     cdiaghg      :      2.51s CPU      2.56s WALL (    2378 calls)
+
+     Called by h_psi:
+     h_psi:pot    :   1796.91s CPU   1837.49s WALL (  286026 calls)
+     h_psi:calbec :    453.06s CPU    467.41s WALL (  286026 calls)
+     vloc_psi     :    975.33s CPU    998.33s WALL (  286026 calls)
+     add_vuspsi   :    365.71s CPU    369.34s WALL (  286026 calls)
+     h_1psi       :   1837.29s CPU   1874.83s WALL (  283648 calls)
+
+     General routines
+     calbec       :    850.83s CPU    881.23s WALL (  572257 calls)
+     fft          :     15.82s CPU     17.19s WALL (     778 calls)
+     ffts         :    144.07s CPU    147.58s WALL (   63961 calls)
+     fftw         :    967.21s CPU    990.61s WALL (  949129 calls)
+     interpolate  :      1.11s CPU      1.27s WALL (      59 calls)
+ 
+     Parallel routines
+     fft_scatt_xy :    152.89s CPU    155.88s WALL ( 1013868 calls)
+     fft_scatt_yz :    366.71s CPU    381.10s WALL ( 1013868 calls)
+ 
+     PWSCF        :     1h 9m CPU        9h 1m WALL
+
+      19h
+ 
+   This run was terminated on:   1:41: 0  20Jan2024            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

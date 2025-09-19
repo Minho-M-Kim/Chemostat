@@ -1,0 +1,45 @@
+&CONTROL
+  calculation = "scf",
+  pseudo_dir  = "/groups/wag/minhokim/pseudo",
+  prefix      = "solute",
+  outdir      = "./solute",
+  tprnfor     = .true.,
+  tefield     = .true.,
+  dipfield    = .true.
+/
+&SYSTEM
+  ibrav       = 0,
+  nat         = 8,
+  ntyp        = 1,
+  ecutwfc     = 50.0,
+  ecutrho     = 500.0,
+  occupations = "smearing",
+  smearing    = "gaussian",
+  degauss     = 0.0147,
+  emaxpos = 0.80
+  eopreg = 0.01
+  edir = 3
+/
+&ELECTRONS
+  startingwfc = 'atomic'
+  diagonalization = 'cg' 
+  mixing_mode = 'local-TF'
+  electron_maxstep = 1000
+/
+ATOMIC_SPECIES
+  Ag 1.0 Ag.pbe-dn-kjpaw_psl.0.1.UPF
+CELL_PARAMETERS {angstrom}
+    4.144170000    -0.000000000    -0.000000000
+    0.000000000     4.144170000    -0.000000000
+    0.000000000     0.000000000   150.000000000
+ATOMIC_POSITIONS {angstrom}
+Ag 1.375350000     1.375350000     0.000000000
+Ag 1.375350000     1.375350000     4.144170000
+Ag 3.447430000     3.447430000     0.000000000
+Ag 3.447430000     3.447430000     4.144170000
+Ag 3.447430000     1.375350000     2.072080000
+Ag 3.447430000     1.375350000     6.216250000
+Ag 1.375350000     3.447430000     2.072080000
+Ag 1.375350000     3.447430000     6.216250000
+K_POINTS automatic
+9 9 1 0 0 0

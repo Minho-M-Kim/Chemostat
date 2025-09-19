@@ -1,0 +1,153 @@
+#NVT#
+
+info            memory
+
+units           real # at this Version, 2019Jay : real unit is only available
+atom_style      full
+boundary        p p f
+dielectric      1
+special_bonds   lj/coul 0.0 0.0 0.5
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  none
+improper_style  none
+kspace_style    pppm 1.0e-4 
+processors      * * 1
+kspace_modify   slab 3.0
+
+pair_style      hybrid/overlay lj/charmm/coul/long/soft 1 2.0 2.5 13 14 buck/coul/long 14
+
+read_data data.temp
+
+pair_coeff      1 1 lj/charmm/coul/long/soft 0.000000 1.000000 1
+pair_coeff      1 2 buck/coul/long 17427.436751 0.348209 1738.890836 #OW_Ag off slab fit_df2func one H down config 
+pair_coeff      1 3 buck/coul/long 3389.446916 0.342857 355.541115 #HW_Ag
+pair_coeff      1 4 buck/coul/long 6700.8494 0.4500 174.594      #Na+_Ag off cluster fit
+pair_coeff      1 5 buck/coul/long 88041.0683 0.2600 2050.025    #Ag_F-_off cluster fit
+pair_coeff      1 6 buck/coul/long 6700.8494 0.4500 174.594      #Na+_Ag off cluster fit
+pair_coeff      1 7 buck/coul/long 88041.0683 0.2600 2050.025    #Ag_F-_off cluster fit
+
+pair_coeff      2 2 lj/charmm/coul/long/soft 0.102000 3.188000 1
+pair_coeff      2 3 lj/charmm/coul/long/soft 0.0000 1.0000 1
+pair_coeff      2 4 lj/charmm/coul/long/soft 0.1010 2.8855 1    #OW_Na+(Netz) mixing off
+pair_coeff      2 5 lj/charmm/coul/long/soft 0.0191 3.6745 1    #OW_F-(Netz) mixing off
+pair_coeff      2 6 lj/charmm/coul/long/soft 0.1010 2.8855 0.068762   #OW_Na+(Netz) mixing off
+pair_coeff      2 7 lj/charmm/coul/long/soft 0.0191 3.6745 0.068762   #OW_F-(Netz) mixing off
+
+pair_coeff      3 3 lj/charmm/coul/long/soft 0.000000 1.000000 1
+pair_coeff      3 4 lj/charmm/coul/long/soft 0.000000 1.000000 1
+pair_coeff      3 5 lj/charmm/coul/long/soft 0.000000 1.000000 1
+pair_coeff      3 6 lj/charmm/coul/long/soft 0.000000 1.000000 0.068762
+pair_coeff      3 7 lj/charmm/coul/long/soft 0.000000 1.000000 0.068762
+
+pair_coeff      4 4 lj/charmm/coul/long/soft 0.1000 2.5830 1     #Na+ (Netz)
+pair_coeff      4 5 lj/charmm/coul/long/soft 0.0284 3.3720 1     #Na+_F- scale1.5 (Netz)
+pair_coeff      4 6 lj/charmm/coul/long/soft 0.1000 2.5830 0.068762  #Na+ (Netz)
+pair_coeff      4 7 lj/charmm/coul/long/soft 0.0284 3.3720 0.068762  #Na+_F- scale1.5 (Netz)
+
+pair_coeff      5 5 lj/charmm/coul/long/soft 0.0036 4.1610 1     #F- (Netz)
+pair_coeff      5 6 lj/charmm/coul/long/soft 0.0284 3.3720 0.068762  #Na+_F- scale1.5 (Netz)
+pair_coeff      5 7 lj/charmm/coul/long/soft 0.0036 4.1610 0.068762  #F- (Netz)
+
+pair_coeff      6 6 lj/charmm/coul/long/soft 0.1000 2.5830 0.068762  #Na+ (Netz)
+pair_coeff      6 7 lj/charmm/coul/long/soft 0.0284 3.3720 0.068762  #Na+_F- scale1.5 (Netz)
+
+pair_coeff      7 7 lj/charmm/coul/long/soft 0.0036 4.1610 0.068762  #F- (Netz)
+
+region          bulk block 0.0000000000000000e+00 4.5585870000000000e+01 0.0000000000000000e+00 4.5585870000000000e+01 50 75
+region          entire block 0.0000000000000000e+00 4.5585870000000000e+01 0.0000000000000000e+00 4.5585870000000000e+01 0 150
+region          interface block 0.0000000000000000e+00 4.5585870000000000e+01 0.0000000000000000e+00 4.5585870000000000e+01 6.216250000 50
+region          toplayer block 0.0000000000000000e+00 4.5585870000000000e+01 0.0000000000000000e+00 4.5585870000000000e+01 6.2 6.3
+group           top region toplayer
+set             group top charge 0.0
+
+variable        sname index Ag100_4sl_t3p0_2MF
+
+set type 6 charge 0.068762
+set type 7 charge -0.068762
+pair_modify     table 0
+neighbor        2.0 multi
+neigh_modify    every 1 delay 0 check yes
+
+# Define atom dynamic group
+variable        type_dynamic atom type
+
+variable        Cat_var atom "v_type_dynamic == 4"
+group           Cat dynamic all var Cat_var every 1
+variable        Cat_num equal count(Cat)
+
+variable        Ani_var atom "v_type_dynamic == 5"
+group           Ani dynamic all var Ani_var every 1
+variable        Ani_num equal count(Ani)
+
+variable        ION_var atom "(v_type_dynamic == 4) || (v_type_dynamic == 5)"
+group           ION dynamic all var ION_var every 1
+variable        ION_num equal count(ION)
+
+variable        Cat_frac_var atom "v_type_dynamic == 6"
+group           Cat_frac dynamic all var Cat_frac_var every 1
+variable        Cat_frac_num equal count(Cat_frac)
+
+variable        Ani_frac_var atom "v_type_dynamic == 7"
+group           Ani_frac dynamic all var Ani_frac_var every 1
+variable        Ani_frac_num equal count(Ani_frac)
+
+variable        ION_frac_var atom "(v_type_dynamic == 6) || (v_type_dynamic == 7)"
+group           ION_frac dynamic all var ION_frac_var every 1
+variable        ION_frac_num equal count(ION_frac)
+
+variable        MOBILE_var atom "(v_type_dynamic == 2) || (v_type_dynamic == 3) || (v_type_dynamic == 4) || (v_type_dynamic == 5) || (v_type_dynamic == 6) || (v_type_dynamic == 7)"
+group           MOBILE dynamic all var MOBILE_var every 1
+variable        MOBILE_num equal count(MOBILE)
+
+group           SOLUTE type 1
+group           SOLVENT type 2 3
+
+neigh_modify    exclude group SOLUTE SOLUTE
+
+compute         tempMobile MOBILE temp
+compute         pressMobile all pressure tempMobile
+compute         pairUC SOLUTE group/group Cat
+compute         pairUA SOLUTE group/group Ani
+compute         pairUM SOLUTE group/group MOBILE
+compute         pairMI MOBILE group/group ION_frac
+
+fix             1 MOBILE momentum 1 linear 1 1 1 angular
+fix             shakeH all shake 0.0001 20 0 b 1 a 1
+fix             wallhi MOBILE wall/harmonic zhi 120.0 5.0 1.0 5.0
+#fix             wallci Cat wall/reflect zlo 8.10  #Na+wall_pressurestep
+#fix             wallai Ani wall/reflect zlo 8.40   #F-wall
+
+fix             solvGrid SOLVENT gridforce -1 121 0	# for SOLVENT group, scale -1, no-supercell,ID
+fix             catGrid Cat gridforce -1 121 1		# for ION group, scale -1, no-supercell,ID
+fix             aniGrid Ani gridforce -1 121 2		# for ION group, scale -1, no-supercell,ID
+fix             catfracGrid Cat_frac gridforce -1 121 3  # for ION_frac group, scale -1, no-supercell,ID
+fix             anifracGrid Ani_frac gridforce -1 121 4  # for ION_frac group, scale -1, no-supercell,ID
+fix_modify      solvGrid energy yes			# include grid energy to lammps total energy
+fix_modify      catGrid energy yes			# include grid energy to lammps total energy
+fix_modify      aniGrid energy yes			# include grid energy to lammps total energy
+fix_modify      catfracGrid energy yes                  # include grid energy to lammps total energy
+fix_modify      anifracGrid energy yes                  # include grid energy to lammps total energy
+grid            ./solute.cube yes 5 SOLVENT.cube cat.cube ani.cube catfrac.cube anifrac.cube
+
+reset_timestep  0
+timestep        1.0
+compute_modify  thermo_temp dynamic yes
+thermo          100
+
+fix             bound_Cat_frac Cat_frac spring/bound tether 0.1 NULL NULL 62.5 10.0
+fix             bound_Ani_frac Ani_frac spring/bound tether 0.1 NULL NULL 62.5 10.0
+#fix             bound_frac ION_frac drag NULL NULL 62.5 20 10.0
+fix             5 MOBILE conc/berendsen 0.1 0.1 1000.0 bulk 0 atom 4 5
+compute         interface_conc MOBILE conc interface
+
+thermo_style    custom v_MOBILE_num v_Cat_num v_Ani_num v_Cat_frac_num v_Ani_frac_num v_ION_num v_ION_frac_num temp etotal c_tempMobile ke pe ebond eangle evdwl ecoul elong press density vol atoms c_pressMobile f_catGrid f_aniGrid f_solvGrid f_catfracGrid f_anifracGrid c_pairUC c_pairUA c_pairUM c_pairMI c_5_conc[4] c_5_conc[5] c_5_conc[6] c_5_conc[7] c_interface_conc[4] c_interface_conc[5]
+thermo_modify   line multi
+
+dump            1 all custom 10000 ${sname}.emd.lammpstrj id type xu yu zu q
+dump_modify     1 sort id
+restart         5000000 ${sname}.emd.*.restart
+fix             3 MOBILE nvt temp 300.0 300.0 100.0
+run		2000000
+
+write_restart   ${sname}.end.restart
