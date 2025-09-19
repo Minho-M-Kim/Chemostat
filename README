@@ -22,12 +22,7 @@ Then, the simulation can be performed using lmp_mpi executable file.
 3. Demo
 #Instructions to run on data
 cd example_chemostat
-../src/lmp_mpi -in in.demo
-
-log.lammps and trajectory file will be printed as outputs.
-These results can be compared with the sample outputs in example_chemostat/sample_outputs/
-
-The demo simulation will be done within a minute on a "normal" desktop computer.
+Refer README file in example_chemostat directory
 
 4. Instructions for use
 a. Create a LAMMPS data or restart file based on the system of interests.

@@ -1,0 +1,17 @@
+These example enables to simulate chemostat under DFT-CES.
+
+1. DFT-CES directory includes sample inputs used in this study. 
+To run,
+qmmm_QE_super2.charging_bader.sh
+
+Detailed description of the DFT-CES is presented in https://github.com/SeungJay/DFT-CES, SI in this paper, and Nat Commun 13, 174 (2022). https://doi.org/10.1038/s41467-021-27909-x.
+In results, some expected outputs are presented where the actual values can be different due to different structure of MD cell & numerical issues.
+
+2. chemostat directory includes sample inputs for chemostat calculation where the expected results in the result directory
+To run,
+${LAMMPS_PATH}/src/lmp_mpi -in in.lammps
+
+log.lammps will be printed as outputs.
+These results can be compared with the sample output where the numerical differences might exist.
+
+The demo simulation will be done within a minute (per 100 timesteps) on a "normal" desktop computer.
