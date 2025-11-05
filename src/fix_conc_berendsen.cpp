@@ -837,37 +837,24 @@ void FixConcBerendsen::pre_exchange()
     int i;
     if (mode == ATOM) {
       //delete_atom_pair
-      int i_Cat_frac_temp,i_Ani_frac_temp,local_Cat_frac_temp,local_Ani_frac_temp;
       int tot_deletion_number,count,count_all;
       tot_deletion_number = Cat_ratio + Ani_ratio;
       count = 0;
       count_all = 0;
       while (count_all < tot_deletion_number) {
-        i_Cat_frac_temp = -1;
-        i_Ani_frac_temp = -1;
-        local_Cat_frac_temp = -1;
-        local_Ani_frac_temp = -1;
         for (i=0;i<atom->nlocal;i++) {
-            if (atom->type[i]==typeAni_frac) {
-	       i_Ani_frac_temp = atom->tag[i];
-               local_Ani_frac_temp=i;
+            if (atom->type[i] == typeCat_frac) {
+	       atom->avec->copy(atom->nlocal-1,i,1);
+               atom->nlocal--;
+	       printf("Cation deleted\n");
+	       count++;
             }
-	    if (atom->type[i]==typeCat_frac) {
-	       i_Cat_frac_temp = atom->tag[i];
-               local_Cat_frac_temp=i;
-	    }
-        }
-        if (local_Ani_frac_temp != -1) {
-	    atom->avec->copy(atom->nlocal-1,local_Ani_frac_temp,1);
-	    atom->nlocal--;
-	    printf("Anion deleted\n");
-	    count++;
-        }
-        if (local_Cat_frac_temp != -1) {
-	    atom->avec->copy(atom->nlocal-1,local_Cat_frac_temp,1);
-	    atom->nlocal--;
-	    printf("Cation deleted\n");
-	    count++;
+            if (atom->type[i] == typeAni_frac) {
+	       atom->avec->copy(atom->nlocal-1,i,1);
+               atom->nlocal--;
+	       printf("Anion deleted\n");
+	       count++;
+            }
         }
 	MPI_Allreduce(&count,&count_all,1,MPI_INT,MPI_SUM,world);
         bigint nblocal = atom->nlocal;
@@ -955,12 +942,12 @@ void FixConcBerendsen::pre_exchange()
       count_all = 0;
       while (count_all < tot_deletion_number) {
         for (i=0;i<atom->nlocal;i++) {
-            if ((atom->type[i] >= typeAni_frac) && (atom->type[i] <= typeAni_frac_max)) {
+            if ((atom->type[i] >= typeCat_frac) && (atom->type[i] <= typeCat_frac_max)) {
 	       atom->avec->copy(atom->nlocal-1,i,1);
                atom->nlocal--;
 	       count++;
             }
-            if ((atom->type[i] >= typeCat_frac) && (atom->type[i] <= typeCat_frac_max)) {
+            if ((atom->type[i] >= typeAni_frac) && (atom->type[i] <= typeAni_frac_max)) {
 	       atom->avec->copy(atom->nlocal-1,i,1);
                atom->nlocal--;
 	       count++;
