@@ -18,7 +18,6 @@ Then, the simulation can be performed using lmp_mpi executable file.
 
 5-15 minute is required to install on a normal computer
 
-
 3. Demo
 #Instructions to run on data
 cd example_chemostat
@@ -29,12 +28,3 @@ a. Create a LAMMPS data or restart file based on the system of interests.
 b. Write a LAMMPS input file based on the required simulation setup.
 c. To use chemostat, fix conc/berendsen, group dynamics, .. are needed.
 d. Run the simulation as in the demo.
-
-#All software dependencies and operating systems (including version numbers)
-#Versions the software has been tested on
-#Any required non-standard hardware
-#Instuctions
-#Typical install time on a "normal" desktop computer
-#Expected output
-#Expected run time for demo on a "normal" desktop computer
-#How to run the software on your data
