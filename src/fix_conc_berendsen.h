@@ -83,6 +83,11 @@ class FixConcBerendsen : public Fix {
     int aparam;
   };
 
+  //Setting for shake
+  class Fix *fixshake;
+  int shakeflag;
+  char *idshake;
+
   Adapt *adapt;
   double *kspace_scale;
   class RanPark *random_equal;
