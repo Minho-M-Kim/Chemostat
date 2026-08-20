@@ -55,7 +55,7 @@ enum{CHARGE};
 
 FixConcBerendsen::FixConcBerendsen(LAMMPS *lmp, int narg, char **arg) :
   Fix(lmp, narg, arg),
-  cstr(NULL), id_temp(NULL), cflag(0), random_equal(NULL)
+  cstr(NULL), id_temp(NULL), cflag(0), random_equal(NULL), fixshake(NULL), idshake(NULL)
 {
   if (narg < 10) error->all(FLERR,"Illegal fix temp/berendsen command");
 
@@ -66,6 +66,7 @@ FixConcBerendsen::FixConcBerendsen(LAMMPS *lmp, int narg, char **arg) :
   scalar_flag = 1;
   global_freq = nevery;
   extscalar = 1;
+  shakeflag = 0;
 
   cstr = NULL;
   if (strstr(arg[3],"v_") == arg[3]) {
@@ -121,12 +122,14 @@ FixConcBerendsen::FixConcBerendsen(LAMMPS *lmp, int narg, char **arg) :
   }
   else if (strcmp(arg[8],"mol")==0) {
     mode = MOLECULE;
-    molCat = atom->find_molecule(arg[9]);
-    molAni = atom->find_molecule(arg[10]);
-    molCat_frac = atom->find_molecule(arg[11]);
-    molAni_frac = atom->find_molecule(arg[12]);
-    if ((molCat == -1) || (molAni == -1) || (molCat_frac == -1) || (molAni_frac == -1)) error->all(FLERR,"Molecule template ID for fix conc/berendsen does not exist");
+    int molbase = atom->find_molecule(arg[9]);
+    if (molbase == -1) error->all(FLERR,"Molecule template ID for fix conc/berendsen does not exist");
     onemols = atom->molecules;
+    if (onemols[molbase]->nset != 4) error->all(FLERR,"Fix conc/berendsen molecule template must contain exactly four molecules in cation, anion, cation_frac, and anion_frac order");
+    molCat = molbase;
+    molAni = molbase+1;
+    molCat_frac = molbase+2;
+    molAni_frac = molbase+3;
 
     // Assign represent atom type(first atom) & number
     // type* : min atom type, type*_max : max atom_type
@@ -172,13 +175,22 @@ FixConcBerendsen::FixConcBerendsen(LAMMPS *lmp, int narg, char **arg) :
       if (typeAni_frac == onemols[molAni_frac]->type[i]) typeAni_frac_num++;
     }
 
-    int iarg = 13;
+    int iarg = 10;
     while (iarg < narg) {
 	if (strcmp(arg[iarg],"ratio") == 0) {
 	    Cat_ratio = force->inumeric(FLERR,arg[iarg+1]);
 	    Ani_ratio = force->inumeric(FLERR,arg[iarg+2]);
 	    iarg += 3;
 	}
+        else if (strcmp(arg[iarg],"shake") == 0) {
+            if (iarg+2 > narg) error->all(FLERR,"Illegal fix conc/berendsen command");
+            int n = strlen(arg[iarg+1]) + 1;
+            delete [] idshake;
+            idshake = new char[n];
+            strcpy(idshake,arg[iarg+1]);
+            shakeflag = 1;
+            iarg += 2;
+        }
 	else error->all(FLERR,"Illegal fix conc/berendsen command");
     }
   }
@@ -356,6 +368,7 @@ FixConcBerendsen::~FixConcBerendsen()
     memory->sfree(grouptypestrings);
   }
   delete random_equal;
+  delete [] idshake;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -388,6 +401,31 @@ void FixConcBerendsen::init()
   if (icompute < 0)
     error->all(FLERR,"Temperature ID for fix temp/berendsen does not exist");
   concentration = modify->compute[icompute];
+
+  // if shakeflag defined, check for SHAKE fix
+  // its molecule template must be same as this one
+
+  // From here, mino
+  // For the fix shake mol tag should be used.
+  // We can define molecule with several txt files
+  // Then the test should be performed.
+  fixshake = NULL;
+  if (shakeflag && mode == MOLECULE) {
+    int ifix = modify->find_fix(idshake);
+    if (ifix < 0) error->all(FLERR,"Fix conc/berendsen shake fix does not exist");
+    fixshake = modify->fix[ifix];
+    int tmp;
+    Molecule **shake_molecules = (Molecule **) fixshake->extract("onemol",tmp);
+    if (shake_molecules == NULL) {
+      error->all(FLERR,"Fix shake must use the mol keyword for fix conc/berendsen");
+    }
+    if (shake_molecules[0]->nset != 4) {
+      error->all(FLERR,"Cation, anion, fractional cation, and anion should be defined as one molecule template ID in fix shake for fix conc/berendsen");
+    }
+    if (shake_molecules != &onemols[molCat]) {
+      error->all(FLERR,"Fix shake and fix conc/berendsen must have same molecule template set");
+    }
+  }
 
   if (modify->check_rigid_group_overlap(groupbit))
     error->warning(FLERR,"Cannot thermostat atoms in rigid bodies");
@@ -657,6 +695,8 @@ void FixConcBerendsen::pre_exchange()
           MathExtra::axisangle_to_quat(r,theta,quat);
           MathExtra::quat_to_mat(quat,rotmat);
 
+	  int nlocalprev = atom->nlocal;
+
           if (coord[0] >= domain->sublo[0] && coord[0] < domain->subhi[0] &&
               coord[1] >= domain->sublo[1] && coord[1] < domain->subhi[1] &&
               coord[2] >= domain->sublo[2] && coord[2] < domain->subhi[2]) {
@@ -695,6 +735,9 @@ void FixConcBerendsen::pre_exchange()
 	    }
 	    printf("Cation created\n");
 	  }
+	  // shake
+	  if (shakeflag) fixshake->set_molecule(nlocalprev,maxtag_all,molCat_frac-molCat,coord,NULL,quat);
+
           atom->natoms += onemols[molCat_frac]->natoms;
           atom->nbonds += onemols[molCat_frac]->nbonds;
           atom->nangles += onemols[molCat_frac]->nangles;
@@ -774,6 +817,9 @@ void FixConcBerendsen::pre_exchange()
           MathExtra::norm3(r);
           MathExtra::axisangle_to_quat(r,theta,quat);
           MathExtra::quat_to_mat(quat,rotmat);
+	  
+	  int nlocalprev = atom->nlocal;
+
           if (coord[0] >= domain->sublo[0] && coord[0] < domain->subhi[0] &&
               coord[1] >= domain->sublo[1] && coord[1] < domain->subhi[1] &&
               coord[2] >= domain->sublo[2] && coord[2] < domain->subhi[2]) {
@@ -810,6 +856,9 @@ void FixConcBerendsen::pre_exchange()
 	    }
 	  printf("Anion created\n");
 	  }
+	  // shake
+	  if (shakeflag) fixshake->set_molecule(nlocalprev,maxtag_all,molAni_frac-molCat,coord,NULL,quat);
+
           atom->natoms += onemols[molAni_frac]->natoms;
           atom->nbonds += onemols[molAni_frac]->nbonds;
           atom->nangles += onemols[molAni_frac]->nangles;
@@ -1328,6 +1377,7 @@ void FixConcBerendsen::pre_exchange()
 	        printf("cat to catfrac before %d\t%d\n",atom->tag[i],atom->type[i]);
 	        atom->type[i] = typeCat_frac_max - (typeCat_max - atom->type[i]);
 	        atom->tag[i] += ((atom->natoms - (i_Cattemp_all[j])) - (onemols[molCat]->natoms*(j+1) + onemols[molAni]->natoms*Ani_ratio - 1));
+		if (shakeflag) fixshake->update_arrays(i,((atom->natoms - (i_Cattemp_all[j])) - (onemols[molCat]->natoms*(j+1) + onemols[molAni]->natoms*Ani_ratio - 1)));
                 printf("cat to catfrac after %d\t%d\n",atom->tag[i],atom->type[i]);
 	    }
         }
@@ -1338,6 +1388,7 @@ void FixConcBerendsen::pre_exchange()
 	        printf("ani to anifrac before %d\t%d\n",atom->tag[i],atom->type[i]);
 	        atom->type[i] = typeAni_frac_max - (typeAni_max - atom->type[i]);
 	        atom->tag[i] += ((atom->natoms - (i_Anitemp_all[j]+onemols[molAni]->natoms*(j+1)-1)));
+		if (shakeflag) fixshake->update_arrays(i,((atom->natoms - (i_Anitemp_all[j]+onemols[molAni]->natoms*(j+1)-1))));
                 printf("ani to anifrac after %d\t%d\n",atom->tag[i],atom->type[i]);
 	    }
         }
@@ -1477,6 +1528,7 @@ void FixConcBerendsen::pre_exchange()
             if (atom->type[i]>=typeCat && atom->type[i]<=typeCat_max && atom->tag[i]>=atom->natoms-onemols[molCat]->natoms*Cat_ratio-onemols[molAni]->natoms*Ani_ratio+1+onemols[molCat]->natoms*(Cat_ratio-j-1) && atom->tag[i]<=atom->natoms-onemols[molAni]->natoms*Ani_ratio-onemols[molCat]->natoms*j) {
                 printf("catfrac to cat before %d\t%d\n",atom->tag[i],atom->type[i]);
 	        atom->tag[i] -= ((atom->natoms - (i_Cattemp_all[j])) - (onemols[molCat]->natoms*(j+1) + onemols[molAni]->natoms*Ani_ratio - 1));
+		if (shakeflag) fixshake->update_arrays(i,-((atom->natoms - (i_Cattemp_all[j])) - (onemols[molCat]->natoms*(j+1) + onemols[molAni]->natoms*Ani_ratio - 1)));
                 printf("catfrac to cat after %d\t%d\n",atom->tag[i],atom->type[i]);
 	    }
         }
@@ -1486,6 +1538,7 @@ void FixConcBerendsen::pre_exchange()
 	    if (atom->type[i]>=typeAni && atom->type[i]<=typeAni_max && atom->tag[i]>=atom->natoms-onemols[molAni]->natoms*Ani_ratio+1+onemols[molAni]->natoms*(Ani_ratio-j-1) && atom->tag[i]<=atom->natoms-onemols[molAni]->natoms*j) {
                 printf("anifrac to ani before %d\t%d\n",atom->tag[i],atom->type[i]);
 	        atom->tag[i] -= ((atom->natoms - (i_Anitemp_all[j]+onemols[molAni]->natoms*(j+1)-1)));
+		if (shakeflag) fixshake->update_arrays(i,-((atom->natoms - (i_Anitemp_all[j]+onemols[molAni]->natoms*(j+1)-1))));
                 printf("anifrac to ani after %d\t%d\n",atom->tag[i],atom->type[i]);
 	    }
         }
